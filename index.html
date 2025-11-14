@@ -1,1 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eduqas‑Style Percentage Trainer (with Reverse % + Number Machine)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --bg:#eef3fb;
+      --card:#ffffff;
+      --accent:#5b73f1;
+      --accent-2:#3846a5;
+      --danger:#c62828;
+      --success:#16a34a;
+      --text:#111827;
+      --muted:#6b7280;
+      --ink:#1f2937;
+      --chip:#eef2ff;
+      --shadow:0 12px 30px rgba(31,41,55,.18);
+      --proc:#4338ca;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 85% -20%, #dfe6ff 0, transparent 60%),
+        radial-gradient(1200px 600px at -10% 110%, #ffdfe6 0, transparent 60%),
+        var(--bg);
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:2rem 1rem;
+    }
+    .card{
+      width:min(900px,98%);
+      background:var(--card);
+      border-radius:1rem;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .header{
+      padding:1.2rem 1.6rem;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#fff;
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+    .header h1{margin:0;font-size:1.25rem;letter-spacing:.3px}
+    .badge{
+      display:inline-flex;align-items:center;gap:.45rem;
+      padding:.25rem .6rem;border-radius:.6rem;background:rgba(255,255,255,.16);
+      font-weight:700;font-size:.85rem
+    }
+    .body{padding:1.4rem 1.6rem}
+    #question{font-weight:700;line-height:1.55;margin:.4rem 0 1rem;font-size:1.08rem}
+    .chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:.2rem 0 .9rem}
+    .chip{background:var(--chip);color:#3730a3;border:1px solid #c7d2fe;border-radius:999px;padding:.15rem .6rem;font-weight:700;font-size:.8rem}
+    .note{margin:.2rem 0 .9rem;color:#374151;font-size:.92rem;background:#f8fafc;border:1px solid #e5e7eb;border-radius:.6rem;padding:.6rem .7rem}
+    label[for="ansInput"]{font-weight:800}
+    input[type="number"], input[type="text"]{
+      width:100%;max-width:280px;margin-top:.35rem;
+      font-size:1.08rem;padding:.6rem .75rem;border:2px solid #c6cfd9;border-radius:.55rem;transition:border-color .15s ease, box-shadow .2s ease, background .2s ease
+    }
+    input[type="number"]:focus, input[type="text"]:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(91,115,241,.18)}
+    .controls{margin-top:1rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+    button{
+      border:none;border-radius:.55rem;cursor:pointer;font-weight:800;
+      padding:.6rem 1.1rem;font-size:.98rem;letter-spacing:.2px;
+      transition:transform .06s ease, background .15s ease, box-shadow .2s ease;
+    }
+    #checkBtn{background:var(--accent);color:#fff;box-shadow:0 6px 14px rgba(91,115,241,.35)}
+    #checkBtn:hover{background:#4e63d6}
+    #checkBtn:active{transform:translateY(1px)}
+    #nextBtn{background:#0f172a;color:#fff;display:none}
+    #nextBtn:hover{background:#0b1220}
+    #hintBtn{background:#e5e7eb}
+    #hintBtn:hover{background:#d9dbe0}
+    #feedback{min-height:1.6rem;margin-top:.65rem;font-weight:800}
+    .no{color:var(--danger)} /* wrong → red */
+    .yes{color:var(--success)} /* right → green */
 
+    /* Shake animation for wrong answers */
+    .shake{animation:shake .28s linear}
+    @keyframes shake{
+      0%,100%{transform:translateX(0)}
+      20%{transform:translateX(-8px)}
+      40%{transform:translateX(8px)}
+      60%{transform:translateX(-6px)}
+      80%{transform:translateX(6px)}
+    }
+
+    /* Confetti & Toast */
+    #confetti{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}
+    .confetti-piece{
+      position:fixed;top:-12px;width:10px;height:14px;opacity:.9;
+      will-change:transform,opacity;
+      animation:fall linear forwards;
+    }
+    @keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+    @media (prefers-reduced-motion: reduce){.shake{animation:none}.confetti-piece{display:none}}
+
+    #toast{
+      position:fixed;top:12px;left:50%;transform:translate(-50%,-10px);
+      background:#111827;color:#fff;border-radius:.6rem;
+      padding:.5rem .8rem;box-shadow:0 10px 25px rgba(0,0,0,.25);
+      opacity:0;pointer-events:none;transition:opacity .18s ease, transform .18s ease;z-index:60;
+      font-weight:800;letter-spacing:.2px
+    }
+    #toast.show{opacity:1;transform:translate(-50%,0)}
+
+    /* Start overlay */
+    #overlay{
+      position:fixed;inset:0;background:rgba(16,24,40,.75);
+      display:flex;align-items:center;justify-content:center;z-index:50
+    }
+    .panel{
+      width:min(520px,92%);background:#fff;border-radius:1rem;padding:1.2rem 1.1rem 1.25rem;
+      box-shadow:0 14px 34px rgba(0,0,0,.35);animation:pop .2s ease-out
+    }
+    @keyframes pop{from{transform:translateY(8px);opacity:0}to{transform:translateY(0);opacity:1}}
+    .panel h2{margin:.2rem 0 1rem;font-size:1.35rem}
+    .row{display:flex;gap:.55rem;flex-wrap:wrap}
+    .group{margin:.55rem 0}
+    .option{display:flex;align-items:center;gap:.45rem;margin:.25rem 0}
+    .radioWrap{background:#f6f7fb;border:1px solid #dfe4f2;border-radius:.6rem;padding:.55rem .75rem}
+    .startBtn{width:100%;margin-top:.7rem;background:var(--accent);color:#fff}
+    .muted{color:var(--muted);font-size:.9rem}
+
+    /* Progress (target mode) */
+    .progress{
+      height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:.4rem;display:none
+    }
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,#34d399,#10b981);width:0%}
+
+    /* Drawer */
+    #drawerShade{
+      position:fixed;inset:0;background:rgba(2,6,23,.32);backdrop-filter:blur(2px);
+      opacity:0;visibility:hidden;transition:.2s;z-index:49;
+    }
+    #drawerShade.open{opacity:1;visibility:visible}
+    #hintDrawer{
+      position:fixed;top:0;right:-520px;height:100vh;width:min(520px,95%);
+      background:#fff;box-shadow:-10px 0 30px rgba(0,0,0,.25);z-index:50;
+      transition:right .22s ease-out;display:flex;flex-direction:column;
+    }
+    #hintDrawer.open{right:0}
+    .drawerHead{
+      display:flex;align-items:center;justify-content:space-between;padding:1rem 1.2rem;border-bottom:1px solid #e5e7eb
+    }
+    .drawerBody{padding:1rem 1.2rem;overflow:auto}
+    .tabs{display:flex;gap:.35rem;margin-bottom:.7rem}
+    .tabBtn{
+      background:#eef2ff;border:1px solid #c7d2fe;color:#3730a3;font-weight:800;
+      padding:.4rem .7rem;border-radius:.6rem;cursor:pointer
+    }
+    .tabBtn.active{background:#4338ca;color:#fff;border-color:#4338ca}
+    .hintCard{
+      border:1px solid #e5e7eb;border-radius:.75rem;padding:.8rem 1rem;margin:.6rem 0;background:#fbfdff
+    }
+    .hintCard h4{margin:.1rem 0 .4rem;font-size:1rem}
+    code{background:#f1f5f9;padding:.1rem .35rem;border-radius:.35rem;white-space:nowrap}
+
+    /* Number machine */
+    .machine{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:.6rem 0 .3rem}
+    .machine .io{
+      padding:.45rem .7rem;border:1.8px solid #c6cfd9;border-radius:.6rem;background:#fff;
+      font-weight:800;min-width:120px;text-align:center
+    }
+    .machine .proc{
+      padding:.5rem .9rem;border-radius:.6rem;background:var(--proc);color:#fff;font-weight:900;
+      box-shadow:0 8px 18px rgba(67,56,202,.25);min-width:110px;text-align:center
+    }
+    .machine .arrow{font-weight:900;opacity:.6;font-size:1.2rem}
+  </style>
+</head>
+<body>
+  <!-- ===== Start Menu ===== -->
+  <div id="overlay" role="dialog" aria-modal="true">
+    <div class="panel">
+      <h2>Start Quiz — Eduqas‑Style Percentages</h2>
+      <div class="group">
+        <label for="nameInput" style="font-weight:700">Name</label>
+        <input id="nameInput" type="text" placeholder="Enter your name" style="width:100%;padding:.6rem .7rem;border:1.8px solid #c6cfd9;border-radius:.5rem;margin-top:.35rem">
+      </div>
+
+      <div class="group">
+        <div style="font-weight:700;margin-bottom:.2rem">Mode</div>
+        <div class="row">
+          <label class="radioWrap option"><input type="radio" name="mode" value="timer" checked> Timed</label>
+          <label class="radioWrap option"><input type="radio" name="mode" value="target"> Target score</label>
+        </div>
+      </div>
+
+      <div id="timerGroup" class="group">
+        <div style="font-weight:700;margin-bottom:.2rem">Time limit</div>
+        <label class="option"><input type="radio" name="timer" value="600" checked> 10 minutes</label>
+        <label class="option"><input type="radio" name="timer" value="1200"> 20 minutes</label>
+        <label class="option"><input type="radio" name="timer" value="none"> No limit</label>
+      </div>
+
+      <div id="scoreGroup" class="group" style="display:none">
+        <label for="scoreInput" style="font-weight:700">Target score</label>
+        <input id="scoreInput" type="number" min="1" placeholder="e.g. 20" style="width:100%;padding:.55rem .7rem;border:1.8px solid #c6cfd9;border-radius:.5rem;margin-top:.35rem">
+        <div class="muted">You’ll earn <b>1 point</b> per correct answer.</div>
+      </div>
+
+      <button id="startBtn" class="startBtn">Start</button>
+      <div class="muted" style="margin-top:.6rem">
+        <b>All answers must be to <u>2 decimal places</u></b> (including percentages). Use the <b>multiplier</b> method.
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Confetti & Toast ===== -->
+  <div id="confetti" aria-hidden="true"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ===== Main Card ===== -->
+  <div class="card" id="card">
+    <div class="header">
+      <h1>Percentage Practice — Foundation (Eduqas style)</h1>
+      <span class="badge">👤 <span id="playerName">—</span></span>
+      <span class="badge">⏱ <span id="timer">--:--</span></span>
+      <span class="badge">🏆 <span id="goal">—</span></span>
+      <span class="badge">✅ <span id="score">0</span></span>
+      <span class="badge">🔥 <span id="streak">0</span></span>
+    </div>
+
+    <div class="body">
+      <div class="chips">
+        <span class="chip">All answers: 2 d.p.</span>
+        <span class="chip">Use the multiplier (×)</span>
+        <span class="chip">Includes reverse %</span>
+      </div>
+
+      <div id="question"></div>
+
+      <div class="note">Type the final <b>amount</b> or <b>percentage</b> as required, to <b>2 d.p.</b> Use the multiplier. Do <b>not</b> show working here.</div>
+
+      <label id="ansLabel" for="ansInput">Your answer (2 d.p.)</label>
+      <input id="ansInput" type="number" step="0.01" inputmode="decimal" placeholder="e.g. 123.45 or 17.50">
+
+      <div id="feedback" aria-live="polite"></div>
+
+      <div class="controls">
+        <button id="checkBtn">Check</button>
+        <button id="nextBtn">Next question</button>
+        <button id="hintBtn" title="Open hints & worked example">Hint & Worked example</button>
+      </div>
+
+      <div class="progress" id="progress"><span id="bar"></span></div>
+    </div>
+  </div>
+
+  <!-- ===== Hints Drawer ===== -->
+  <div id="drawerShade" aria-hidden="true"></div>
+  <aside id="hintDrawer" aria-label="Hints and Examples">
+    <div class="drawerHead">
+      <strong>Hint & Worked Example (Number Machine)</strong>
+      <button id="closeDrawer" class="tabBtn" style="background:#0f172a;color:#fff;border-color:#0f172a">Close ✕</button>
+    </div>
+    <div class="drawerBody">
+      <div class="tabs">
+        <button class="tabBtn active" data-tab="thisQ">This question — method only</button>
+        <button class="tabBtn" data-tab="example">Worked example (same type)</button>
+      </div>
+
+      <!-- This question (process only; no answers revealed) -->
+      <div id="tab-thisQ">
+        <div class="hintCard">
+          <h4 id="thisQTitle">How to approach it</h4>
+          <div id="thisQBody"></div>
+        </div>
+      </div>
+
+      <!-- Worked example — generated for the current type only -->
+      <div id="tab-example" style="display:none">
+        <div class="hintCard">
+          <h4 id="exTitle">Worked example</h4>
+          <div id="exBody"></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <script>
+    /* ---------------- helpers ---------------- */
+    const pad = n => String(n).padStart(2,'0');
+    const fmt = s => s===null ? '∞' : `${Math.floor(s/60)}:${pad(s%60)}`;
+    const rnd = (a,b)=> Math.floor(Math.random()*(b-a+1))+a;
+    const choice = arr => arr[rnd(0,arr.length-1)];
+    const clamp = (v,min,max)=> Math.min(max,Math.max(min,v));
+    const approxEq = (a,b,tol=0.01)=> Math.abs(a-b) <= tol; // ~2 d.p. tolerance
+    const stepRnd = (min, max, step) => {
+      const n = Math.round((Math.random()*(max-min)+min)/step)*step;
+      return Math.max(min, Math.min(max, n));
+    };
+    const to2 = x => Math.round(x*100)/100;
+    const f2 = x => to2(x).toFixed(2);
+
+    /* ---------------- visuals: confetti + toast ---------------- */
+    function confettiBurst(count=140){
+      const colors = ['#f59e0b','#10b981','#3b82f6','#ef4444','#8b5cf6','#14b8a6','#e11d48'];
+      const root = document.getElementById('confetti');
+      const pieces = [];
+      for(let i=0;i<count;i++){
+        const p = document.createElement('i');
+        p.className='confetti-piece';
+        p.style.width = rnd(8,12)+'px';
+        p.style.height = rnd(10,16)+'px';
+        p.style.left = rnd(0,100)+'%';
+        p.style.background = colors[rnd(0,colors.length-1)];
+        p.style.transform = `translateY(-12px) rotate(${rnd(0,360)}deg)`;
+        p.style.animationDuration = (Math.random()*0.8+0.9)+'s';
+        p.style.animationDelay = (Math.random()*0.15)+'s';
+        p.style.borderRadius = Math.random()<0.4 ? '50% 50% 30% 70% / 50% 50% 70% 30%' : '2px';
+        root.appendChild(p);
+        pieces.push(p);
+      }
+      setTimeout(()=> pieces.forEach(el=> el.remove()), 1500);
+    }
+    const toastEl = document.getElementById('toast'); let toastTimer=null;
+    function flashToast(msg){
+      clearTimeout(toastTimer);
+      toastEl.textContent = msg;
+      toastEl.classList.add('show');
+      toastTimer = setTimeout(()=> toastEl.classList.remove('show'), 1400);
+    }
+
+    /* ---------------- state ---------------- */
+    let score=0, streak=0, player='—', mode='timer', timeLeft=null, target=null, timerID=null;
+    // cur holds everything about the current question
+    let cur = {
+      type:null, // 'of','inc','dec','rev_final','rev_part','rate'
+      p:null,    // percentage (if relevant)
+      a:null, b:null, // amounts (if relevant)
+      m:null,    // multiplier (if relevant)
+      ans:null,  // numeric correct answer (to 2 d.p.)
+      ansType:'amount', // 'amount' or 'percent'
+      qStart: performance.now(),
+      text:'',
+      currency:'£' // stick with UK style
+    };
+
+    /* ---------------- DOM ---------------- */
+    const qEl = document.getElementById('question');
+    const ansEl = document.getElementById('ansInput');
+    const fbEl = document.getElementById('feedback');
+    const scoreEl = document.getElementById('score');
+    const streakEl = document.getElementById('streak');
+    const playerEl = document.getElementById('playerName');
+    const timerEl = document.getElementById('timer');
+    const goalEl = document.getElementById('goal');
+    const checkBtn = document.getElementById('checkBtn');
+    const nextBtn  = document.getElementById('nextBtn');
+    const hintBtn  = document.getElementById('hintBtn');
+    const cardEl   = document.getElementById('card');
+    const progress = document.getElementById('progress');
+    const barEl    = document.getElementById('bar');
+
+    // Drawer DOM
+    const drawer = document.getElementById('hintDrawer');
+    const shade  = document.getElementById('drawerShade');
+    const closeDrawerBtn = document.getElementById('closeDrawer');
+    const tabBtns = document.querySelectorAll('.tabBtn[data-tab]');
+    const tabThisQ = document.getElementById('tab-thisQ');
+    const tabExample = document.getElementById('tab-example');
+    const thisQBody = document.getElementById('thisQBody');
+    const thisQTitle = document.getElementById('thisQTitle');
+    const exTitle = document.getElementById('exTitle');
+    const exBody = document.getElementById('exBody');
+
+    /* ---------------- content ---------------- */
+    const itemsMoney = [
+      'a coat','a pair of trainers','a mobile phone','a concert ticket',
+      'a restaurant bill','a laptop','a backpack','a bike helmet','a bus pass'
+    ];
+    const itemsGeneral = ['population','attendance','membership fee','car value','tablet price'];
+    const P_OF       = [5,6,7.5,8,9,10,12.5,15,17.5,18,20,22.5,24,25,30,33,35,37,40,45,50,60,65,70,75,80,85,90,95,100];
+    const P_INC      = [5,7.5,10,12.5,15,17.5,20,22.5,24,25,30,35,40,45,50];
+    const P_DEC      = [5,7.5,10,12.5,15,17.5,20,22.5,24,25,30,35,40,45,50];
+
+    /* ---------------- number machine render ---------------- */
+    function machineHTML({direction='forward', input='Input', proc='× 1.20', output='Output'}={}){
+      const arrow = direction==='forward' ? '→' : '←';
+      return `
+        <div class="machine">
+          <div class="io">${direction==='forward'?'Input':'Output'}<br><span style="font-weight:900">${input}</span></div>
+          <div class="arrow">${arrow}</div>
+          <div class="proc">${proc}</div>
+          <div class="arrow">${arrow}</div>
+          <div class="io">${direction==='forward'?'Output':'Input'}<br><span style="font-weight:900">${output}</span></div>
+        </div>
+      `;
+    }
+
+    /* ---------------- hint content (process only) ---------------- */
+    function updateThisQHint(){
+      let html='', title='';
+      if(cur.type==='of'){
+        title='Finding p% of an amount';
+        html = `
+          ${machineHTML({direction:'forward', input:'amount', proc:'× (p/100)', output:'p% of amount'})}
+          <ul>
+            <li>Convert <b>p%</b> to a decimal: <code>p ÷ 100</code>.</li>
+            <li>Multiply the amount by <code>p/100</code>.</li>
+            <li>Give your answer to <b>2 d.p.</b></li>
+          </ul>
+        `;
+      } else if(cur.type==='inc'){
+        title='Percentage increase';
+        html = `
+          ${machineHTML({direction:'forward', input:'original amount', proc:'× (1 + p/100)', output:'new amount'})}
+          <ul>
+            <li>Multiplier for an increase is <code>1 + p/100</code>.</li>
+            <li>Multiply the original by this multiplier.</li>
+            <li>Answer to <b>2 d.p.</b></li>
+          </ul>
+        `;
+      } else if(cur.type==='dec'){
+        title='Percentage decrease';
+        html = `
+          ${machineHTML({direction:'forward', input:'original amount', proc:'× (1 − p/100)', output:'new amount'})}
+          <ul>
+            <li>Multiplier for a decrease is <code>1 − p/100</code>.</li>
+            <li>Multiply the original by this multiplier.</li>
+            <li>Answer to <b>2 d.p.</b></li>
+          </ul>
+        `;
+      } else if(cur.type==='rev_final'){
+        title='Reverse percentage (final amount & % given)';
+        html = `
+          ${machineHTML({direction:'backward', input:'original amount', proc:'÷ (1 ± p/100)', output:'final amount'})}
+          <ul>
+            <li>Identify the multiplier: <code>1 + p/100</code> (increase) or <code>1 − p/100</code> (decrease).</li>
+            <li>Go <b>backwards</b>: divide the final amount by the multiplier.</li>
+            <li>Answer to <b>2 d.p.</b></li>
+          </ul>
+        `;
+      } else if(cur.type==='rev_part'){
+        title='Reverse percentage (part is p% of whole)';
+        html = `
+          ${machineHTML({direction:'backward', input:'whole', proc:'÷ (p/100)', output:'given part'})}
+          <ul>
+            <li>When a value is <b>p%</b> of a whole, the multiplier is <code>p/100</code>.</li>
+            <li>Go <b>backwards</b>: divide the part by <code>p/100</code> to get the whole.</li>
+            <li>Answer to <b>2 d.p.</b></li>
+          </ul>
+        `;
+      } else if(cur.type==='rate'){
+        title='Find the percentage change from two amounts';
+        html = `
+          ${machineHTML({direction:'forward', input:'initial', proc:'× m', output:'final'})}
+          <ul>
+            <li>Find the multiplier: <code>m = final ÷ initial</code>.</li>
+            <li>If <code>m &gt; 1</code> it’s an increase; if <code>m &lt; 1</code> it’s a decrease.</li>
+            <li>Percentage change: <code>|m − 1| × 100%</code>.</li>
+            <li>Give your percentage to <b>2 d.p.</b></li>
+          </ul>
+        `;
+      }
+      thisQTitle.textContent = title || 'Method';
+      thisQBody.innerHTML = html;
+    }
+
+    /* ---------------- worked example (same type only) ---------------- */
+    function updateWorkedExample(){
+      // Build a small random example for the *same* type as the question
+      let html='', title='';
+      const C = cur.currency;
+      if(cur.type==='of'){
+        // Example: Work out 37% of £260
+        const p = choice([12.5,20,25,37,45]);
+        const A = rnd(60,320)*1; // whole pounds
+        const m = p/100;
+        const ans = to2(A*m);
+        title = 'Worked example — finding p% of an amount';
+        html = `
+          <p>Work out <b>${p}%</b> of <b>${C}${A.toFixed(2)}</b>. Give your answer to 2 d.p.</p>
+          ${machineHTML({direction:'forward', input:`${C}${A.toFixed(2)}`, proc:`× ${p}/100`, output:`${C}${f2(ans)}`})}
+          <p>Multiplier = <code>${p}/100</code> = <code>${(p/100).toFixed(2)}</code></p>
+          <p>Calculation: <code>${C}${A.toFixed(2)} × ${(p/100).toFixed(2)} = ${C}${f2(ans)}</code></p>
+        `;
+      } else if(cur.type==='inc'){
+        const p = choice([12,15,20,22.5,25]);
+        const A = rnd(30,250);
+        const m = 1+p/100;
+        const ans = to2(A*m);
+        title = 'Worked example — percentage increase';
+        html = `
+          <p>A jacket costs <b>${C}${A.toFixed(2)}</b>. The price is increased by <b>${p}%</b>. Work out the new price. Give your answer to 2 d.p.</p>
+          ${machineHTML({direction:'forward', input:`${C}${A.toFixed(2)}`, proc:`× (1 + ${p}/100)`, output:`${C}${f2(ans)}`})}
+          <p>Multiplier = <code>1 + ${p}/100 = ${(m).toFixed(2)}</code></p>
+          <p>Calculation: <code>${C}${A.toFixed(2)} × ${(m).toFixed(2)} = ${C}${f2(ans)}</code></p>
+        `;
+      } else if(cur.type==='dec'){
+        const p = choice([10,12.5,15,20,25,30]);
+        const A = rnd(30,250);
+        const m = 1-p/100;
+        const ans = to2(A*m);
+        title = 'Worked example — percentage decrease';
+        html = `
+          <p>A pair of trainers costs <b>${C}${A.toFixed(2)}</b>. The price is reduced by <b>${p}%</b>. Work out the sale price. Give your answer to 2 d.p.</p>
+          ${machineHTML({direction:'forward', input:`${C}${A.toFixed(2)}`, proc:`× (1 − ${p}/100)`, output:`${C}${f2(ans)}`})}
+          <p>Multiplier = <code>1 − ${p}/100 = ${(m).toFixed(2)}</code></p>
+          <p>Calculation: <code>${C}${A.toFixed(2)} × ${(m).toFixed(2)} = ${C}${f2(ans)}</code></p>
+        `;
+      } else if(cur.type==='rev_final'){
+        // After a p% increase/reduction, final price is F. Find original.
+        const p = choice([10,12.5,15,20,25]);
+        const inc = Math.random()<0.5;
+        const orig = rnd(40,240);
+        const m = inc ? (1+p/100) : (1-p/100);
+        const final = to2(orig*m);
+        title = 'Worked example — reverse percentage (final & % given)';
+        html = `
+          <p>After a <b>${p}% ${inc?'increase':'reduction'}</b>, the price is <b>${C}${final.toFixed(2)}</b>.<br>Work out the original price. Give your answer to 2 d.p.</p>
+          ${machineHTML({direction:'backward', input:`${C}${orig.toFixed(2)}`, proc:`÷ ${(m).toFixed(2)}`, output:`${C}${final.toFixed(2)}`})}
+          <p>Multiplier = <code>${inc?'1 +':'1 −'} ${p}/100 = ${(m).toFixed(2)}</code></p>
+          <p>Original = <code>final ÷ multiplier = ${C}${final.toFixed(2)} ÷ ${(m).toFixed(2)} = ${C}${f2(orig)}</code></p>
+        `;
+      } else if(cur.type==='rev_part'){
+        const p = choice([20,25,30,40,60,75]);
+        const whole = rnd(60,320);
+        const part = to2(whole * (p/100));
+        title = 'Worked example — reverse percentage (part is p% of whole)';
+        html = `
+          <p><b>${C}${part.toFixed(2)}</b> is <b>${p}%</b> of the cost of a coat.<br>Work out the cost of the coat. Give your answer to 2 d.p.</p>
+          ${machineHTML({direction:'backward', input:`${C}${whole.toFixed(2)}`, proc:`÷ ${ (p/100).toFixed(2) }`, output:`${C}${part.toFixed(2)}`})}
+          <p>Multiplier for “p% of whole” is <code>p/100 = ${(p/100).toFixed(2)}</code></p>
+          <p>Whole = <code>part ÷ (p/100) = ${C}${part.toFixed(2)} ÷ ${(p/100).toFixed(2)} = ${C}${f2(whole)}</code></p>
+        `;
+      } else if(cur.type==='rate'){
+        const inc = Math.random()<0.5;
+        const p = choice([12.5,15,20,25,30]);
+        const a = rnd(50,200);
+        const m = inc ? (1+p/100) : (1-p/100);
+        const b = to2(a*m);
+        title = 'Worked example — percentage change from two amounts';
+        html = `
+          <p>The value changes from <b>${C}${a.toFixed(2)}</b> to <b>${C}${b.toFixed(2)}</b>.<br>Calculate the ${inc?'percentage increase':'percentage decrease'}. Give your answer to 2 d.p.</p>
+          ${machineHTML({direction:'forward', input:`${C}${a.toFixed(2)}`, proc:`× m`, output:`${C}${b.toFixed(2)}`})}
+          <p>First find the multiplier: <code>m = final ÷ initial = ${b.toFixed(2)} ÷ ${a.toFixed(2)} = ${(b/a).toFixed(4)}</code></p>
+          <p>Percentage ${inc?'increase':'decrease'} = <code>|m − 1| × 100% = ${Math.abs(b/a-1).toFixed(4)} × 100% = ${f2(p)}%</code></p>
+        `;
+      }
+      exTitle.textContent = title || 'Worked example';
+      exBody.innerHTML = html;
+    }
+
+    /* ---------------- question generator ---------------- */
+    function newQuestion(){
+      fbEl.textContent=''; fbEl.className='';
+      checkBtn.disabled=false; nextBtn.style.display='none';
+      ansEl.value=''; ansEl.focus();
+      cardEl.classList.remove('shake');
+
+      const type = choice(['of','inc','dec','rev_final','rev_part','rate']);
+      const C = cur.currency;
+
+      let text='', ansType='amount', p=null, m=null, a=null, b=null, final=null, incDec=null;
+
+      // Build according to Eduqas-style wording
+      if(type==='of'){
+        p = choice(P_OF);
+        a = stepRnd(20, 500, 5);
+        m = p/100;
+        final = to2(a*m);
+        text = `Work out <b>${p}%</b> of <b>${C}${a.toFixed(2)}</b>. Give your answer to <b>2 decimal places</b>.`;
+      }
+      else if(type==='inc'){
+        p = choice(P_INC);
+        a = stepRnd(20, 400, 5);
+        m = 1 + p/100;
+        final = to2(a*m);
+        const item = choice(itemsMoney);
+        text = `The price of ${item} is <b>${C}${a.toFixed(2)}</b>.<br>It is increased by <b>${p}%</b>. Work out the new price. Give your answer to <b>2 decimal places</b>.`;
+      }
+      else if(type==='dec'){
+        p = choice(P_DEC);
+        a = stepRnd(20, 400, 5);
+        m = 1 - p/100;
+        final = to2(a*m);
+        const item = choice(itemsMoney);
+        text = `The price of ${item} is <b>${C}${a.toFixed(2)}</b>.<br>It is reduced by <b>${p}%</b>. Work out the sale price. Give your answer to <b>2 decimal places</b>.`;
+      }
+      else if(type==='rev_final'){
+        // After increase OR reduction, final is given
+        p = choice(P_DEC.concat(P_INC));
+        incDec = Math.random()<0.5 ? 'increase' : 'reduction';
+        m = incDec==='increase' ? (1+p/100) : (1-p/100);
+        a = stepRnd(30, 400, 5); // original
+        final = to2(a*m);
+        const item = choice(itemsMoney);
+        text = `After a <b>${p}% ${incDec}</b>, the price of ${item} is <b>${C}${final.toFixed(2)}</b>.<br>Work out the original price. Give your answer to <b>2 decimal places</b>.`;
+      }
+      else if(type==='rev_part'){
+        // Given part is p% of whole
+        p = choice(P_OF.filter(x=>x!==100));
+        a = stepRnd(30, 500, 5); // whole
+        final = to2(a*(p/100)); // part
+        const item = choice(itemsMoney);
+        text = `<b>${C}${final.toFixed(2)}</b> is <b>${p}%</b> of the cost of ${item}.<br>Work out the cost of ${item}. Give your answer to <b>2 decimal places</b>.`;
+      }
+      else if(type==='rate'){
+        // Given initial and final, find % increase or decrease
+        a = stepRnd(40, 500, 5);
+        const inc = Math.random()<0.5;
+        p = choice(P_INC); // use from INC set
+        m = inc ? (1+p/100) : (1-p/100);
+        b = to2(a*m);
+        ansType='percent';
+        text = `The value changes from <b>${C}${a.toFixed(2)}</b> to <b>${C}${b.toFixed(2)}</b>.<br>Calculate the <b>percentage ${inc?'increase':'decrease'}</b>. Give your answer to <b>2 decimal places</b>.`;
+      }
+
+      // store
+      cur.type = type;
+      cur.p = p; cur.m = m; cur.a = a; cur.b = b; cur.qStart = performance.now();
+
+      if(type==='rate'){
+        cur.ansType='percent';
+        cur.ans = to2(Math.abs(( (b??final)/a - 1) * 100)); // should be p exactly, but compute safely
+        document.getElementById('ansLabel').textContent = 'Your answer (%), 2 d.p.';
+        ansEl.placeholder = 'e.g. 17.50';
+      } else if(type==='rev_final'){
+        cur.ansType='amount';
+        cur.ans = to2(a); // original
+        document.getElementById('ansLabel').textContent = `Your answer (amount, 2 d.p.)`;
+        ansEl.placeholder = 'e.g. 123.45';
+      } else if(type==='rev_part'){
+        cur.ansType='amount';
+        cur.ans = to2(a); // whole
+        document.getElementById('ansLabel').textContent = `Your answer (amount, 2 d.p.)`;
+        ansEl.placeholder = 'e.g. 123.45';
+      } else {
+        cur.ansType='amount';
+        cur.ans = to2(final);
+        document.getElementById('ansLabel').textContent = `Your answer (amount, 2 d.p.)`;
+        ansEl.placeholder = 'e.g. 123.45';
+      }
+
+      qEl.innerHTML = text;
+
+      // refresh hint + worked example content for this type
+      updateThisQHint();
+      updateWorkedExample();
+    }
+
+    /* ---------------- check answer ---------------- */
+    function doShake(){
+      cardEl.classList.remove('shake');
+      void cardEl.offsetWidth; // restart animation
+      cardEl.classList.add('shake');
+      ansEl.style.borderColor = 'var(--danger)';
+      ansEl.style.background = '#ffecec';
+      setTimeout(()=>{ ansEl.style.borderColor = '#c6cfd9'; ansEl.style.background = '#fff'; }, 300);
+    }
+
+    checkBtn.onclick = () => {
+      const raw = String(ansEl.value).trim();
+      const v = Number(raw);
+      if(!raw || Number.isNaN(v)){
+        fbEl.textContent = "Please enter a number to 2 d.p. If you're not sure, ask your teacher for help.";
+        fbEl.className='no';
+        doShake();
+        return;
+      }
+      const userRounded = to2(v);
+      const ok = approxEq(userRounded, cur.ans, 0.01);
+
+      if(ok){
+        // Quick answer toast (under 4s)
+        const elapsed = performance.now() - (cur.qStart || performance.now());
+        if(elapsed < 4000){ flashToast("Wow, that was quick!! ⚡️"); }
+
+        const suffix = cur.ansType==='percent' ? '%' : '';
+        fbEl.innerHTML = `Correct! ✅ ${cur.ansType==='percent'?'Percentage':'Answer'} = <b>${f2(cur.ans)}${suffix}</b>.`;
+        fbEl.className='yes';
+        streak += 1;
+        score += 1;
+        scoreEl.textContent = score;
+        streakEl.textContent = streak;
+        checkBtn.disabled = true;
+        nextBtn.style.display='inline-block';
+        confettiBurst(150);
+
+        if(mode==='target' && target){
+          const pct = clamp(Math.round((score/target)*100),0,100);
+          barEl.style.width = pct + '%';
+          if(score >= target){
+            setTimeout(()=>{ alert('🎉 Target reached! Great work.'); location.reload(); }, 250);
+          }
+        }
+      }else{
+        const exp = cur.ansType==='percent' ? 'a percentage to 2 d.p.' : 'an amount to 2 d.p.';
+        fbEl.textContent = `Not quite — try again. Enter ${exp}. If you're not sure, ask your teacher for help.`;
+        fbEl.className='no';
+        doShake();
+        streak = 0;
+        streakEl.textContent = streak;
+      }
+    };
+
+    nextBtn.onclick = newQuestion;
+
+    // Enter key
+    ansEl?.addEventListener('keydown', (e)=>{
+      if(e.key==='Enter'){
+        if(nextBtn.style.display==='inline-block'){ newQuestion(); }
+        else{ checkBtn.click(); }
+      }
+    });
+
+    /* ---------------- timer ---------------- */
+    function startTimer(){
+      clearInterval(timerID);
+      timerEl.textContent = fmt(timeLeft);
+      if(timeLeft===null) return;
+      timerID = setInterval(()=>{
+        timeLeft--;
+        timerEl.textContent = fmt(timeLeft);
+        if(timeLeft<0){
+          clearInterval(timerID);
+          alert("⏰ Time's up!");
+          location.reload();
+        }
+      },1000);
+    }
+
+    /* ---------------- drawer ---------------- */
+    function openDrawer(){ drawer.classList.add('open'); shade.classList.add('open'); }
+    function closeDrawer(){ drawer.classList.remove('open'); shade.classList.remove('open'); }
+    shade.onclick = closeDrawer; closeDrawerBtn.onclick = closeDrawer; hintBtn.onclick = openDrawer;
+    tabBtns.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        tabBtns.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const which = btn.dataset.tab;
+        if(which==='thisQ'){ tabThisQ.style.display='block'; tabExample.style.display='none'; }
+        else { tabThisQ.style.display='none'; tabExample.style.display='block'; }
+      });
+    });
+
+    /* ---------------- menu handlers ---------------- */
+    function toggleGroups(){
+      const m = document.querySelector('input[name="mode"]:checked').value;
+      document.getElementById('timerGroup').style.display = m==='timer' ? 'block' : 'none';
+      document.getElementById('scoreGroup').style.display = m==='target' ? 'block' : 'none';
+    }
+    document.querySelectorAll('input[name="mode"]').forEach(r => r.addEventListener('change', toggleGroups));
+
+    document.getElementById('startBtn').onclick = () => {
+      player = document.getElementById('nameInput').value.trim() || 'Player';
+      playerEl.textContent = player;
+      mode = document.querySelector('input[name="mode"]:checked').value;
+
+      if(mode==='timer'){
+        const sel = document.querySelector('input[name="timer"]:checked').value;
+        timeLeft = sel==='none' ? null : parseInt(sel,10);
+        goalEl.textContent = '—';
+        progress.style.display='none';
+        startTimer();
+      }else{
+        target = parseInt(document.getElementById('scoreInput').value,10);
+        if(!Number.isInteger(target) || target<1){
+          alert('Please enter a positive whole number for the target score.');
+          return;
+        }
+        goalEl.textContent = target;
+        progress.style.display='block';
+        barEl.style.width = '0%';
+        timeLeft = null; timerEl.textContent = '∞';
+      }
+
+      document.getElementById('overlay').style.display='none';
+      newQuestion();
+    };
+
+    window.onload = toggleGroups;
+  </script>
+</body>
+</html>
