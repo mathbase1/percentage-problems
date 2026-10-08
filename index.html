@@ -22,6 +22,50 @@ body[data-theme=dark]{--ink:#e4eef7;--muted:#b1c2d1;--paper:#1b2d3e;--bg:#12212f
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media print{body{background:white!important;color:#111!important}header,.site-footer,.results-toolbar,#toast,dialog,button,.notice,.skip-link{display:none!important}.main-wrap{max-width:none;padding:0}.panel,.review-card,.metric{box-shadow:none;border-color:#bbb;border-radius:0;background:white!important;color:#111!important}.results-hero{padding:0}.results-hero h1{font-size:22pt}.review-card summary{font-size:12pt}.review-body{display:block!important}.review-card{break-inside:avoid}.result-metrics{gap:.3rem}.metric b{font-size:18pt}.topic-summary{padding:.6rem}.review-heading{break-after:avoid}.question-grid{display:block}.question-paper{padding:1rem}.answer-panel{margin-top:1rem}.paper-tools,.answer-actions,.session-bar,.stats-strip,.progress-wrap,.session-note{display:none!important}.results-hero p,.metric span,.topic-row,.review-body,.review-part{color:#111!important}a{color:#111!important}}
 </style>
+<!-- BEGIN PERCENTAGE CALCULATOR STYLES -->
+<style>
+/* Floating calculator only; all non-calculator app rules are unchanged. */
+#psCalculator{position:fixed;z-index:900;width:332px;max-width:calc(100vw - 20px);max-height:calc(100vh - 20px);max-height:calc(100dvh - 20px);display:flex;flex-direction:column;box-sizing:border-box;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:15px;box-shadow:0 16px 54px #10273a38;margin:0;padding:0;min-width:0;overflow:hidden}
+#psCalculator[hidden]{display:none!important}
+#psCalculator .ps-calc-titlebar{display:flex;align-items:center;gap:4px;padding:5px 7px 5px 10px;background:var(--soft);border-bottom:1px solid var(--line);flex:none}
+#psCalculatorDrag{flex:1;min-width:0;min-height:40px;text-align:left;padding:3px 7px;background:transparent;color:var(--ink);border:0;border-radius:7px;cursor:grab;touch-action:none;user-select:none}
+#psCalculatorDrag:active{transform:none;cursor:grabbing}
+#psCalculatorDrag>span{display:block;font-size:.9rem;font-weight:800;line-height:1.4}
+#psCalculatorDrag>small{display:block;font-size:.64rem;font-weight:500;color:var(--muted);line-height:1.5}
+#psCalculator[data-dragging=true] #psCalculatorDrag{cursor:grabbing}
+#psCalculator .ps-calc-window-control{flex:none;display:grid;place-items:center;min-height:36px;width:36px;padding:0;background:var(--paper);color:var(--ink);border:1px solid var(--line);font-size:1.2rem;border-radius:8px}
+#psCalculator .ps-calc-window-control:hover{background:var(--accent-soft)}
+#psCalculator .ps-calc-body{padding:10px 12px 12px;min-width:0;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+#psCalculator .ps-calc-label{display:block;font-size:.72rem;font-weight:700;color:var(--muted);margin-bottom:.35rem}
+#psCalculatorInput{font-size:1rem;letter-spacing:0;font-variant-numeric:tabular-nums;text-align:right;padding:.5rem .7rem;width:100%;min-width:0;line-height:1.5;scroll-margin-top:20px}
+#psCalculator .ps-calc-display{padding:.45rem .65rem;margin:.4rem 0 .5rem;background:var(--soft);border:1px solid var(--line);border-radius:10px;text-align:right;min-width:0}
+#psCalculator .ps-calc-display-label{display:block;font-size:.65rem;color:var(--muted);text-align:left;margin-bottom:.2rem}
+#psCalculatorResult{display:block;font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.5;font-weight:750;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;user-select:text}
+#psCalculatorMessage{font-size:.72rem;line-height:1.5;margin:.5rem 0 .65rem;overflow-wrap:anywhere;color:var(--muted)}
+#psCalculatorMessage[data-error=true]{color:var(--error);font-weight:650}
+#psCalculator .ps-calc-keys{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.38rem}
+#psCalculator .ps-calc-key{font-size:1.05rem;font-weight:750;border:1px solid var(--line);border-radius:9px;background:var(--paper);color:var(--ink);padding:.4rem .2rem;min-height:40px;min-width:0;touch-action:manipulation}
+#psCalculator .ps-calc-key:hover{background:var(--soft)}
+#psCalculator .ps-calc-key.ps-calc-function{background:var(--soft);color:var(--ink);font-size:.9rem}
+#psCalculator .ps-calc-key.ps-calc-operation{color:var(--accent);background:var(--accent-soft);font-size:1.2rem}
+#psCalculator .ps-calc-key.ps-calc-equals{grid-column:span 2;background:var(--accent);color:#fff}
+body[data-theme=dark] #psCalculator .ps-calc-key.ps-calc-equals{color:#112d28}
+#psCalculator .ps-calc-key math{font-size:1.08em}
+#psCalculator .ps-calc-bottom{display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin-top:.6rem}
+#psCalculator .ps-calc-bottom button{font-size:.73rem;min-height:36px;padding:.45rem .65rem}
+#psCalculator .ps-calc-bottom small{color:var(--muted);font-size:.67rem}
+#psCalculator .ps-calc-help{font-size:.69rem;line-height:1.65;color:var(--muted);margin:.55rem 0 .05rem}
+#psCalculatorDock{display:inline-flex;align-self:stretch;flex:none}
+#psCalculatorJump{font-size:.78rem;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;background:var(--accent-soft);border:1px solid var(--accent);color:var(--accent);z-index:899;touch-action:manipulation}
+#psCalculatorJump[data-floating=true]{position:fixed;box-shadow:0 5px 22px #10273a26}
+#psCalculatorJump svg{width:17px;height:19px;flex:none}
+#psCalculator .ps-calc-instructions{margin:.45rem 0 0;border-top:1px solid var(--line);padding-top:.35rem}
+#psCalculator .ps-calc-instructions>summary{font-size:.72rem;font-weight:700;cursor:pointer;padding:.3rem 0;min-height:30px;color:var(--muted)}
+@media(pointer:coarse){#psCalculator .ps-calc-key{min-height:44px}}
+@media(max-width:760px){#psCalculatorJump{min-height:36px;font-size:.72rem;padding:.45rem .55rem}}
+@media print{#psCalculator,#psCalculatorDock,#psCalculatorJump{display:none!important}}
+</style>
+<!-- END PERCENTAGE CALCULATOR STYLES -->
 </head>
 <body data-theme="light" data-overlay="none">
 <a href="#main" class="skip-link">Skip to main content</a>
@@ -483,6 +527,403 @@ window.addEventListener('pagehide',()=>{pull();finishStroke();save();});document
 try{const pref=JSON.parse(localStorage.getItem(PREF)||'null');if(pref){if(['normal','large'].includes(pref.size))$('sizeSelectDisplay').value=pref.size;if(['light','dark'].includes(pref.theme))$('themeSelect').value=pref.theme;if(['none','cream','blue','green'].includes(pref.overlay))$('overlaySelect').value=pref.overlay;}preferences();const raw=localStorage.getItem(KEY);if(raw){try{saved=E.restore(raw);updateResume();}catch{notice('The saved session could not be validated. You can start a fresh session; no saved answers were loaded.');try{localStorage.removeItem(KEY);}catch{}}}}catch{storageOK=false;notice('Saving is unavailable in this browser context. The trainer still works; keep this tab open until you finish.');}
 if(!ctx){$('workBtn').disabled=true;notice('This browser cannot draw on the working canvas. You can still answer questions and view methods.');}
 modeFields();
+/* BEGIN PERCENTAGE CALCULATOR ADDITION */
+(function installCalculatorOnly() {
+/* Calculator arithmetic is separate from question generation and marking.
+   Exact fractions keep decimal operations and Ans chains free of binary drift.
+   Only a small mathematical grammar is accepted: no eval or Function calls. */
+const StudioBasicCalculator = (() => {
+  const MAX_DIGITS = 500;
+  function gcd(a, b) { a = a < 0n ? -a : a; while (b) { const t = a % b; a = b; b = t; } return a; }
+  function fraction(n, d = 1n) {
+    if (!d) throw new Error('Cannot divide by zero.');
+    if (d < 0n) { n = -n; d = -d; }
+    const g = gcd(n, d); n /= g; d /= g;
+    if (n.toString().length > MAX_DIGITS || d.toString().length > MAX_DIGITS) throw new Error('This calculation is too large. Use smaller values.');
+    return { n, d };
+  }
+  function number(text) {
+    const match = /^(\d+(?:\.\d*)?|\.\d+)(?:[eE]([+-]?\d{1,3}))?$/.exec(text);
+    if (!match) throw new Error('Check the number you entered.');
+    const exponent = Number(match[2] || 0);
+    if (Math.abs(exponent) > 100) throw new Error('Use powers between −100 and 100.');
+    const [whole, decimals = ''] = match[1].split('.');
+    let n = BigInt((whole || '0') + decimals), d = 10n ** BigInt(decimals.length);
+    if (exponent > 0) n *= 10n ** BigInt(exponent);
+    if (exponent < 0) d *= 10n ** BigInt(-exponent);
+    return fraction(n, d);
+  }
+  const add = (a, b) => fraction(a.n * b.d + b.n * a.d, a.d * b.d);
+  const subtract = (a, b) => fraction(a.n * b.d - b.n * a.d, a.d * b.d);
+  const multiply = (a, b) => fraction(a.n * b.n, a.d * b.d);
+  const divide = (a, b) => fraction(a.n * b.d, a.d * b.n);
+  function raise(a, b) {
+    if (b.d !== 1n || b.n < -100n || b.n > 100n) throw new Error('This basic calculator uses whole-number powers from −100 to 100.');
+    if (!a.n && !b.n) throw new Error('Zero to the power zero is not defined here.');
+    const e = b.n < 0n ? -b.n : b.n;
+    // Reject oversized powers before exponentiation rather than after it.
+    if (e && Math.max(a.n.toString().length, a.d.toString().length) * Number(e) > 600) throw new Error('This power is too large. Use smaller values.');
+    return b.n < 0n ? fraction(a.d ** e, a.n ** e) : fraction(a.n ** e, a.d ** e);
+  }
+  function evaluate(source, answer = null) {
+    const text = String(source).replace(/[×x]/g, '*').replace(/[÷]/g, '/').replace(/[−–]/g, '-');
+    if (!text.trim()) throw new Error('Enter a calculation first.');
+    if (text.length > 240) throw new Error('Keep the calculation to 240 characters or fewer.');
+    const tokens = []; let offset = 0;
+    while (offset < text.length) {
+      if (/\s/.test(text[offset])) { offset++; continue; }
+      const rest = text.slice(offset), numeric = /^(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d{1,3})?/.exec(rest);
+      if (numeric) { tokens.push({ type: 'number', value: number(numeric[0]) }); offset += numeric[0].length; continue; }
+      if (/^ans\b/i.test(rest)) { tokens.push({ type: 'answer' }); offset += 3; continue; }
+      if ('+-*/^()%'.includes(text[offset])) { tokens.push({ type: text[offset++] }); continue; }
+      throw new Error('Use numbers, +, −, ×, ÷, brackets, %, a power or Ans.');
+    }
+    let at = 0, depth = 0;
+    const take = type => tokens[at]?.type === type ? (at++, true) : false;
+    function primary() {
+      if (++depth > 32) throw new Error('There are too many nested brackets.');
+      let result;
+      if (take('(')) { result = sum(); if (!take(')')) throw new Error('Close each opening bracket.'); }
+      else if (tokens[at]?.type === 'number') result = tokens[at++].value;
+      else if (take('answer')) { if (!answer) throw new Error('Press = on a calculation before using Ans.'); result = answer; }
+      else throw new Error('A number is missing. Check the operators and brackets.');
+      while (take('%')) result = divide(result, fraction(100n));
+      depth--; return result;
+    }
+    function power() { let value = primary(); if (take('^')) value = raise(value, unary()); return value; }
+    function unary() { if (take('+')) return unary(); if (take('-')) { const v = unary(); return fraction(-v.n, v.d); } return power(); }
+    function product() { let value = unary(); while (true) { if (take('*')) value = multiply(value, unary()); else if (take('/')) value = divide(value, unary()); else break; } return value; }
+    function sum() { let value = product(); while (true) { if (take('+')) value = add(value, product()); else if (take('-')) value = subtract(value, product()); else break; } return value; }
+    const value = sum();
+    if (at !== tokens.length) throw new Error('Check your brackets and put an operator between each value.');
+    return value;
+  }
+  function format(value) {
+    if (!value.n) return { text: '0', approximate: false };
+    const negative = value.n < 0n, n = negative ? -value.n : value.n, d = value.d;
+    // Find the magnitude using integers, including very small fractions.
+    let exponent = n.toString().length - d.toString().length;
+    if (exponent >= 0 ? n < d * 10n ** BigInt(exponent) : n * 10n ** BigInt(-exponent) < d) exponent--;
+    const shift = 13 - exponent;
+    const numerator = shift >= 0 ? n * 10n ** BigInt(shift) : n;
+    const denominator = shift >= 0 ? d : d * 10n ** BigInt(-shift);
+    const quotient = numerator / denominator, remainder = numerator % denominator;
+    let digits = (quotient + (remainder * 2n >= denominator ? 1n : 0n)).toString();
+    if (digits.length > 14) { digits = digits.slice(0, -1); exponent++; }
+    digits = digits.padStart(14, '0');
+    let text;
+    if (exponent >= 14 || exponent < -8) {
+      const tail = digits.slice(1).replace(/0+$/, '');
+      text = digits[0] + (tail ? '.' + tail : '') + 'e' + (exponent >= 0 ? '+' : '') + exponent;
+    } else {
+      const point = exponent + 1;
+      text = point <= 0 ? '0.' + '0'.repeat(-point) + digits : point >= digits.length ? digits + '0'.repeat(point - digits.length) : digits.slice(0, point) + '.' + digits.slice(point);
+      if (text.includes('.')) text = text.replace(/0+$/, '').replace(/\.$/, '');
+    }
+    return { text: (negative ? '-' : '') + text, approximate: remainder !== 0n };
+  }
+  return { evaluate, format };
+})();
+
+  const calculator = document.createElement('section');
+  calculator.id = 'psCalculator';
+  calculator.hidden = true;
+  calculator.setAttribute('role', 'dialog');
+  calculator.setAttribute('aria-modal', 'false');
+  calculator.setAttribute('aria-labelledby', 'psCalculatorTitle');
+  calculator.innerHTML = `
+    <div class="ps-calc-titlebar">
+      <button type="button" id="psCalculatorDrag" title="Drag to move. Arrow keys move the window; Home returns it to the right." aria-label="Move calculator: drag or use the arrow keys; Home resets its position."><span id="psCalculatorTitle">Calculator</span><small>Drag to move</small></button>
+      <button type="button" class="ps-calc-window-control" id="psCalculatorPosition" title="Return to the right side" aria-label="Return calculator to the right side">↺</button>
+      <button type="button" class="ps-calc-window-control" id="psCalculatorClose" title="Close calculator" aria-label="Close calculator">×</button>
+    </div>
+    <div class="ps-calc-body">
+      <label class="ps-calc-label" for="psCalculatorInput">Calculation</label>
+      <input id="psCalculatorInput" type="text" inputmode="text" autocomplete="off" spellcheck="false" maxlength="240" placeholder="e.g. 64 ÷ 0.8" aria-describedby="psCalculatorHelp psCalculatorMessage">
+      <div class="ps-calc-display"><span class="ps-calc-display-label">Result</span><output id="psCalculatorResult" for="psCalculatorInput" aria-live="polite" aria-atomic="true">0</output></div>
+      <div class="ps-calc-keys" role="group" aria-label="Calculator keypad">
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-action="clear" aria-label="Clear calculator">AC</button>
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-action="delete" aria-label="Delete calculator character">DEL</button>
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-value="(" aria-label="Opening bracket">(</button>
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-value=")" aria-label="Closing bracket">)</button>
+        <button type="button" class="ps-calc-key" data-ps-value="7">7</button>
+        <button type="button" class="ps-calc-key" data-ps-value="8">8</button>
+        <button type="button" class="ps-calc-key" data-ps-value="9">9</button>
+        <button type="button" class="ps-calc-key ps-calc-operation" data-ps-value="÷" aria-label="Divide">÷</button>
+        <button type="button" class="ps-calc-key" data-ps-value="4">4</button>
+        <button type="button" class="ps-calc-key" data-ps-value="5">5</button>
+        <button type="button" class="ps-calc-key" data-ps-value="6">6</button>
+        <button type="button" class="ps-calc-key ps-calc-operation" data-ps-value="×" aria-label="Multiply">×</button>
+        <button type="button" class="ps-calc-key" data-ps-value="1">1</button>
+        <button type="button" class="ps-calc-key" data-ps-value="2">2</button>
+        <button type="button" class="ps-calc-key" data-ps-value="3">3</button>
+        <button type="button" class="ps-calc-key ps-calc-operation" data-ps-value="−" aria-label="Subtract or enter a negative number">−</button>
+        <button type="button" class="ps-calc-key" data-ps-value="0">0</button>
+        <button type="button" class="ps-calc-key" data-ps-value="." aria-label="Decimal point">.</button>
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-value="%" aria-label="Percent, divide by 100">%</button>
+        <button type="button" class="ps-calc-key ps-calc-operation" data-ps-value="+" aria-label="Add">+</button>
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-value="Ans" aria-label="Use the last calculator result">Ans</button>
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-value="^" aria-label="Raise to a whole-number power"><math xmlns="http://www.w3.org/1998/Math/MathML" aria-hidden="true"><msup><mi>x</mi><mi>y</mi></msup></math></button>
+        <button type="button" class="ps-calc-key ps-calc-equals" data-ps-action="equals" aria-label="Calculate result">=</button>
+      </div>
+      <p id="psCalculatorMessage" role="status" aria-live="polite">Type a calculation or use the buttons.</p>
+      <div class="ps-calc-bottom"><button type="button" class="quiet" id="psCalculatorCopy" disabled>Copy result</button><small>Calculator-allowed practice only</small></div>
+      <details class="ps-calc-instructions"><summary>Calculator help</summary><p id="psCalculatorHelp" class="ps-calc-help">Enter or = calculates. AC clears. Brackets and the usual order of operations apply. % divides the preceding value by 100: use 200 × 10% for 10% of 200. Use ^ for a whole-number power and Ans for the previous result. Round only your final answer to the question.</p></details>
+    </div>`;
+  const input = calculator.querySelector('#psCalculatorInput');
+  const result = calculator.querySelector('#psCalculatorResult');
+  const status = calculator.querySelector('#psCalculatorMessage');
+  const copy = calculator.querySelector('#psCalculatorCopy');
+  const jump = document.createElement('button');
+  jump.id = 'psCalculatorJump'; jump.type = 'button'; jump.className = 'quiet';
+  jump.innerHTML = '<svg viewBox="0 0 18 22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1" y="1" width="16" height="20" rx="3"/><path d="M4 5h10v4H4zM4 12h2m3 0h2m3 0h.1M4 15h2m3 0h2m3 0h.1M4 18h2m3 0h2m3 0h.1"/></svg><span>Open calculator</span>';
+  jump.setAttribute('aria-controls', 'psCalculator');
+  jump.setAttribute('aria-haspopup', 'dialog');
+  jump.setAttribute('aria-expanded', 'false');
+  const dock = document.createElement('span');
+  dock.id = 'psCalculatorDock'; dock.appendChild(jump);
+  const dragHandle = calculator.querySelector('#psCalculatorDrag');
+  const closeButton = calculator.querySelector('#psCalculatorClose');
+  const positionButton = calculator.querySelector('#psCalculatorPosition');
+  let position = null, drag = null, layoutFrame = null;
+  let owner = null, lastAnswer = null, resultText = '', evaluated = false;
+
+  // Use the actual active session, not the setup dropdown or a stored preference.
+  // Resuming a non-calculator session must never enable this calculator.
+  function allowed() {
+    return !!session && session.phase === 'active' && session.config.component === 'calc' && view === 'sessionView' && !$('sessionView').hidden;
+  }
+  function showMessage(text, error = false) { status.textContent = text; status.dataset.error = String(error); }
+  function reset() {
+    input.value = ''; result.textContent = '0'; lastAnswer = null; resultText = ''; evaluated = false; copy.disabled = true;
+    showMessage('Type a calculation or use the buttons.');
+  }
+  function edit() {
+    evaluated = false; resultText = ''; result.textContent = '—'; copy.disabled = true;
+    showMessage('Press = or Enter to calculate.');
+  }
+  function focusInput(position) {
+    input.focus({ preventScroll: true });
+    input.setSelectionRange(position, position);
+    input.scrollLeft = input.scrollWidth;
+  }
+  function insert(value) {
+    if (!allowed()) return;
+    if (evaluated) {
+      input.value = /^[+−×÷^%]$/.test(value) ? 'Ans' : '';
+      input.setSelectionRange(input.value.length, input.value.length);
+    }
+    const start = input.selectionStart ?? input.value.length, end = input.selectionEnd ?? start;
+    const next = input.value.slice(0, start) + value + input.value.slice(end);
+    if (next.length > 240) { showMessage('Keep the calculation to 240 characters or fewer.', true); return; }
+    input.value = next; edit(); focusInput(start + value.length);
+  }
+  function removeCharacter() {
+    if (!allowed()) return;
+    const start = input.selectionStart ?? input.value.length, end = input.selectionEnd ?? start;
+    const from = start === end ? Math.max(0, start - 1) : start;
+    input.value = input.value.slice(0, from) + input.value.slice(end);
+    edit(); focusInput(from);
+  }
+  function calculate() {
+    if (!allowed() || evaluated) return;
+    try {
+      const value = StudioBasicCalculator.evaluate(input.value, lastAnswer);
+      const formatted = StudioBasicCalculator.format(value);
+      lastAnswer = value; resultText = formatted.text; result.textContent = formatted.text; evaluated = true; copy.disabled = false;
+      showMessage(formatted.approximate ? 'Displayed result rounded to 14 significant figures. Ans keeps the full calculation.' : 'Result ready. Copy it or type it into your answer box.');
+    } catch (error) {
+      result.textContent = 'Check calculation'; resultText = ''; copy.disabled = true; evaluated = false;
+      showMessage(error.message || 'Check the calculation and try again.', true);
+    }
+  }
+  // All keys are type=button and all keyboard handling is local to this widget.
+  // Calculator Enter must not submit a question or advance to the next one.
+  calculator.addEventListener('click', event => {
+    const button = event.target.closest('[data-ps-action],[data-ps-value]');
+    if (!button || !calculator.contains(button) || !allowed()) return;
+    if (button.dataset.psValue !== undefined) insert(button.dataset.psValue);
+    else if (button.dataset.psAction === 'equals') { calculate(); focusInput(input.value.length); }
+    else if (button.dataset.psAction === 'delete') removeCharacter();
+    else if (button.dataset.psAction === 'clear') { reset(); focusInput(0); }
+  });
+  input.addEventListener('input', () => { if (allowed()) edit(); });
+  calculator.addEventListener('keydown', event => {
+    if (!allowed() || event.ctrlKey || event.metaKey || event.altKey || event.isComposing) return;
+    if (event.target === input) {
+      if (event.key === 'Enter' || event.key === '=') { event.preventDefault(); event.stopPropagation(); calculate(); return; }
+      if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); closeCalculator(); return; }
+      if (evaluated && event.key.length === 1 && /[\d.(+\-*/^%×÷−]/.test(event.key)) {
+        input.value = /^[+\-*/^%×÷−]$/.test(event.key) ? 'Ans' : '';
+        input.setSelectionRange(input.value.length, input.value.length); evaluated = false;
+      }
+    } else if (event.key === 'Enter') {
+      // Let the focused calculator button activate, but do not bubble outward.
+      event.stopPropagation();
+    }
+  });
+  copy.addEventListener('click', async () => {
+    if (!allowed() || !resultText) return;
+    const text = resultText, currentOwner = owner;
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
+      if (allowed() && owner === currentOwner) showMessage('Result copied. Paste it into the answer box, rounding when needed.');
+    } catch {
+      if (!allowed() || owner !== currentOwner) return;
+      const area = document.createElement('textarea');
+      area.value = text; area.setAttribute('aria-label', 'Calculator result to copy');
+      area.style.cssText = 'position:fixed;left:-9999px;top:0;width:1px;height:1px';
+      calculator.appendChild(area); area.select();
+      let copied = false; try { copied = document.execCommand('copy'); } catch {}
+      area.remove(); copy.focus({ preventScroll: true });
+      showMessage(copied ? 'Result copied. Paste it into the answer box, rounding when needed.' : 'Select the displayed result and use your device’s copy command.');
+    }
+  });
+  // Non-modal, viewport-fixed window: the question remains interactive.
+  // All positioning and drag state belongs to the calculator, never the lesson.
+  function viewport() {
+    const v = window.visualViewport;
+    return { left: v?.offsetLeft || 0, top: v?.offsetTop || 0,
+      width: v?.width || document.documentElement.clientWidth || window.innerWidth,
+      height: v?.height || window.innerHeight };
+  }
+  function bounded(value, low, high) { return Math.max(low, Math.min(Math.max(low, high), value)); }
+  function placeLauncher() {
+    if (!allowed() || !dock.isConnected) return;
+    const v = viewport();
+    // Measure the normal button size, then reserve it if it needs to float.
+    if (!jump.hasAttribute('data-floating')) {
+      const b = jump.getBoundingClientRect();
+      dock.style.width = b.width + 'px'; dock.style.height = b.height + 'px';
+    }
+    const d = dock.getBoundingClientRect();
+    if (d.top < v.top + 10) {
+      jump.dataset.floating = 'true';
+      jump.style.width = d.width + 'px';
+      jump.style.left = bounded(d.left, v.left + 10, v.left + v.width - d.width - 10) + 'px';
+      jump.style.top = (v.top + 10) + 'px';
+    } else {
+      jump.removeAttribute('data-floating');
+      jump.style.removeProperty('width'); jump.style.removeProperty('left'); jump.style.removeProperty('top');
+    }
+  }
+  function placeWindow(resetPosition = false) {
+    if (!allowed() || calculator.hidden || !calculator.isConnected) return;
+    const v = viewport(), gap = 10;
+    calculator.style.maxWidth = Math.max(1, v.width - gap * 2) + 'px';
+    calculator.style.maxHeight = Math.max(1, v.height - gap * 2) + 'px';
+    const b = calculator.getBoundingClientRect();
+    const left = v.left + gap, right = v.left + v.width - b.width - gap;
+    const top = v.top + gap, bottom = v.top + v.height - b.height - gap;
+    if (resetPosition || !position) {
+      const launcher = jump.getBoundingClientRect();
+      position = { x: right, y: bounded(launcher.bottom + gap, top, bottom) };
+    }
+    position.x = bounded(position.x, left, right);
+    position.y = bounded(position.y, top, bottom);
+    calculator.style.left = position.x + 'px';
+    calculator.style.top = position.y + 'px';
+  }
+  function layout() {
+    if (layoutFrame !== null) return;
+    layoutFrame = requestAnimationFrame(() => {
+      layoutFrame = null; placeLauncher(); placeWindow();
+    });
+  }
+  function stopDrag() {
+    if (!drag) return;
+    const pointerId = drag.pointerId; drag = null;
+    calculator.removeAttribute('data-dragging');
+    try { if (dragHandle.hasPointerCapture(pointerId)) dragHandle.releasePointerCapture(pointerId); } catch {}
+  }
+  function openCalculator() {
+    if (!allowed()) return;
+    calculator.hidden = false; jump.setAttribute('aria-expanded', 'true');
+    placeLauncher(); placeWindow();
+    // Focusing the fixed window must never scroll the question out of view.
+    if (window.matchMedia('(pointer: coarse)').matches) dragHandle.focus({ preventScroll: true });
+    else focusInput(input.value.length);
+  }
+  function closeCalculator(restoreFocus = true) {
+    stopDrag(); calculator.hidden = true; jump.setAttribute('aria-expanded', 'false');
+    if (restoreFocus && allowed() && jump.isConnected) jump.focus({ preventScroll: true });
+  }
+  jump.addEventListener('click', openCalculator);
+  closeButton.addEventListener('click', () => closeCalculator());
+  positionButton.addEventListener('click', () => { stopDrag(); placeLauncher(); placeWindow(true); });
+  dragHandle.addEventListener('dblclick', () => { stopDrag(); placeWindow(true); });
+  dragHandle.addEventListener('pointerdown', event => {
+    if (!allowed() || calculator.hidden || event.button !== 0 || event.isPrimary === false || drag) return;
+    event.preventDefault();
+    const b = calculator.getBoundingClientRect();
+    position = { x: b.left, y: b.top };
+    drag = { pointerId: event.pointerId, x: event.clientX, y: event.clientY, left: b.left, top: b.top };
+    calculator.dataset.dragging = 'true';
+    dragHandle.focus({ preventScroll: true });
+    try { dragHandle.setPointerCapture(event.pointerId); } catch {}
+  });
+  dragHandle.addEventListener('pointermove', event => {
+    if (!drag || event.pointerId !== drag.pointerId) return;
+    event.preventDefault();
+    position = { x: drag.left + event.clientX - drag.x, y: drag.top + event.clientY - drag.y };
+    placeWindow();
+  });
+  for (const name of ['pointerup', 'pointercancel', 'lostpointercapture']) {
+    dragHandle.addEventListener(name, event => { if (drag?.pointerId === event.pointerId) stopDrag(); });
+  }
+  window.addEventListener('blur', stopDrag);
+  dragHandle.addEventListener('keydown', event => {
+    if (!allowed() || calculator.hidden || event.ctrlKey || event.metaKey || event.altKey || event.isComposing) return;
+    const moves = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] };
+    if (event.key === 'Home') { event.preventDefault(); event.stopPropagation(); placeWindow(true); return; }
+    const move = moves[event.key]; if (!move) return;
+    event.preventDefault(); event.stopPropagation();
+    const step = event.shiftKey ? 40 : 10, b = calculator.getBoundingClientRect();
+    position = { x: b.left + move[0] * step, y: b.top + move[1] * step }; placeWindow();
+  });
+  calculator.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !event.isComposing && allowed()) {
+      event.preventDefault(); event.stopPropagation(); closeCalculator();
+    }
+  });
+  window.addEventListener('scroll', layout, { passive: true });
+  window.addEventListener('resize', () => {
+    // Remeasure the launcher after mobile/desktop or larger-text changes.
+    dock.style.removeProperty('width'); dock.style.removeProperty('height');
+    jump.removeAttribute('data-floating'); jump.style.removeProperty('width');
+    jump.style.removeProperty('left'); jump.style.removeProperty('top');
+    stopDrag(); layout();
+  });
+  window.visualViewport?.addEventListener('resize', layout);
+  window.visualViewport?.addEventListener('scroll', layout);
+  if (typeof ResizeObserver !== 'undefined') {
+    const sizeObserver = new ResizeObserver(layout);
+    sizeObserver.observe(calculator); sizeObserver.observe(dock);
+  }
+  function sync() {
+    if (!allowed()) {
+      closeCalculator(false); calculator.remove(); dock.remove();
+      if (owner) reset(); owner = null; position = null; return;
+    }
+    if (owner !== session) { reset(); closeCalculator(false); position = null; owner = session; }
+    if (!calculator.isConnected) document.body.appendChild(calculator);
+    if (!dock.isConnected) {
+      const actions = $('sessionView').querySelector('.session-actions');
+      actions.insertBefore(dock, actions.firstChild);
+    }
+    // Starts closed. Moving between questions preserves the calculation/window.
+    placeLauncher(); layout();
+  }
+  // These observers do not modify the app's questions, score, timer or storage.
+  // They cover new sessions, resumed sessions, question changes and results.
+  const observer = new MutationObserver(sync);
+  observer.observe($('sessionView'), { attributes: true, attributeFilter: ['hidden'] });
+  observer.observe($('questionHeading'), { childList: true, characterData: true, subtree: true });
+  sync();
+
+})();
+/* END PERCENTAGE CALCULATOR ADDITION */
 // The test harness can request read-only access to state and normal UI entry points.
 if(window.__PERCENT_TEST__)window.PercentageTest={session:()=>session,load:s=>{session=s;renderQuestion(false);runTimer();},renderQuestion,renderResults,tableHTML,machineHTML,barHTML,reviewHTML,csv,summary,save,openMethod,openWork,step};
 })();
