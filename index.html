@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#172d43">
+<meta name="description" content="Independent percentage practice for Eduqas Foundation GCSE Mathematics, with precise marking, worked methods and a classroom working space.">
+<title>Percentages Studio | Foundation GCSE Mathematics</title>
+<style>:root{--ink:#172d43;--muted:#586b7e;--paper:#fff;--bg:#f3f5f7;--soft:#edf3f5;--line:#d7e1e7;--accent:#006b65;--accent-soft:#e6f4f0;--error:#a82537;--warning:#805400;--shadow:0 9px 32px rgba(21,44,62,.06);--radius:18px;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg)}[hidden]{display:none!important}button,input,select,textarea{font:inherit}button{cursor:pointer}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button{border:1px solid transparent;border-radius:10px;font-weight:700;padding:.65rem .9rem;line-height:1.3;min-height:44px;transition:background .14s,box-shadow .14s}button:disabled{opacity:.48;cursor:not-allowed}button:not(:disabled):active{transform:translateY(1px)}:focus-visible{outline:3px solid #cf8a00;outline-offset:3px}input:focus,select:focus,textarea:focus{outline:3px solid #cf8a00;outline-offset:2px}a{color:var(--accent);text-underline-offset:3px}h1,h2,h3,p{margin:0 0 1rem}h1{line-height:1.08;letter-spacing:-.045em;font-size:clamp(2rem,4vw,3.6rem)}h2{font-size:1.35rem;line-height:1.25;letter-spacing:-.02em}h3{font-size:1.05rem;margin-top:1.5rem}small,.help{font-size:.82rem;line-height:1.5}.help{color:var(--muted);margin:.35rem 0 .8rem}.muted{color:var(--muted)}.eyebrow{font-size:.7rem;letter-spacing:.12em;font-weight:800;line-height:1.6;color:var(--accent);margin:0 0 .5rem}.primary{background:var(--accent);color:#fff}.primary:hover:not(:disabled){background:#00534e}.secondary{background:var(--ink);color:var(--paper)}.secondary:hover:not(:disabled){filter:brightness(1.17)}.quiet{background:var(--paper);color:var(--ink);border-color:var(--line)}.quiet:hover:not(:disabled){background:var(--soft)}.text-button{background:transparent;color:var(--muted);font-size:.8rem;padding:.45rem .3rem;text-decoration:underline;text-underline-offset:3px}.button-row{display:flex;gap:.6rem;flex-wrap:wrap}.skip-link{position:fixed;top:5px;left:5px;transform:translateY(-160%);z-index:1000;background:var(--paper);padding:.7rem}.skip-link:focus{transform:none}
+.site-header{max-width:1360px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 2rem;border-bottom:1px solid var(--line)}.brand{display:flex;gap:.75rem;align-items:center}.brand-mark{width:44px;height:44px;border-radius:13px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:1.8rem;font-weight:800;flex:none}.brand strong{font-size:1.12rem;display:block;letter-spacing:-.03em}.brand div>span{font-size:.73rem;color:var(--muted);display:block}.header-actions{display:flex;gap:.4rem}.header-actions button{font-size:.78rem;min-height:40px}.main-wrap{max-width:1220px;margin:0 auto;padding:1.65rem 2rem 3rem}.panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}.hero{border-radius:22px;background:#172d43;color:#fff;padding:2.4rem 2rem;position:sticky;top:1.5rem;overflow:hidden}.hero .eyebrow{color:#acdacf}.hero h1{margin:1.15rem 0 1.4rem}.hero h1 span{color:#a9dfca}.hero-lead{font-size:1.03rem;line-height:1.75;max-width:370px;color:#d5e2ed}.hero-example{border:1px solid #486171;border-radius:14px;padding:1.1rem;margin:2.5rem 0 2rem;background:#203b51}.mini-heading{font-size:.64rem;letter-spacing:.14em;color:#b8d1df;font-weight:800}.hero-machine{display:grid;grid-template-columns:1fr 18px .7fr 18px 1fr;gap:.25rem;align-items:center;margin:.9rem 0;text-align:center}.hero-machine small{display:block;color:#b8d1df;font-size:.66rem}.hero-machine b{font-size:1.65rem}.hero-process{background:#a9dfca;color:#172d43;border-radius:10px;padding:.6rem .2rem;font-size:1.15rem;font-weight:800}.hero-example p{font-size:.76rem;color:#c8dae6;margin:1rem 0 .1rem}.hero-footer{display:flex;flex-wrap:wrap;gap:.5rem .85rem;font-size:.7rem;color:#c5d7e1}.hero-footer span:before{content:'✓';margin-right:.35rem;color:#a9dfca}.hero-disclaimer{font-size:.7rem;color:#bacdd9;line-height:1.7;margin:1.5rem 0 0}.setup-card{padding:1.65rem}.field{display:grid;gap:.3rem;margin-bottom:1rem;min-width:0}.field label,legend{font-size:.84rem;font-weight:700}.field .help{margin:0}input,select,textarea{width:100%;min-width:0;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:9px;padding:.65rem .75rem}select{padding-right:1.8rem}input::placeholder,textarea::placeholder{color:var(--muted);opacity:.85}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}.form-grid select{font-size:.83rem}.mode-field{padding:0;border:0;margin:0 0 1rem;min-width:0}.mode-field legend{margin-bottom:.4rem}.mode-options{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}.mode-options label{display:flex;gap:.3rem;align-items:center;border:1px solid var(--line);padding:.65rem .45rem;border-radius:9px;cursor:pointer;font-size:.76rem;font-weight:700;min-height:44px}.mode-options input{width:auto;accent-color:var(--accent);margin:0}.mode-options label:has(input:checked){background:var(--accent-soft);border-color:var(--accent)}.tolerance-card{background:var(--accent-soft);border:1px solid var(--line);padding:.8rem;border-radius:12px;display:flex;gap:.9rem;align-items:center;margin:1rem 0 .4rem}.tolerance-symbol{font-size:1.45rem;font-weight:800;color:var(--accent);flex:none;font-variant-numeric:tabular-nums}.tolerance-card strong{font-size:.83rem}.tolerance-card p{font-size:.73rem;line-height:1.55;margin:.2rem 0 0;color:var(--muted)}.start-button{width:100%;display:flex;align-items:center;justify-content:space-between;padding:.85rem 1rem;margin-top:1rem}.resume-card{padding:1rem;background:var(--accent-soft);border:1px solid var(--line);border-radius:12px;margin-bottom:1.4rem;font-size:.85rem}.resume-card p{font-size:.78rem;margin:.35rem 0 .8rem}.resume-card button{font-size:.8rem}.notice{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:.85rem 1rem;font-size:.85rem;margin:1rem 0;line-height:1.6;overflow-wrap:anywhere}.notice.success{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}.notice.error,.error-message{color:var(--error)}.notice.error{background:var(--paper);border-color:var(--error)}.notice.warning{border-color:#c69442;color:var(--warning);background:#fff9e9}.error-message{font-size:.87rem;font-weight:650}
+.session-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1rem}.session-bar>div:first-child{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}.student-name{font-weight:800;max-width:360px;overflow-wrap:anywhere}.session-bar .muted{font-size:.83rem}.session-actions{display:flex;gap:.4rem}.session-actions button{font-size:.78rem}.stats-strip{display:grid;grid-template-columns:repeat(5,1fr);background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:.8rem .3rem}.stats-strip>div{padding:.2rem 1rem;border-right:1px solid var(--line)}.stats-strip>div:last-child{border:0}.stats-strip span{display:block;font-size:.66rem;letter-spacing:.035em;color:var(--muted)}.stats-strip strong{font-size:1.22rem;font-variant-numeric:tabular-nums;line-height:1.65}.stats-strip strong.urgent{color:var(--error)}.progress-wrap{display:flex;align-items:center;gap:1rem;margin:.85rem 0 1.2rem}.progress-wrap progress{width:100%;height:6px;appearance:none;border:0;background:var(--line);border-radius:8px;overflow:hidden}.progress-wrap progress::-webkit-progress-bar{background:var(--line)}.progress-wrap progress::-webkit-progress-value{background:var(--accent)}.progress-wrap progress::-moz-progress-bar{background:var(--accent)}.progress-wrap span{font-size:.69rem;color:var(--muted);white-space:nowrap}.question-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:1.2rem;align-items:start}.question-paper{padding:1.7rem 1.9rem;min-height:380px}.paper-top{display:flex;align-items:center;justify-content:space-between;gap:.7rem;margin-bottom:1.35rem}.paper-top .eyebrow{margin:0}.pill{display:inline-flex;align-items:center;border-radius:99px;background:var(--soft);border:1px solid var(--line);padding:.22rem .6rem;color:var(--muted);font-size:.68rem;font-weight:700;line-height:1.4;white-space:nowrap}.question-paper h2{font-size:1.55rem;margin:0 0 1.2rem}.question-text{font-size:1.17rem;line-height:1.75;letter-spacing:.002em}.question-text p{margin:0 0 .75rem}.question-text b{font-weight:780;font-variant-numeric:tabular-nums}.question-guidance{font-size:.78rem;color:var(--muted);border-left:3px solid var(--line);padding:.1rem 0 .1rem .65rem;margin:1.1rem 0}.paper-tools{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.45rem}.paper-tools button{font-size:.83rem}.paper-foot{display:flex;gap:.8rem;justify-content:space-between;font-size:.67rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem;margin-top:1.5rem}.paper-foot span:last-child{text-align:right}.table-scroll{overflow:auto;border:1px solid var(--line);border-radius:11px;margin:1rem 0}.data-table{border-collapse:collapse;width:100%;font-size:.89rem}.data-table th{background:var(--soft);text-align:left;font-size:.76rem;font-weight:750}.data-table th,.data-table td{padding:.7rem .85rem;border-bottom:1px solid var(--line)}.data-table tr:last-child td{border-bottom:0}.data-table td{font-variant-numeric:tabular-nums}.answer-panel{padding:1.4rem}.answer-top{display:flex;justify-content:space-between;align-items:center;gap:1rem}.answer-top h2{margin:0;font-size:1.18rem}.answer-top .pill{background:var(--accent-soft);color:var(--accent)}.answer-panel>.help{margin:.6rem 0 1.2rem}.answer-item{margin:0 0 1.15rem;padding:0;border:0;min-width:0}.answer-item>label,.answer-item>legend{font-size:.86rem;display:block;font-weight:750;margin-bottom:.5rem}.number-shell{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;background:var(--paper)}.number-shell input{border:0;background:transparent;font-size:1.5rem;font-weight:700;letter-spacing:.03em;font-variant-numeric:tabular-nums;padding:.7rem .5rem}.number-shell input:focus{outline-offset:0}.answer-unit{font-size:.86rem;color:var(--muted);padding:0 .7rem;white-space:nowrap}.number-shell:has(input[disabled]){background:var(--soft)}.step-controls{display:flex;justify-content:flex-end;gap:.4rem;margin-top:.4rem}.step-controls button{font-size:.73rem;background:var(--soft);border-color:var(--line);padding:.4rem .7rem;color:var(--ink);min-height:34px}.part-feedback{font-size:.77rem;margin-top:.5rem;line-height:1.65}.part-feedback.good{color:var(--accent);font-weight:650}.part-feedback.bad{color:var(--error)}.part-feedback.invalid{color:var(--error)}.choice-options{display:grid;gap:.5rem}.choice-option{display:flex;align-items:center;gap:.6rem;border:1px solid var(--line);padding:.65rem .75rem;border-radius:10px;cursor:pointer;font-size:.88rem;min-height:44px;line-height:1.5}.choice-option:has(input:checked){background:var(--accent-soft);border-color:var(--accent)}.choice-option input{width:auto;accent-color:var(--accent);flex:none}.choice-option span{overflow-wrap:anywhere}.check-button,.next-button{width:100%;margin:.2rem 0 .3rem;padding:.8rem}.answer-actions{display:flex;justify-content:space-between;gap:.5rem}.tolerance-help{border-top:1px solid var(--line);padding-top:.85rem;font-size:.72rem!important;margin-top:.8rem!important;margin-bottom:0!important}.solution-inline{border-top:1px solid var(--line);margin-top:.8rem;padding-top:.7rem}.solution-inline h3{margin:.1rem 0 .6rem}.solution-inline p{font-size:.83rem;line-height:1.6;margin-bottom:.7rem;overflow-wrap:anywhere}.session-note{font-size:.71rem;color:var(--muted);margin:.9rem 0 0;text-align:right}.site-footer{border-top:1px solid var(--line);max-width:1220px;margin:auto;padding:1.2rem 2rem;display:flex;justify-content:space-between;gap:1rem;font-size:.7rem;color:var(--muted)}
+.results-hero{padding:1.4rem 0 1rem}.results-hero h1{font-size:2.45rem}.results-hero>p:last-child{color:var(--muted)}.result-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.metric{border:1px solid var(--line);background:var(--paper);border-radius:14px;padding:1.15rem}.metric b{font-size:1.9rem;letter-spacing:-.035em;display:block;font-variant-numeric:tabular-nums}.metric span{font-size:.74rem;color:var(--muted);display:block;margin-top:.25rem}.results-toolbar{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.3rem 0}.results-toolbar button{font-size:.83rem}.topic-summary{padding:1.25rem;margin:1.2rem 0 1.8rem}.topic-summary h2{font-size:1.1rem}.topic-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem 1.5rem}.topic-row{display:flex;align-items:center;gap:.8rem;justify-content:space-between;border-bottom:1px solid var(--line);padding:.35rem 0;font-size:.78rem}.topic-row strong{white-space:nowrap}.review-heading{margin:1.4rem 0 1rem}.review-card{background:var(--paper);border:1px solid var(--line);border-radius:13px;margin:.75rem 0;overflow:hidden}.review-card summary{padding:1rem;cursor:pointer;font-weight:700;display:flex;justify-content:space-between;gap:.8rem;align-items:center;font-size:.86rem}.review-card summary>span:first-child:before{content:'+';display:inline-block;margin-right:.8rem;color:var(--accent)}.review-card[open] summary>span:first-child:before{content:'−'}.review-card summary::-webkit-details-marker{display:none}.review-card summary>span:last-child{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em}.review-body{padding:.2rem 1.1rem 1rem}.review-body>p{font-size:.9rem;margin-bottom:.6rem}.review-part{border-top:1px solid var(--line);padding:.75rem 0;font-size:.84rem}.review-part p{margin:.2rem 0}.review-part strong{color:var(--accent)}.working-review{white-space:pre-wrap;background:var(--soft);padding:.8rem;border-radius:9px;font: .85rem/1.6 system-ui,sans-serif;overflow-wrap:anywhere}.review-body .quiet{font-size:.78rem}.review-method{margin-top:.7rem;border-top:1px solid var(--line);padding-top:.5rem}.review-method p{font-size:.8rem;line-height:1.6;margin:.5rem 0}.toast{position:fixed;bottom:1.4rem;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:.65rem 1rem;border-radius:9px;box-shadow:var(--shadow);font-size:.84rem;z-index:999;max-width:min(600px,90vw);text-align:center;pointer-events:none}.toast:empty{display:none}
+/* Dialogs use the browser's focus containment and Escape behaviour. */
+dialog{background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:17px;padding:0;box-shadow:0 24px 100px #0004;max-height:92dvh;overflow:auto;width:calc(100% - 2rem)}dialog::backdrop{background:#132738b8;backdrop-filter:blur(3px)}.small-dialog{max-width:480px}.source-dialog{max-width:760px}.method-dialog{max-width:740px}.work-dialog{max-width:1200px;width:calc(100% - 2rem);max-height:96dvh}.dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.4rem;border-bottom:1px solid var(--line)}.dialog-heading h2{margin:0;font-size:1.2rem}.dialog-heading .eyebrow{font-size:.62rem}.close-button{background:var(--soft);color:var(--ink);border:1px solid var(--line);width:40px;min-height:40px;padding:.3rem;flex:none}.dialog-body{padding:1.2rem 1.4rem}.dialog-body>h3:first-child{margin-top:0}.dialog-body p{font-size:.91rem;line-height:1.75}.tab-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;padding:.9rem 1.4rem 0}.tab-row button{background:var(--soft);color:var(--muted);font-size:.78rem;border-color:var(--line)}.tab-row button[aria-selected=true]{background:var(--accent);color:#fff;border-color:var(--accent)}.method-steps{list-style:none;counter-reset:steps;padding:0;margin:1.2rem 0}.method-steps li{counter-increment:steps;display:flex;align-items:flex-start;gap:.8rem;font-size:.93rem;line-height:1.75;margin:1rem 0}.method-steps li:before{content:counter(steps);width:27px;height:27px;background:var(--accent-soft);color:var(--accent);border-radius:50%;display:grid;place-items:center;flex:none;font-size:.78rem;font-weight:800;margin-top:.15rem}.method-note{background:var(--soft);border-left:3px solid var(--accent);padding:.75rem;font-size:.8rem;margin:1rem 0}.machine-block{border:1px solid var(--line);border-radius:13px;padding:.95rem;background:var(--soft);margin:1rem 0}.machine-caption{font-size:.75rem;font-weight:750;color:var(--accent);margin-bottom:.8rem}.number-machine{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1.05fr) 24px minmax(0,1fr);gap:.25rem;align-items:center;text-align:center}.machine-end{padding:.55rem .2rem;background:var(--paper);border-radius:8px;border:1px solid var(--line);min-height:65px;display:flex;flex-direction:column;justify-content:center}.machine-end small{font-size:.66rem;color:var(--muted);line-height:1.4}.machine-end strong{font-size:1rem;margin-top:.3rem;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.machine-operation{background:var(--accent);color:white;padding:.6rem .3rem;border-radius:8px;font-weight:750;font-size:.95rem;line-height:1.5;overflow-wrap:anywhere}.machine-arrow{font-size:1.5rem;color:var(--accent)}.number-machine.play .machine-arrow{animation:arrowRight 1.2s ease-in-out 3}.number-machine.reverse.play .machine-arrow{animation:arrowLeft 1.2s ease-in-out 3}.animate-button{margin-top:.6rem;font-size:.7rem;padding:.4rem .6rem;min-height:34px}.bar-model{border:1px solid var(--line);border-radius:13px;padding:1rem;margin:1rem 0}.bar-row{margin:.7rem 0}.bar-row>div:first-child{display:flex;justify-content:space-between;gap:.5rem;font-size:.76rem;margin-bottom:.35rem}.bar-track{width:100%;height:22px;position:relative}.bar-fill{height:100%;background:var(--accent);border-radius:4px;min-width:2px}.bar-fill.reference{background:#98aabd}.bar-model>p{font-size:.69rem!important;margin:.6rem 0 0!important;color:var(--muted)}.example-question{padding:1rem;background:var(--soft);border-radius:12px;margin:.6rem 0 1rem}.example-question p{font-size:.93rem;line-height:1.6;margin:.4rem 0}.solution-step{padding:.55rem 0;border-bottom:1px solid var(--line);font-size:.94rem;line-height:1.7;overflow-wrap:anywhere}.source-list{border-top:1px solid var(--line);margin-top:.7rem}.source-list p{font-size:.82rem;line-height:1.6;padding:.65rem 0;margin:0;border-bottom:1px solid var(--line)}.source-list a{font-weight:700}.work-question{padding:.85rem 1.3rem;background:var(--soft);font-size:1rem;line-height:1.7;max-height:27dvh;overflow:auto}.work-question p{margin:.15rem 0}.work-question .data-table{font-size:.82rem}.work-question .table-scroll{margin:.5rem 0}.drawing-tools{padding:.65rem 1rem;display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;border-bottom:1px solid var(--line)}.drawing-tools button{font-size:.76rem}.drawing-tools button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:white}.drawing-tools label{display:flex;align-items:center;gap:.3rem;font-size:.75rem;margin:0 .2rem}.drawing-tools select{width:auto;font-size:.75rem;padding:.5rem 1.6rem .5rem .5rem}.canvas-shell{width:100%;height:350px;background-color:#fff;background-image:radial-gradient(#d3dce3 1px,transparent 1px);background-size:24px 24px;overflow:hidden}.canvas-shell canvas{display:block;width:100%;height:100%;touch-action:none;cursor:crosshair}.typed-working{padding:.9rem 1.2rem;border-top:1px solid var(--line)}.typed-working label{font-weight:750;font-size:.81rem}.typed-working textarea{height:85px;resize:vertical;margin-top:.35rem}.typed-working p{margin-bottom:0}
+@keyframes arrowRight{0%,100%{transform:translateX(-4px);opacity:.45}60%{transform:translateX(4px);opacity:1}}@keyframes arrowLeft{0%,100%{transform:translateX(4px);opacity:.45}60%{transform:translateX(-4px);opacity:1}}
+body[data-theme=dark]{--ink:#e4eef7;--muted:#b1c2d1;--paper:#1b2d3e;--bg:#12212f;--soft:#233c50;--line:#3c5265;--accent:#8edfc8;--accent-soft:#24483f;--error:#ff9ea8;--warning:#f1cd91;--shadow:0 9px 30px #0001;color-scheme:dark}body[data-theme=dark] .primary,body[data-theme=dark] .machine-operation,body[data-theme=dark] .tab-row button[aria-selected=true],body[data-theme=dark] .drawing-tools button[aria-pressed=true]{color:#112d28}body[data-theme=dark] .primary:hover{background:#b2efdd}body[data-theme=dark] .notice.warning{background:#413724}body[data-theme=dark] .hero{border:1px solid var(--line)}body[data-overlay=cream]:not([data-theme=dark]) .question-paper{background:#fff9e9}body[data-overlay=blue]:not([data-theme=dark]) .question-paper{background:#eef8ff}body[data-overlay=green]:not([data-theme=dark]) .question-paper{background:#eff9ee}body[data-overlay]:not([data-overlay=none])[data-theme=dark] .question-paper{background:#243849}body[data-size=large] .question-text{font-size:1.4rem}
+@media(min-width:1440px){.question-paper{min-height:440px}.canvas-shell{height:420px}}
+@media(max-width:1050px){.site-header{padding:1rem 1.3rem}.main-wrap{padding:1.2rem 1.3rem 2rem}.setup-grid{gap:1.2rem}.hero{padding:1.8rem 1.4rem}.setup-card{padding:1.3rem}.hero h1{font-size:2.65rem}.form-grid{grid-template-columns:1fr;gap:0}.question-grid{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:.85rem}.question-paper{padding:1.3rem}.paper-top{flex-wrap:wrap}.answer-panel{padding:1.1rem}.stats-strip>div{padding:.2rem .8rem}}
+@media(max-width:760px){.site-header{flex-wrap:wrap;gap:.8rem}.header-actions{width:100%;justify-content:flex-end}.brand div>span{font-size:.68rem}.main-wrap{padding:1rem .85rem 1.8rem}.setup-grid{grid-template-columns:1fr}.hero{position:static;padding:1.45rem}.hero h1{font-size:2.4rem;margin:.5rem 0 .9rem}.hero h1 br{display:none}.hero-lead{max-width:none;margin:0;font-size:.94rem;line-height:1.6}.hero-example{display:none}.hero-footer{margin-top:1.1rem}.hero-disclaimer{font-size:.64rem;margin:.85rem 0 0}.setup-card{padding:1.2rem}.form-grid{grid-template-columns:1fr 1fr;gap:.75rem}.question-grid{grid-template-columns:1fr}.question-paper{min-height:0;padding:1.25rem}.paper-top{margin-bottom:.8rem}.question-paper h2{font-size:1.32rem;margin-bottom:.8rem}.question-text{font-size:1.12rem;line-height:1.7}.paper-tools{margin-top:1rem}.paper-foot{margin-top:1rem;padding-top:.65rem}.answer-panel{padding:1.2rem}.answer-panel>.help{margin-bottom:.8rem}.session-bar{align-items:flex-start}.session-bar>div:first-child{gap:.25rem;display:flex;flex-direction:column;align-items:flex-start}.session-actions{flex-direction:column;align-items:stretch}.session-actions button{min-height:36px;padding:.45rem .55rem;font-size:.72rem}.stats-strip>div{padding:.15rem .4rem}.stats-strip span{font-size:.58rem}.stats-strip strong{font-size:1.06rem}.result-metrics{grid-template-columns:1fr 1fr;gap:.7rem}.topic-grid{grid-template-columns:1fr}.results-hero h1{font-size:2rem}.metric{padding:.85rem}.metric b{font-size:1.55rem}.site-footer{flex-direction:column;gap:.3rem;padding:1rem}.session-note{text-align:left}.dialog-heading{padding:1rem}.dialog-body{padding:1rem}.tab-row{padding:.7rem 1rem 0}.work-question{padding:.6rem 1rem;font-size:.88rem}.canvas-shell{height:330px}.drawing-tools{padding:.5rem;gap:.3rem}.drawing-tools button{padding:.45rem .6rem;min-height:36px}.drawing-tools label{font-size:.68rem}.work-dialog{width:calc(100% - .7rem)}.review-card summary{font-size:.8rem;align-items:flex-start}.review-card summary>span:last-child{font-size:.6rem}.machine-block{padding:.6rem}.number-machine{grid-template-columns:minmax(0,1fr) 17px minmax(0,1fr) 17px minmax(0,1fr);gap:.15rem}.machine-end strong{font-size:.84rem}.machine-operation{font-size:.82rem}.machine-arrow{font-size:1.25rem}.machine-end small{font-size:.61rem}}
+@media(max-width:400px){.form-grid{grid-template-columns:1fr;gap:0}.mode-options{gap:.25rem}.mode-options label{font-size:.69rem;padding:.6rem .3rem}.stats-strip strong{font-size:.97rem}.stats-strip>div{padding:.15rem .3rem}.paper-top .eyebrow{font-size:.6rem}.paper-tools button{font-size:.78rem}.hero h1{font-size:2.15rem}.brand strong{font-size:1.05rem}.tab-row button{font-size:.67rem;padding:.55rem .45rem}.machine-operation{font-size:.73rem}.machine-end strong{font-size:.77rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{body{background:white!important;color:#111!important}header,.site-footer,.results-toolbar,#toast,dialog,button,.notice,.skip-link{display:none!important}.main-wrap{max-width:none;padding:0}.panel,.review-card,.metric{box-shadow:none;border-color:#bbb;border-radius:0;background:white!important;color:#111!important}.results-hero{padding:0}.results-hero h1{font-size:22pt}.review-card summary{font-size:12pt}.review-body{display:block!important}.review-card{break-inside:avoid}.result-metrics{gap:.3rem}.metric b{font-size:18pt}.topic-summary{padding:.6rem}.review-heading{break-after:avoid}.question-grid{display:block}.question-paper{padding:1rem}.answer-panel{margin-top:1rem}.paper-tools,.answer-actions,.session-bar,.stats-strip,.progress-wrap,.session-note{display:none!important}.results-hero p,.metric span,.topic-row,.review-body,.review-part{color:#111!important}a{color:#111!important}}
+</style>
+<!-- BEGIN PERCENTAGE CALCULATOR STYLES -->
+<style>
+/* Floating calculator only; all non-calculator app rules are unchanged. */
+#psCalculator{position:fixed;z-index:900;width:332px;max-width:calc(100vw - 20px);max-height:calc(100vh - 20px);max-height:calc(100dvh - 20px);display:flex;flex-direction:column;box-sizing:border-box;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:15px;box-shadow:0 16px 54px #10273a38;margin:0;padding:0;min-width:0;overflow:hidden}
+#psCalculator[hidden]{display:none!important}
+#psCalculator .ps-calc-titlebar{display:flex;align-items:center;gap:4px;padding:5px 7px 5px 10px;background:var(--soft);border-bottom:1px solid var(--line);flex:none}
+#psCalculatorDrag{flex:1;min-width:0;min-height:40px;text-align:left;padding:3px 7px;background:transparent;color:var(--ink);border:0;border-radius:7px;cursor:grab;touch-action:none;user-select:none}
+#psCalculatorDrag:active{transform:none;cursor:grabbing}
+#psCalculatorDrag>span{display:block;font-size:.9rem;font-weight:800;line-height:1.4}
+#psCalculatorDrag>small{display:block;font-size:.64rem;font-weight:500;color:var(--muted);line-height:1.5}
+#psCalculator[data-dragging=true] #psCalculatorDrag{cursor:grabbing}
+#psCalculator .ps-calc-window-control{flex:none;display:grid;place-items:center;min-height:36px;width:36px;padding:0;background:var(--paper);color:var(--ink);border:1px solid var(--line);font-size:1.2rem;border-radius:8px}
+#psCalculator .ps-calc-window-control:hover{background:var(--accent-soft)}
+#psCalculator .ps-calc-body{padding:10px 12px 12px;min-width:0;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+#psCalculator .ps-calc-label{display:block;font-size:.72rem;font-weight:700;color:var(--muted);margin-bottom:.35rem}
+#psCalculatorInput{font-size:1rem;letter-spacing:0;font-variant-numeric:tabular-nums;text-align:right;padding:.5rem .7rem;width:100%;min-width:0;line-height:1.5;scroll-margin-top:20px}
+#psCalculator .ps-calc-display{padding:.45rem .65rem;margin:.4rem 0 .5rem;background:var(--soft);border:1px solid var(--line);border-radius:10px;text-align:right;min-width:0}
+#psCalculator .ps-calc-display-label{display:block;font-size:.65rem;color:var(--muted);text-align:left;margin-bottom:.2rem}
+#psCalculatorResult{display:block;font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.5;font-weight:750;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;user-select:text}
+#psCalculatorMessage{font-size:.72rem;line-height:1.5;margin:.5rem 0 .65rem;overflow-wrap:anywhere;color:var(--muted)}
+#psCalculatorMessage[data-error=true]{color:var(--error);font-weight:650}
+#psCalculator .ps-calc-keys{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.38rem}
+#psCalculator .ps-calc-key{font-size:1.05rem;font-weight:750;border:1px solid var(--line);border-radius:9px;background:var(--paper);color:var(--ink);padding:.4rem .2rem;min-height:40px;min-width:0;touch-action:manipulation}
+#psCalculator .ps-calc-key:hover{background:var(--soft)}
+#psCalculator .ps-calc-key.ps-calc-function{background:var(--soft);color:var(--ink);font-size:.9rem}
+#psCalculator .ps-calc-key.ps-calc-operation{color:var(--accent);background:var(--accent-soft);font-size:1.2rem}
+#psCalculator .ps-calc-key.ps-calc-equals{grid-column:span 2;background:var(--accent);color:#fff}
+body[data-theme=dark] #psCalculator .ps-calc-key.ps-calc-equals{color:#112d28}
+#psCalculator .ps-calc-key math{font-size:1.08em}
+#psCalculator .ps-calc-bottom{display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin-top:.6rem}
+#psCalculator .ps-calc-bottom button{font-size:.73rem;min-height:36px;padding:.45rem .65rem}
+#psCalculator .ps-calc-bottom small{color:var(--muted);font-size:.67rem}
+#psCalculator .ps-calc-help{font-size:.69rem;line-height:1.65;color:var(--muted);margin:.55rem 0 .05rem}
+#psCalculatorDock{display:inline-flex;align-self:stretch;flex:none}
+#psCalculatorJump{font-size:.78rem;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;background:var(--accent-soft);border:1px solid var(--accent);color:var(--accent);z-index:899;touch-action:manipulation}
+#psCalculatorJump[data-floating=true]{position:fixed;box-shadow:0 5px 22px #10273a26}
+#psCalculatorJump svg{width:17px;height:19px;flex:none}
+#psCalculator .ps-calc-instructions{margin:.45rem 0 0;border-top:1px solid var(--line);padding-top:.35rem}
+#psCalculator .ps-calc-instructions>summary{font-size:.72rem;font-weight:700;cursor:pointer;padding:.3rem 0;min-height:30px;color:var(--muted)}
+@media(pointer:coarse){#psCalculator .ps-calc-key{min-height:44px}}
+@media(max-width:760px){#psCalculatorJump{min-height:36px;font-size:.72rem;padding:.45rem .55rem}}
+@media print{#psCalculator,#psCalculatorDock,#psCalculatorJump{display:none!important}}
+</style>
+<!-- END PERCENTAGE CALCULATOR STYLES -->
+</head>
+<body data-theme="light" data-overlay="none">
+<a href="#main" class="skip-link">Skip to main content</a>
+<header class="site-header">
+ <div class="brand"><span class="brand-mark" aria-hidden="true">%</span><div><strong>Percentages Studio</strong><span>Foundation GCSE Mathematics · Eduqas-style practice</span></div></div>
+ <nav class="header-actions" aria-label="Display and information"><button id="sourceBtn" class="quiet">About & sources</button><button id="displayBtn" class="quiet">Display</button><button id="fullBtn" class="quiet">Full screen</button></nav>
+</header>
+<main id="main" class="main-wrap">
+ <div id="storageNotice" class="notice warning" hidden></div>
+ <section id="setupView" aria-labelledby="setupTitle">
+  <div class="setup-grid">
+   <div class="hero">
+    <p class="eyebrow">READ THE QUESTION. CHOOSE YOUR METHOD.</p>
+    <h1 id="setupTitle">Make sense<br>of <span>percentages.</span></h1>
+    <p class="hero-lead">From finding a percentage to working backwards, comparing offers and repeated change.</p>
+    <div class="hero-example" aria-label="Example: after 20 percent off, 80 percent remains. Divide by 0.8 to find the original price.">
+     <div class="mini-heading">WORK BACKWARDS</div>
+     <div class="hero-machine"><div><small>Original price</small><b>?</b></div><span aria-hidden="true">←</span><div class="hero-process">÷ 0.8</div><span aria-hidden="true">←</span><div><small>After 20% off</small><b>£64</b></div></div>
+     <p>80% is known. Find the original 100%.</p>
+    </div>
+    <div class="hero-footer"><span>13 question families</span><span>Worked examples</span><span>Write on screen</span></div>
+    <p class="hero-disclaimer">Original questions informed by selected past-paper formats.<br>Independent resource, not an official Eduqas product.</p>
+   </div>
+   <div class="setup-card panel">
+    <p class="eyebrow">YOUR PRACTICE SESSION</p><h2>Choose how to practise</h2>
+    <div id="resumeCard" class="resume-card" hidden><strong id="resumeTitle">A saved session is available</strong><p id="resumeInfo"></p><div class="button-row"><button id="resumeBtn" class="primary">Resume</button><button id="discardBtn" class="quiet">Discard saved session</button></div></div>
+    <form id="setupForm" novalidate>
+     <div class="field"><label for="nameInput">Name <span class="muted">(optional)</span></label><input id="nameInput" autocomplete="off" maxlength="60" placeholder="Student"></div>
+     <div class="field"><label for="componentSelect">Calculation style</label><select id="componentSelect"><option value="noncalc">Non-calculator practice</option><option value="calc">Calculator-allowed practice</option></select><p class="help">Non-calculator sets use friendlier numbers. Any valid method is welcome.</p></div>
+     <div class="form-grid">
+      <div class="field"><label for="focusSelect">Question selection</label><select id="focusSelect"><option value="all">All percentage skills</option><option value="original">Original six skills</option></select></div>
+      <div class="field"><label for="difficultySelect">Difficulty</label><select id="difficultySelect"><option value="build">Build up gradually</option><option value="mixed">Foundation mix</option><option value="stretch">Stretch practice</option></select></div>
+     </div>
+     <fieldset class="mode-field"><legend>Session mode</legend><div class="mode-options"><label><input type="radio" name="mode" value="practice" checked><span>Practice set</span></label><label><input type="radio" name="mode" value="timed"><span>Timed / free</span></label><label><input type="radio" name="mode" value="target"><span>Target score</span></label></div></fieldset>
+     <div id="sizeField" class="field"><label for="sizeSelect">Number of questions</label><select id="sizeSelect"><option>10</option><option selected>12</option><option>20</option><option>30</option><option>60</option></select></div>
+     <div id="timeField" class="field" hidden><label for="timeSelect">Time limit</label><select id="timeSelect"><option value="600">10 minutes</option><option value="1200">20 minutes</option><option value="1800">30 minutes</option><option value="0">No time limit</option></select><p class="help">The clock continues while you view methods or use another tab.</p></div>
+     <div id="targetField" class="field" hidden><label for="targetInput">Correct questions to finish</label><input id="targetInput" type="number" min="1" max="100" step="1" value="10"><p class="help">1 point for each complete question. Revealed and skipped questions do not earn a point.</p></div>
+     <div class="tolerance-card"><span class="tolerance-symbol">±1.00</span><div><strong>Inclusive answer tolerance</strong><p>Every numeric answer within ±1.00 is accepted.<br>Answer controls move in 0.01 steps.</p></div></div>
+     <p class="help">For a percentage answer, this means ±1 percentage point. For money, it means ±£1. This is a generous practice rule, not an exam marking rule.</p>
+     <p id="setupError" class="error-message" role="alert" hidden></p>
+     <button type="submit" id="startBtn" class="primary start-button">Start practice <span aria-hidden="true">→</span></button>
+    </form>
+   </div>
+  </div>
+ </section>
+ <section id="sessionView" aria-labelledby="questionHeading" hidden>
+  <div class="session-bar"><div><span id="sessionName" class="student-name"></span><span id="sessionMode" class="muted"></span></div><div class="session-actions"><button id="finishBtn" class="quiet">Finish & review</button><button id="newBtn" class="quiet">New session</button></div></div>
+  <div class="stats-strip"><div><span>Question</span><strong id="questionCount">1 / 12</strong></div><div><span>Points</span><strong id="pointsCount">0</strong></div><div><span>Exact numeric</span><strong id="exactCount">0</strong></div><div><span>Within tolerance</span><strong id="nearCount">0</strong></div><div><span id="clockLabel">Time used</span><strong id="clock">0:00</strong></div></div>
+  <div class="progress-wrap"><progress id="progress" value="0" max="12" aria-label="Session progress"></progress><span id="progressLabel">0 completed</span></div>
+  <div class="question-grid">
+   <article class="question-paper panel">
+    <div class="paper-top"><span class="eyebrow" id="paperStyle">NON-CALCULATOR PRACTICE</span><span class="pill" id="levelPill">Getting started</span></div>
+    <h2 id="questionHeading" tabindex="-1">Question 1</h2>
+    <div id="questionText" class="question-text"></div>
+    <div id="questionTable"></div>
+    <p class="question-guidance" id="questionGuidance"></p>
+    <div class="paper-tools"><button id="workBtn" class="secondary">Write / working space</button><button id="methodBtn" class="quiet">Method & example</button></div>
+    <div class="paper-foot"><span>Show your method as you work.</span><span id="topicLabel"></span></div>
+   </article>
+   <aside class="answer-panel panel" aria-labelledby="answerHeading">
+    <div class="answer-top"><h2 id="answerHeading">Your answer</h2><span class="pill">±1.00</span></div>
+    <p class="help" id="answerInstructions">Enter up to 2 decimal places. Whole numbers are also accepted.</p>
+    <form id="answerForm" novalidate><div id="answerFields"></div><div id="checkMessage" class="notice" role="status" aria-live="polite" hidden></div><button id="checkBtn" class="primary check-button" type="submit">Check answer</button></form>
+    <button id="nextBtn" class="secondary next-button" hidden>Next question →</button>
+    <div class="answer-actions"><button id="revealBtn" class="text-button">Reveal solution</button><button id="skipBtn" class="text-button">Skip question</button></div>
+    <div id="solutionBox" class="solution-inline" hidden></div>
+    <p class="help tolerance-help">The limit includes exactly −1.00 and +1.00 from the model answer. Exact and tolerance-only answers are counted separately.</p>
+   </aside>
+  </div>
+  <p class="session-note" id="saveStatus">Progress is saved in this browser when storage is available.</p>
+ </section>
+ <section id="resultsView" hidden aria-labelledby="resultsHeading">
+  <div class="results-hero"><p class="eyebrow">PRACTICE REVIEW</p><h1 id="resultsHeading" tabindex="-1">Your session, reviewed.</h1><p id="resultsSubtitle"></p></div>
+  <div id="resultMetrics" class="result-metrics"></div>
+  <div class="results-toolbar"><button id="againBtn" class="primary">Set up another session</button><button id="csvBtn" class="quiet">Export CSV</button><button id="copyBtn" class="quiet">Copy summary</button><button id="printBtn" class="quiet">Print review</button></div>
+  <div class="notice">These are practice points, not GCSE marks or a predicted grade. Numeric answers use your ±1.00 rule; choices must be selected correctly. Written working is saved for review, but is not automatically marked.</div>
+  <div class="panel topic-summary"><h2>By skill</h2><div id="topicSummary"></div></div>
+  <h2 class="review-heading">Question-by-question review</h2><div id="reviewList"></div>
+ </section>
+</main>
+<footer class="site-footer"><span>Percentages Studio · Version 1.0</span><span>One HTML file · No accounts · No external libraries</span></footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<dialog id="methodDialog" class="method-dialog" aria-labelledby="methodHeading">
+ <div class="dialog-heading"><div><p class="eyebrow">UNDERSTAND THE PROCESS</p><h2 id="methodHeading">Method & worked example</h2></div><button class="close-button" data-close="methodDialog" aria-label="Close methods">✕</button></div>
+ <div class="tab-row" role="tablist" aria-label="Help content"><button id="methodTab" role="tab" aria-controls="methodContent" aria-selected="true">This question: method</button><button id="exampleTab" role="tab" aria-controls="exampleContent" aria-selected="false" tabindex="-1">Different worked example</button></div>
+ <div class="dialog-body"><section id="methodContent" role="tabpanel" aria-labelledby="methodTab"></section><section id="exampleContent" role="tabpanel" aria-labelledby="exampleTab" hidden></section></div>
+</dialog>
+<dialog id="workDialog" class="work-dialog" aria-labelledby="workHeading">
+ <div class="dialog-heading"><div><p class="eyebrow">MAKE YOUR WORKING VISIBLE</p><h2 id="workHeading">Working space</h2></div><button class="close-button" data-close="workDialog" aria-label="Close working space">✕</button></div>
+ <div class="work-question" id="workQuestion"></div>
+ <div class="drawing-tools" role="group" aria-label="Writing tools"><button id="penBtn" class="quiet" aria-pressed="true">Pen</button><button id="eraserBtn" class="quiet" aria-pressed="false">Eraser</button><label>Ink <select id="inkSelect"><option value="#152c42">Dark</option><option value="#14679b">Blue</option><option value="#a52836">Red</option></select></label><label>Width <select id="penWidth"><option value="2">Fine</option><option value="4" selected>Medium</option><option value="7">Broad</option></select></label><button id="undoBtn" class="quiet">Undo</button><button id="redoBtn" class="quiet">Redo</button><button id="clearBtn" class="quiet">Clear drawing</button></div>
+ <div id="canvasShell" class="canvas-shell"><canvas id="workCanvas" aria-label="Freehand working area. Use the typed working box below as a keyboard alternative."></canvas></div>
+ <div class="typed-working"><label for="workText">Typed working / explanation</label><textarea id="workText" maxlength="10000" placeholder="Type calculations or explain how you decided…"></textarea><p class="help">Your working stays with this question. It is not automatically marked.</p></div>
+</dialog>
+<dialog id="displayDialog" class="small-dialog" aria-labelledby="displayHeading"><div class="dialog-heading"><h2 id="displayHeading">Display settings</h2><button class="close-button" data-close="displayDialog" aria-label="Close display settings">✕</button></div><div class="dialog-body"><div class="field"><label for="themeSelect">Colour scheme</label><select id="themeSelect"><option value="light">Light</option><option value="dark">Dark</option></select></div><div class="field"><label for="sizeSelectDisplay">Text size</label><select id="sizeSelectDisplay"><option value="normal">Standard</option><option value="large">Large / classroom display</option></select></div><div class="field"><label for="overlaySelect">Reading background</label><select id="overlaySelect"><option value="none">White</option><option value="cream">Cream</option><option value="blue">Pale blue</option><option value="green">Pale green</option></select></div><p class="help">Keyboard access, visible focus and reduced-motion preferences are supported.</p></div></dialog>
+<dialog id="sourceDialog" class="source-dialog" aria-labelledby="sourceHeading"><div class="dialog-heading"><div><p class="eyebrow">TEACHER NOTES</p><h2 id="sourceHeading">About this question bank</h2></div><button class="close-button" data-close="sourceDialog" aria-label="Close about and sources">✕</button></div><div class="dialog-body">
+ <h3>Scope and scoring</h3><p>This is an independent percentage trainer for Foundation GCSE Mathematics, not a complete examination paper or an official Eduqas resource. All questions in the app are newly written. Difficulty labels describe this app’s progression, not examination grades.</p>
+ <p>The original six percentage skills remain. Added formats include comparison questions, percentage tables, simple interest, compound change, successive changes and multiplier selection. All methods shown use the actual displayed question data.</p>
+ <p><strong>Numeric marking:</strong> the model is rounded to two decimal places. Every entered hundredth from model − 1.00 through model + 1.00 is accepted. For percentage answers this is ±1 percentage point. Entries with non-zero digits beyond the second decimal place must be rounded before submission. Choices are exact-match selections, not numeric input.</p>
+ <p><strong>This tolerance is intentionally generous.</strong> For small answers, it can accept values such as zero or non-whole numbers in a counting question. The exact model answer is always shown after acceptance and exact numeric results are reported separately. This rule must not be mistaken for Eduqas examination marking. The app does not assess handwritten method marks.</p>
+ <h3>Sources checked for this build</h3><p>Specification references: <strong>FR10</strong> (percentages, original-value problems, simple interest) and <strong>FR16</strong> (growth and decay, including compound interest). Both calculator styles practise these skills; the non-calculator generator deliberately uses more manageable values.</p>
+ <div class="source-list">
+ <p><a href="https://www.eduqas.co.uk/media/cosjcbs1/eduqas-gcse-maths-spec-from-2015-e.pdf" target="_blank" rel="noopener noreferrer">Eduqas GCSE Mathematics specification</a><br>Foundation content, printed page 10: FR10 and FR16.</p>
+ <p><a href="https://revisionmaths.com/sites/default/files/revisionmaths/documents/EMA24P1.pdf" target="_blank" rel="noopener noreferrer">Summer 2024 · Component 1 · Foundation</a><br>Q4(b): percentage of visitors. Q27(a): original price after a reduction. Q27(b): selecting multipliers.</p>
+ <p><a href="https://revisionmaths.com/sites/default/files/revisionmaths/documents/EQM31s23-c300u10-1.pdf" target="_blank" rel="noopener noreferrer">Summer 2023 · Component 1 · Foundation</a><br>Q5(b): comparison of test scores. Q9(c): amount of a pay rise. Q11(a): price including a stated VAT rate.</p>
+ <p><a href="https://revisionmaths.com/sites/default/files/revisionmaths/documents/EMA24P3.pdf" target="_blank" rel="noopener noreferrer">Summer 2024 · Component 2 · Foundation</a><br>Q7(b–c): calculations using a percentage table. Q20: repeated percentage decay.</p>
+ <p><a href="https://revisionmaths.com/sites/default/files/revisionmaths/documents/EQM35s23-c300u20-1.pdf" target="_blank" rel="noopener noreferrer">Summer 2023 · Component 2 · Foundation</a><br>Q23: compound-interest comparison. The app practises the underlying calculation; it does not reproduce all the question’s reasoning and assumptions tasks.</p>
+ <p><a href="https://revisionmaths.com/sites/default/files/revisionmaths/documents/EMA24M1.pdf" target="_blank" rel="noopener noreferrer">Summer 2024 · Component 1 marking scheme</a><br>Q4(b) and Q27 distinguish correct values, methods and exact choice selections. There is no universal ±1 marking rule.</p>
+ </div><p class="help">The question papers and marking scheme linked above are authored by WJEC CBAC Ltd and hosted by Revision Maths. Links require an internet connection; the trainer itself does not. Sources checked 28 September 2026. The source review covers selected relevant questions, not a statistical survey of all papers.</p>
+ <h3>Saving and privacy</h3><p>Where permitted, progress and your optional name are stored only in this browser. This app sends no learner data and has no analytics. Shared computers may retain the previous learner’s saved session; discard it before starting. Saving may be unavailable with local files, private browsing or restricted storage.</p>
+</div></dialog>
+<dialog id="confirmDialog" class="small-dialog" aria-labelledby="confirmTitle"><div class="dialog-heading"><h2 id="confirmTitle">Continue?</h2></div><div class="dialog-body"><p id="confirmText"></p><div class="button-row"><button id="confirmCancel" class="quiet">Cancel</button><button id="confirmOK" class="primary">Continue</button></div></div></dialog>
+<noscript><p class="notice warning">JavaScript must be enabled to use this trainer.</p></noscript>
+<script>/* Percentages Studio — pure question and marking engine. No network or dependencies. */
+(function(root){
+'use strict';
+const VERSION=1, TOLERANCE=100;
+const TYPES={
+ of:'Percentage of an amount', inc:'Percentage increase', dec:'Percentage decrease',
+ rev_final:'Reverse percentage: original amount',rev_part:'Reverse percentage: whole from a part',rate:'Percentage change',
+ as_percent:'Express as a percentage',compare:'Compare percentages and offers',table:'Percentages from a table',
+ simple:'Simple interest',compound:'Compound interest and depreciation',successive:'Successive percentage changes',multiplier:'Choose the correct multiplier'
+};
+const ORIGINAL=['of','inc','dec','rev_final','rev_part','rate'];
+const NAMES=['Amira','Ben','Chloe','Daniel','Ellie','Faisal','Grace','Hassan','Isla','Jasmine','Kai','Liam','Maya','Noah','Olivia','Priya','Ruby','Sam','Tariq','Zara'];
+const ITEMS=['a waterproof jacket','a pair of trainers','a tablet','a concert ticket','a bicycle helmet','a backpack','a desk lamp','a camera','a games console','a monthly bus pass'];
+function rng(seed){let s=seed>>>0;return ()=>{s=(s+0x6D2B79F5)>>>0;let t=s;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return ((t^t>>>14)>>>0)/4294967296;};}
+function hash(a,b){let t=(a^Math.imul(b+1,0x9e3779b9))>>>0;t=Math.imul(t^t>>>16,0x85ebca6b);t=Math.imul(t^t>>>13,0xc2b2ae35);return (t^t>>>16)>>>0;}
+function roundRatio(n,d){n=BigInt(n);d=BigInt(d);if(d<=0n)throw new Error('Invalid denominator');const sign=n<0n?-1n:1n;n=n<0n?-n:n;const out=sign*((2n*n+d)/(2n*d));if(out>9007199254740991n||out< -9007199254740991n)throw new Error('Number too large');return Number(out);}
+function fmt(c){if(!Number.isSafeInteger(c))throw new Error('Expected integer hundredths');return (c<0?'−':'')+Math.floor(Math.abs(c)/100).toLocaleString('en-GB')+'.'+String(Math.abs(c)%100).padStart(2,'0');}
+function inputFmt(c){return (c<0?'-':'')+Math.floor(Math.abs(c)/100)+'.'+String(Math.abs(c)%100).padStart(2,'0');}
+function shortC(c){return fmt(c).replace(/\.00$/,'').replace(/(\.\d)0$/,'$1');}
+function dec(n){return String(Number(n.toFixed(6)));}
+const pct=p=>dec(p/10)+'%';
+const money=c=>'£'+fmt(c);
+function show(c,u){return u==='£'?money(c):fmt(c)+(u?' '+u:'');}
+function parse(raw,unit=''){
+ let s=String(raw??'').trim().replace(/−/g,'-').replace(/·/g,'.');
+ if(!s)return {ok:false,error:'Enter an answer first.'};
+ if(s.length>48)return {ok:false,error:'That entry is too long.'};
+ if(unit==='£')s=s.replace(/^£\s*/,'').replace(/\s*GBP$/i,'');
+ else if(unit==='%')s=s.replace(/\s*%$/,'');
+ else if(['g','kg','m','cm'].includes(unit))s=s.replace(new RegExp('\\s*'+unit+'$','i'),'');
+ if(!/^[+-]?(?:(?:\d{1,3}(?:,\d{3})+)|\d+|\d*\.\d+)(?:\.\d*)?$/.test(s))return {ok:false,error:'Use a number, for example 24.50. Do not enter a calculation or a different unit.'};
+ s=s.replace(/,/g,'');
+ if(!/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(s))return {ok:false,error:'Check the decimal point.'};
+ let sign=1;if(s[0]==='-'){sign=-1;s=s.slice(1);}else if(s[0]==='+')s=s.slice(1);
+ const [whole='0',fraction='']=s.split('.');
+ if(fraction.length>2&&/[1-9]/.test(fraction.slice(2)))return {ok:false,error:'Round your final answer to 2 decimal places, then enter it again.'};
+ const c=sign*(Number(whole||0)*100+Number((fraction+'00').slice(0,2)));
+ if(!Number.isSafeInteger(c)||Math.abs(c)>1e12)return {ok:false,error:'That number is outside this trainer’s input range.'};
+ return {ok:true,cents:c===0?0:c};
+}
+function mark(raw,part){
+ if(part.kind==='choice')return {valid:part.options.some(x=>x.id===String(raw)),accepted:String(raw)===part.correct,exact:String(raw)===part.correct,raw:String(raw??'')};
+ const p=parse(raw,part.unit);if(!p.ok)return {valid:false,error:p.error};
+ const diff=p.cents-part.answer;
+ return {valid:true,accepted:Math.abs(diff)<=TOLERANCE,exact:diff===0,diff,cents:p.cents,raw:String(raw)};
+}
+function numeric(label,unit,answer){return {kind:'numeric',label,unit,answer};}
+function option(label,options,correct){return {kind:'choice',label,options:options.map((text,i)=>({id:String(i),text})),correct:String(correct)};}
+function shuffled(a,r){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function generate(type,seed,component='noncalc',level=2,forcedVariant=null){
+ if(!TYPES[type]||!['noncalc','calc'].includes(component)||![1,2,3].includes(level))throw new Error('Invalid question settings');
+ const r=rng(seed),pick=a=>a[Math.floor(r()*a.length)],int=(a,b)=>a+Math.floor(r()*(b-a+1));
+ const nc=component==='noncalc',name=pick(NAMES),item=pick(ITEMS);
+ const v=forcedVariant===null?int(0,3):forcedVariant;
+ const q={type,seed:seed>>>0,component,level,variant:v,title:TYPES[type],lines:[],parts:[],method:[],solution:[],data:{},table:null,machine:null,bar:null,source:'Specification FR10'};
+ const simpleP=level===1?[50,100,200,250,500]:[20,50,100,150,200,250,300,400,500,600,750];
+ const allP=level===1?[50,100,200,250,500]:[25,50,75,100,125,150,175,200,225,240,250,300,350,400,450,500];
+ const p=pick(nc?simpleP:allP);
+ let a=int(6,70)*(nc?1000:400),b,answer;
+ function setMachine(leftLabel,left,op,rightLabel,right,reverse=false){q.machine={leftLabel,left,op,rightLabel,right,reverse};}
+ function setBar(percent,label){q.bar={percent,label};}
+ if(type==='of'){
+  let p1=p,unit='£';
+  if(v===0){q.lines=[`Work out ${pct(p1)} of ${money(a)}.`];}
+  else if(v===1){a=int(2,18)*40000;unit='people';q.lines=[`A sports centre has ${shortC(a)} members.`,`On Saturday, ${pct(p1)} of the members visit the centre.`,`Work out how many members visit on Saturday.`];}
+  else if(v===2){a=int(10,26)*100;const payP=pick(nc?[20,50,100]:[25,35,50,75]);p1=payP;q.lines=[`${name} earns ${money(a)} per hour.`,`The hourly pay is increased by ${pct(p1)}.`,`By how much does the hourly pay increase?`];q.source='2023 C1 Q9(c) — amount of a pay rise';}
+  else {p1=pick([1250,1500,2000]);a=int(6,45)*1000;unit='g';q.lines=[`A bakery used ${shortC(a)} g of flour on Monday.`,`On Tuesday it uses ${pct(p1)} of Monday’s amount.`,`Work out the mass of flour used on Tuesday.`];}
+  answer=roundRatio(BigInt(a)*BigInt(p1),1000);q.parts=[numeric(v===2?'Increase in hourly pay':'Amount',unit,answer)];q.data={a,p:p1};
+  q.method=[`The whole amount is 100%. You need ${pct(p1)} of it.`,`Find 1% by dividing the whole by 100, then multiply by ${dec(p1/10)}.`,`Alternatively, multiply by ${dec(p1/1000)}. Keep the whole multiplier: do not round it.`];
+  q.solution=[`1% = ${show(a,unit)} ÷ 100.`,`${pct(p1)} = ${show(a,unit)} × ${dec(p1/1000)} = ${show(answer,unit)}.`];setMachine('Whole (100%)',show(a,unit),'× '+dec(p1/1000),'Required part','?');setBar(p1/10,'Required percentage');
+  if(v===1)q.source='2024 C1 Q4(b) — percentage of a number of visitors';
+ }
+ else if(type==='inc'||type==='dec'){
+  const increase=type==='inc';let p1=p,unit='£',label=increase?'New price':'Sale price';
+  if(increase&&v===2){p1=200;q.lines=[`The advertised price of ${item} is ${money(a)} before VAT.`,`VAT is charged at 20% of this price.`,`Work out the price including VAT.`];q.source='2023 C1 Q11(a) — price including stated VAT';}
+  else if(increase&&v===1){a=int(9,26)*100;p1=pick(nc?[20,50,100]:[25,50,75]);label='New hourly pay';q.lines=[`${name} earns ${money(a)} per hour.`,`The hourly pay increases by ${pct(p1)}.`,`Work out the new hourly pay.`];}
+  else if(!increase&&v===3){unit='m';a=int(10,60)*1000;label='Length remaining';q.lines=[`A roll of cable is ${shortC(a)} m long.`,`${pct(p1)} of the cable is used.`,`Work out the length of cable remaining.`];}
+  else q.lines=[`The price of ${item} is ${money(a)}.`,`The price is ${increase?'increased':'reduced'} by ${pct(p1)}.`,`Work out the ${increase?'new':'sale'} price.`];
+  const mult=1000+(increase?p1:-p1);answer=roundRatio(BigInt(a)*BigInt(mult),1000);q.parts=[numeric(label,unit,answer)];q.data={a,p:p1,sign:increase?1:-1};
+  q.method=[`Start with 100% of the original amount.`,`${increase?'Add':'Subtract'} ${pct(p1)}: the new amount is ${pct(mult)} of the original.`,`Use × ${dec(mult/1000)}, or find the change and ${increase?'add it to':'subtract it from'} the original.`];
+  q.solution=[`Percentage ${increase?'after the increase':'remaining'} = 100% ${increase?'+':'−'} ${pct(p1)} = ${pct(mult)}.`,`Multiplier = ${dec(mult/1000)}.`,`${label} = ${show(a,unit)} × ${dec(mult/1000)} = ${show(answer,unit)}.`];setMachine('Original (100%)',show(a,unit),'× '+dec(mult/1000),'New amount','?');setBar(mult/10,'New amount as a percentage of the original');
+ }
+ else if(type==='rev_final'){
+  const increase=v%2===1,p1=pick(nc?[100,200,250,500]:[50,75,100,125,150,200,250,300]);a=int(8,90)*400;
+  const mult=1000+(increase?p1:-p1);b=roundRatio(BigInt(a)*BigInt(mult),1000);
+  // The displayed final price, not a hidden unrounded value, determines the model answer.
+  answer=roundRatio(BigInt(b)*1000n,mult);q.data={b,p:p1,sign:increase?1:-1};
+  q.lines=[`After a ${pct(p1)} ${increase?'increase':'reduction'}, the price of ${item} is ${money(b)}.`,`Work out the original price.`];q.parts=[numeric('Original price','£',answer)];
+  q.method=[`The given price is ${pct(mult)} of the original, not 100%.`,`Find 1% by dividing the given price by ${dec(mult/10)}, then multiply by 100.`,`Or undo the forward multiplier: divide the given price by ${dec(mult/1000)}.`];
+  q.solution=[`Final percentage = 100% ${increase?'+':'−'} ${pct(p1)} = ${pct(mult)}.`,`Original price = ${money(b)} ÷ ${dec(mult/1000)} = ${money(answer)}.`,`Check by multiplying the original price by ${dec(mult/1000)}.`];setMachine('Original (100%)','?','÷ '+dec(mult/1000),`Known (${pct(mult)})`,money(b),true);setBar(mult/10,'Known final amount');q.source='2024 C1 Q27(a) — reverse a percentage reduction';
+ }
+ else if(type==='rev_part'){
+  const p1=pick(nc?[100,200,250,400,500,750]:[50,75,100,125,150,200,250,400,600,750]);a=int(8,90)*400;b=roundRatio(BigInt(a)*BigInt(p1),1000);answer=roundRatio(BigInt(b)*1000n,p1);q.data={b,p:p1};
+  q.lines=v%2?[`${name} pays a deposit of ${money(b)} for ${item}.`,`The deposit is ${pct(p1)} of the full price.`,`Work out the full price.`]:[`${money(b)} is ${pct(p1)} of the cost of ${item}.`,`Work out the total cost.`];
+  q.parts=[numeric('Full price','£',answer)];q.method=[`The known part is ${pct(p1)}. The unknown whole is 100%.`,`Find 1% by dividing the given part by ${dec(p1/10)}.`,`Multiply by 100, or divide the part directly by ${dec(p1/1000)}.`];q.solution=[`The known part is ${pct(p1)} = ${dec(p1/1000)} of the whole.`,`Whole = ${money(b)} ÷ ${dec(p1/1000)} = ${money(answer)}.`];setMachine('Whole (100%)','?','÷ '+dec(p1/1000),`Part (${pct(p1)})`,money(b),true);setBar(p1/10,'Known part');
+ }
+ else if(type==='rate'){
+  const sign=v%2?1:-1;const mult=1000+sign*p;b=roundRatio(BigInt(a)*BigInt(mult),1000);answer=roundRatio(BigInt(Math.abs(b-a))*10000n,a);q.data={a,b};
+  q.lines=[`The price of ${item} changes from ${money(a)} to ${money(b)}.`,`Calculate the percentage ${sign>0?'increase':'decrease'}.`];q.parts=[numeric(`Percentage ${sign>0?'increase':'decrease'}`,'%',answer)];
+  q.method=[`Find the change between the two prices.`,`Divide the change by the ORIGINAL price, not the new price.`,`Multiply by 100. Enter the size of the ${sign>0?'increase':'decrease'} as a positive percentage.`];q.solution=[`Change = ${money(Math.abs(b-a))}.`,`Percentage change = ${fmt(Math.abs(b-a))} ÷ ${fmt(a)} × 100 = ${fmt(answer)}%.`];setMachine('Change',money(Math.abs(b-a)),'÷ original × 100','Percentage change','?');
+ }
+ else if(type==='as_percent'){
+  const total=pick(nc?[20,25,40,50,80]:[24,30,35,40,60,75,80]),score=int(3,total-2);q.data={score,total};answer=roundRatio(BigInt(score)*10000n,total);
+  q.lines=[`${name} scores ${score} marks out of ${total} in a test.`,`Express the score as a percentage of the total marks.`];q.parts=[numeric('Percentage score','%',answer)];q.method=[`The total available marks represent 100%.`,`Divide the marks scored by the total, then multiply by 100.`,`Do not divide by the marks that were lost.`];q.solution=[`Percentage = ${score} ÷ ${total} × 100 = ${fmt(answer)}%.`];setMachine('Marks scored',String(score),'÷ '+total+' × 100','Percentage score','?');q.source='2023 C1 Q5(b) — compare test scores on a percentage basis';
+ }
+ else if(type==='compare'){
+  if(v%2===0){
+   const total1=pick([20,25,40,50]),total2=pick((nc?[20,25,40,50,80]:[30,40,50,60]).filter(n=>n!==total1)),score1=int(Math.ceil(total1*.4),total1-1),score2=int(Math.ceil(total2*.4),total2-1);
+   const rawDiff=score1*total2-score2*total1,correct=rawDiff>0?0:rawDiff<0?1:2;
+   answer=roundRatio(BigInt(Math.abs(rawDiff))*10000n,BigInt(total1)*BigInt(total2));q.data={total1,total2,score1,score2};
+   q.lines=[`${name} takes two tests.`,`Which test has the higher percentage score, and by how many percentage points?`,`Show how you decide in the working space.`];q.table={headers:['Test','Marks scored','Total marks'],rows:[['First test',String(score1),String(total1)],['Second test',String(score2),String(total2)]]};
+   q.parts=[option('Higher percentage score',['First test','Second test','The scores are equal'],correct),numeric('Difference in percentage points','%',answer)];
+   q.method=[`Convert both scores to percentages: marks scored ÷ total marks × 100.`,`Compare the unrounded percentages.`,`Subtract the smaller percentage from the larger. Round only this final difference.`];
+   q.solution=[`First test: ${score1} ÷ ${total1} × 100 ≈ ${fmt(roundRatio(BigInt(score1)*10000n,total1))}%.`,`Second test: ${score2} ÷ ${total2} × 100 ≈ ${fmt(roundRatio(BigInt(score2)*10000n,total2))}%.`,`Answer: ${['first test','second test','equal percentage scores'][correct]}.`,`Difference using unrounded percentages = ${fmt(answer)} percentage points.`];q.source='2023 C1 Q5(b) — comparing two test scores';
+  }else{
+   a=int(8,50)*1000;const p1=pick([100,150,200,250,300]),discount=roundRatio(BigInt(a)*BigInt(p1),1000),offset=pick([-600,-400,-200,200,400,600]),fixed=Math.max(100,discount+offset);const c1=a-discount,c2=a-fixed;answer=Math.abs(c1-c2);q.data={a,p:p1,fixed};
+   q.lines=[`Two shops sell the same ${item.replace(/^a |^an /,'')}.`,`The normal price is ${money(a)} at each shop.`,`Which shop is cheaper after its offer, and how much cheaper is it?`,`There are no extra charges.`];q.table={headers:['Shop','Offer'],rows:[['Oak Store',`${pct(p1)} off the normal price`],['River Shop',`${money(fixed)} off the normal price`]]};q.parts=[option('Cheaper shop',['Oak Store','River Shop'],c1<c2?0:1),numeric('Amount saved by choosing it','£',answer)];
+   q.method=[`Calculate the actual price at each shop.`,`A percentage discount and a pound discount cannot be compared directly.`,`Subtract the lower final price from the higher final price.`];q.solution=[`Oak Store: ${money(a)} × ${dec(1-p1/1000)} = ${money(c1)}.`,`River Shop: ${money(a)} − ${money(fixed)} = ${money(c2)}.`,`${c1<c2?'Oak Store':'River Shop'} is cheaper by ${money(answer)}.`];q.source='Specification FR10 — comparing percentage offers (new context)';
+  }
+ }
+ else if(type==='table'){
+  const ps=pick([[200,300,500],[250,350,400],[100,300,600],[150,250,600]]);const total=int(4,30)*10000;const given=roundRatio(BigInt(total)*BigInt(ps[0]),1000);const labels=['Drama','Music','Sport'];
+  q.table={headers:['Activity','Percentage of members'],rows:labels.map((s,i)=>[s,pct(ps[i])])};
+  if(v%2===0){answer=roundRatio(BigInt(total)*BigInt(ps[1]),1000);q.data={total,p:ps[1]};q.lines=[`A youth club has ${shortC(total)} members.`,`Each member chooses exactly one of the activities shown in the table.`,`How many members choose Music?`];q.method=[`Read the percentage in the Music row.`,`The total membership is 100%.`,`Multiply the total by ${dec(ps[1]/1000)}.`];q.solution=[`Music accounts for ${pct(ps[1])}.`,`${shortC(total)} × ${dec(ps[1]/1000)} = ${shortC(answer)} members.`];}
+  else{answer=roundRatio(BigInt(given)*BigInt(ps[1]),ps[0]);q.data={given,pKnown:ps[0],pTarget:ps[1]};q.lines=[`Each member of a youth club chooses exactly one activity.`,`The table shows the percentages choosing each activity.`,`${shortC(given)} members choose Drama.`,`How many members choose Music?`];q.method=[`The known number represents the Drama percentage, not the whole club.`,`Find 1% by dividing by ${dec(ps[0]/10)}.`,`Multiply by ${dec(ps[1]/10)} to find the Music group.`];q.solution=[`Drama: ${pct(ps[0])} represents ${shortC(given)} members.`,`Music: ${shortC(given)} ÷ ${dec(ps[0]/10)} × ${dec(ps[1]/10)} = ${shortC(answer)} members.`];}
+  q.parts=[numeric('Members choosing Music','people',answer)];q.source='2024 C2 Q7(b–c) — read percentage tables and find a different part';
+ }
+ else if(type==='simple'){
+  a=int(3,30)*10000;const p1=pick(nc?[20,30,40,50]:[15,25,30,35,40,45,50]),years=int(2,5),interest=roundRatio(BigInt(a)*BigInt(p1)*BigInt(years),1000),total=v%2===1;answer=total?a+interest:interest;q.data={a,p:p1,years,total};
+  q.lines=[`${name} puts ${money(a)} into a savings account.`,`It pays ${pct(p1)} simple interest per year for ${years} years.`,`Interest is calculated on the original deposit each year.`,`Work out ${total?'the total amount in the account':'the total interest earned'} after ${years} years.`,`Assume the rate stays the same and no money is added or withdrawn.`];q.parts=[numeric(total?'Total amount':'Interest earned','£',answer)];
+  q.method=[`Simple interest uses the ORIGINAL deposit every year.`,`Find one year’s interest, then multiply by ${years}.`,total?'Add the total interest to the original deposit.':'Give the interest only; do not include the original deposit.'];
+  q.solution=[`One year’s interest = ${money(a)} × ${dec(p1/1000)}.`,`Interest for ${years} years = ${money(a)} × ${dec(p1/1000)} × ${years} = ${money(interest)}.`,total?`Total = ${money(a)} + ${money(interest)} = ${money(answer)}.`:`Answer: ${money(answer)} interest.`];
+ }
+ else if(type==='compound'){
+  const growth=v%2===0,years=nc?2:int(2,5),p1=pick(nc?[50,100,200]:growth?[15,25,30,35,40,50,60]:[75,100,125,150,200,250]);a=int(5,70)*10000;const mult=1000+(growth?p1:-p1);answer=roundRatio(BigInt(a)*BigInt(mult)**BigInt(years),1000n**BigInt(years));q.data={a,p:p1,years,sign:growth?1:-1};
+  q.lines=growth?[`${name} invests ${money(a)} for ${years} years.`,`The account pays ${pct(p1)} compound interest each year.`,`Assume the rate stays the same and there are no fees, deposits or withdrawals.`,`Work out the total amount after ${years} years.`,`Keep full precision until the final answer.`]:[`An electric cargo bicycle is bought for ${money(a)}.`,`Its value decreases by ${pct(p1)} each year for ${years} years.`,`Each decrease is based on the value at the start of that year.`,`Work out its value after ${years} years.`,`Keep full precision until the final answer.`];
+  q.parts=[numeric(growth?'Final amount':'Value after depreciation','£',answer)];q.method=[`Each year uses the new amount from the previous year.`,`The multiplier for one year is ${dec(mult/1000)}.`,`Multiply by this factor ${years} times. Do not multiply the percentage by the number of years.`];q.solution=[`One-year multiplier = ${dec(mult/1000)}.`,`After ${years} years: ${money(a)} × ${dec(mult/1000)}^${years}.`,`Final amount, rounded once at the end = ${money(answer)}.`];setMachine('Starting value',money(a),'× '+dec(mult/1000)+'^'+years,'After '+years+' years','?');q.source='Specification FR16; 2023 C2 Q23 — compound interest; 2024 C2 Q20 — repeated decay';
+ }
+ else if(type==='successive'){
+  a=int(2,18)*10000;const p1=pick([100,150,200,250]),p2=v===0?p1:pick([50,100,150,200]),sign1=v%2===0?1:-1,sign2=v===3?1:-1,m1=1000+sign1*p1,m2=1000+sign2*p2;
+  answer=roundRatio(BigInt(a)*BigInt(m1)*BigInt(m2),1000000);q.data={a,p1,p2,sign1,sign2};q.lines=[`The price of a mountain bike is ${money(a)}.`,`It is first ${sign1>0?'increased':'reduced'} by ${pct(p1)}.`,`The new price is then ${sign2>0?'increased':'reduced'} by ${pct(p2)}.`,`Work out the final price.`];q.parts=[numeric('Final price','£',answer)];q.method=[`Use a separate multiplier for each change.`,`The second percentage acts on the CHANGED price.`,`Multiply by ${dec(m1/1000)} and then by ${dec(m2/1000)}. Do not simply add or subtract the percentages.`];q.solution=[`First multiplier = ${dec(m1/1000)}; second multiplier = ${dec(m2/1000)}.`,`Final price = ${money(a)} × ${dec(m1/1000)} × ${dec(m2/1000)} = ${money(answer)}.`];setMachine('Original price',money(a),'× '+dec(m1/1000)+' × '+dec(m2/1000),'Final price','?');q.source='Specification FR10/FR16 — successive change (new question format)';
+ }
+ else if(type==='multiplier'){
+  const p1=pick([30,50,75,100,125,150,200,250,300,350]),increase=v%2===1,years=v>=2?int(2,4):1,m=1000+(increase?p1:-p1);q.data={p:p1,sign:increase?1:-1,years};
+  let correct,choices;
+  if(years===1){correct=dec(m/1000);choices=[correct,dec(p1/1000),dec((1000+(increase?-p1:p1))/1000),'−'+dec(m/1000)];q.lines=[`A value is ${increase?'increased':'decreased'} by ${pct(p1)}.`,`Select the multiplier that finds the new value.`];}
+  else{correct=dec(m/1000)+'^'+years;choices=[correct,dec(m/1000),dec(1+(increase?1:-1)*years*p1/1000),dec(p1/1000)+'^'+years];q.lines=[`A value is ${increase?'increased':'decreased'} by ${pct(p1)} on ${years} occasions.`,`Each change is applied to the value after the previous change.`,`Select the multiplier for the overall change.`];}
+  choices=shuffled([...new Set(choices)],r);q.parts=[option('Correct multiplier',choices,choices.indexOf(correct))];q.method=[`The original value represents 100%.`,`${increase?'Add':'Subtract'} ${pct(p1)} and divide by 100 to find the one-change multiplier.`,years===1?'Choose the full multiplier, not just the percentage as a decimal.':`Use the same multiplier ${years} times; a power represents repeated multiplication.`];q.solution=[`One-change multiplier = ${dec(m/1000)}.`,years===1?`Choose ${correct}.`:`Overall multiplier = ${correct}.`];q.source='2024 C1 Q27(b)(i–ii) — selecting single and repeated-change multipliers';
+ }
+ if(!q.parts.length||q.parts.some(part=>part.kind==='numeric'&&!Number.isSafeInteger(part.answer)))throw new Error('Question failed validation');
+ q.signature=type+':'+v+':'+JSON.stringify(q.data);return q;
+}
+function normalize(c){
+ const o={name:String(c.name??'Student').trim().slice(0,60)||'Student',mode:c.mode??'practice',size:Number(c.size??12),seconds:Number(c.seconds??600),target:Number(c.target??10),component:c.component??'noncalc',focus:c.focus??'all',difficulty:c.difficulty??'build'};
+ if(!['practice','timed','target'].includes(o.mode)||![10,12,20,30,60].includes(o.size)||![0,600,1200,1800].includes(o.seconds)||!Number.isInteger(o.target)||o.target<1||o.target>100||!['noncalc','calc'].includes(o.component)||!['all','original',...Object.keys(TYPES)].includes(o.focus)||!['build','mixed','stretch'].includes(o.difficulty))throw new Error('Check your session settings. The target must be a whole number from 1 to 100.');
+ if(o.component==='noncalc'&&o.focus==='multiplier')o.focus='all';
+ return o;
+}
+function available(c,index){
+ let types=c.focus==='all'?Object.keys(TYPES):c.focus==='original'?ORIGINAL:[c.focus];
+ if(c.component==='noncalc'){types=types.filter(t=>t!=='multiplier');if(!types.length)types=Object.keys(TYPES).filter(t=>t!=='multiplier');}
+ if(c.difficulty==='build'&&types.length>1){const span=c.mode==='practice'?Math.max(3,Math.ceil(c.size/3)):6;const stage=Math.min(3,1+Math.floor(index/span));if(stage===1)types=types.filter(t=>['of','inc','dec','as_percent','multiplier'].includes(t));if(stage===2)types=types.filter(t=>!['compound','successive'].includes(t));}
+ return types;
+}
+function nextRecord(s){
+ const i=s.records.length,types=available(s.config,i),r=rng(hash(s.seed,i+731));
+ const lastTypes=s.records.slice(-types.length+1).map(x=>x.q.type);
+ const unseen=types.filter(x=>!lastTypes.includes(x));const pool=unseen.length?unseen:types;
+ let type=pool[Math.floor(r()*pool.length)];
+ const span=s.config.mode==='practice'?Math.max(3,Math.ceil(s.config.size/3)):6;
+ const level=s.config.difficulty==='stretch'?3:s.config.difficulty==='build'?Math.min(3,1+Math.floor(i/span)):(r()<.25?1:2);
+ // A single multiplier family has a finite bank. Reuse older formats only in
+ // long/free sessions, rather than failing after every variant has appeared.
+ const horizon=type==='multiplier'&&s.config.mode!=='practice'?40:100;
+ const oldSignatures=new Set(s.records.slice(-horizon).map(x=>x.q.signature));let q;
+ for(let j=0;j<64;j++){q=generate(type,hash(s.seed,i*67+j),s.config.component,level);if(!oldSignatures.has(q.signature))break;if(j===63)throw new Error('Could not find a fresh question. Start a new set.');}
+ return {q,status:'open',parts:q.parts.map(()=>({status:'open',raw:'',attempts:0})),draft:q.parts.map(()=>''),working:'',strokes:[],openedAt:Date.now(),wrongChecks:0,hint:false,example:false};
+}
+function create(config,seed=1,now=Date.now()){config=normalize(config);const s={version:VERSION,config,seed:seed>>>0,startedAt:now,endedAt:null,deadline:config.mode==='timed'&&config.seconds?now+config.seconds*1000:null,phase:'active',reason:'',records:[]};s.records.push(nextRecord(s));return s;}
+function current(s){return s.records[s.records.length-1];}
+function stats(s){let score=0,exactQ=0,numericExact=0,numericNear=0,choiceCorrect=0,attempts=0,first=0,completed=0,streak=0,best=0;for(const r of s.records){if(r.status!=='open')completed++;if(r.status==='accepted'){score++;if(r.parts.every(p=>p.status==='exact'))exactQ++;if(r.parts.every(p=>p.attempts===1))first++;streak++;best=Math.max(best,streak);}else if(r.status!=='open'||r.wrongChecks)streak=0;for(let i=0;i<r.parts.length;i++){const p=r.parts[i];attempts+=p.attempts;if(p.status==='exact'){if(r.q.parts[i].kind==='choice')choiceCorrect++;else numericExact++;}if(p.status==='near')numericNear++;}}return {score,exactQ,nearQ:score-exactQ,numericExact,numericNear,choiceCorrect,attempts,first,completed,seen:s.records.length,streak,best};}
+function finish(s,reason,now=Date.now()){if(s.phase==='finished')return;s.phase='finished';s.reason=reason;s.endedAt=Math.min(now,s.deadline??now);}
+function expired(s,now=Date.now()){if(s.phase==='active'&&s.deadline!==null&&now>=s.deadline){finish(s,'Time is up',now);return true;}return s.phase==='finished';}
+function submit(s,raws,now=Date.now()){
+ if(expired(s,now))return {status:'finished'};const r=current(s);if(r.status!=='open')return {status:'locked'};
+ if(!Array.isArray(raws)||raws.length!==r.parts.length)return {status:'invalid',errors:[{index:0,message:'Complete the answer fields.'}]};
+ const errors=[],marks=[];r.parts.forEach((p,i)=>{if(['exact','near'].includes(p.status))return;const m=mark(raws[i],r.q.parts[i]);marks[i]=m;if(!m.valid)errors.push({index:i,message:m.error||'Choose one option.'});});
+ if(errors.length)return {status:'invalid',errors};
+ let wrong=false;marks.forEach((m,i)=>{if(!m)return;const p=r.parts[i];p.raw=String(raws[i]);p.attempts++;p.status=m.accepted?(m.exact?'exact':'near'):'wrong';if(m.cents!==undefined)p.cents=m.cents;if(!m.accepted)wrong=true;});
+ if(wrong)r.wrongChecks++;
+ if(r.parts.every(p=>['exact','near'].includes(p.status))){r.status='accepted';if(s.config.mode==='target'&&stats(s).score>=s.config.target)finish(s,'Target reached',now);}
+ return {status:r.status==='accepted'?'accepted':'retry',marks};
+}
+function reveal(s,now=Date.now()){if(expired(s,now))return false;const r=current(s);if(r.status!=='open')return false;r.status='revealed';r.parts.forEach(p=>{if(!['exact','near'].includes(p.status))p.status='revealed';});return true;}
+function skip(s,now=Date.now()){if(expired(s,now))return false;const r=current(s);if(r.status!=='open')return false;r.status='skipped';return true;}
+function next(s,now=Date.now()){if(expired(s,now))return false;if(current(s).status==='open')return false;if(s.config.mode==='practice'&&s.records.length>=s.config.size){finish(s,'Practice set complete',now);return false;}if(s.records.length>=500){finish(s,'500-question session complete',now);return false;}s.records.push(nextRecord(s));return true;}
+function serialise(s){return JSON.stringify({...s,records:s.records.map(r=>({...r,q:{type:r.q.type,seed:r.q.seed,component:r.q.component,level:r.q.level}}))});}
+function restore(text){
+ if(typeof text!=='string'||text.length>6000000)throw new Error('Saved session is too large');const s=JSON.parse(text);
+ if(s?.version!==VERSION||!['active','finished'].includes(s.phase)||!Number.isInteger(s.seed)||!Number.isFinite(s.startedAt)||!Array.isArray(s.records)||!s.records.length||s.records.length>500)throw new Error('Saved session is not compatible');s.config=normalize(s.config);
+ if(s.deadline!==null&&(!Number.isFinite(s.deadline)||s.deadline!==s.startedAt+s.config.seconds*1000))throw new Error('Saved timer is invalid');
+ if(s.endedAt!==null&&!Number.isFinite(s.endedAt))throw new Error('Saved end time is invalid');
+ s.reason=String(s.reason||'').slice(0,100);
+ s.records=s.records.map((r,index)=>{
+  const key=r.q;if(!key||!Number.isInteger(key.seed))throw new Error('Saved question is invalid');const q=generate(key.type,key.seed,key.component,key.level);
+  if(!['open','accepted','revealed','skipped'].includes(r.status)||!Array.isArray(r.parts)||r.parts.length!==q.parts.length||!Number.isInteger(r.wrongChecks)||r.wrongChecks<0)throw new Error('Saved answers are invalid');
+  const parts=r.parts.map((p,i)=>{if(!['open','wrong','exact','near','revealed'].includes(p.status)||!Number.isInteger(p.attempts)||p.attempts<0||p.attempts>100000)throw new Error('Saved marking is invalid');const raw=String(p.raw??'').slice(0,48);if(['exact','near'].includes(p.status)){const m=mark(raw,q.parts[i]);if(!m.valid||!m.accepted||(p.status==='exact')!==m.exact)throw new Error('Saved accepted answer failed validation');}return {status:p.status,raw,attempts:p.attempts};});
+  if(r.status==='accepted'&&!parts.every(p=>['exact','near'].includes(p.status)))throw new Error('Saved score failed validation');
+  if(index<s.records.length-1&&r.status==='open')throw new Error('Saved sequence failed validation');
+  const strokes=Array.isArray(r.strokes)?r.strokes.slice(0,500).map(st=>({tool:st.tool==='eraser'?'eraser':'pen',colour:['#152c42','#14679b','#a52836'].includes(st.colour)?st.colour:'#152c42',width:[2,4,7,24].includes(st.width)?st.width:4,points:Array.isArray(st.points)?st.points.slice(0,2500).filter(pt=>Array.isArray(pt)&&pt.length===2&&pt.every(n=>Number.isFinite(n)&&n>=0&&n<=1)):[]})):[];
+  return {q,status:r.status,parts,draft:q.parts.map((_,i)=>String(r.draft?.[i]??'').slice(0,48)),working:String(r.working??'').slice(0,10000),strokes,wrongChecks:r.wrongChecks,hint:!!r.hint,example:!!r.example,openedAt:Number.isFinite(r.openedAt)?r.openedAt:s.startedAt};
+ });
+ // Retain completed records; replace only an open, removed question on resume.
+ if(s.phase==='active'&&s.config.component==='noncalc'&&current(s).status==='open'&&current(s).q.type==='multiplier'){
+  const previous=s.records.pop(),replacement=nextRecord(s);replacement.openedAt=previous.openedAt;s.records.push(replacement);
+ }
+ return s;
+}
+function example(q){let e;for(let i=1;i<33;i++){e=generate(q.type,hash(q.seed,333+i),q.component,q.level,q.variant);if(JSON.stringify(e.data)!==JSON.stringify(q.data))return e;}throw new Error('No different example generated');}
+const api={VERSION,TOLERANCE,TYPES,ORIGINAL,rng,hash,roundRatio,fmt,inputFmt,shortC,show,parse,mark,generate,normalize,create,current,stats,finish,expired,submit,reveal,skip,next,serialise,restore,example,available};
+if(typeof module!=='undefined'&&module.exports)module.exports=api;root.PercentStudio=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script>
+<script>(function(){
+'use strict';
+const E=window.PercentStudio,$=id=>document.getElementById(id),KEY='percentage-studio-v1-session',PREF='percentage-studio-v1-display';
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const power=x=>esc(x).replace(/\^(\d+)/g,'<sup>$1</sup>');
+function rich(x){return power(x).replace(/(£[\d,]+(?:\.\d+)?|\b\d+(?:\.\d+)?%)/g,'<b>$1</b>');}
+let session=null,saved=null,timer=null,saveTimer=null,toastTimer=null,storageOK=true,view='setupView';
+let drawRecord=null,drawReadOnly=false,currentStroke=null,redoStack=[],penTool='pen',cw=1,ch=1;
+const canvas=$('workCanvas'),ctx=canvas.getContext('2d');
+function toast(text){clearTimeout(toastTimer);$('toast').textContent=text;toastTimer=setTimeout(()=>$('toast').textContent='',4600);}
+function notice(text){$('storageNotice').hidden=false;$('storageNotice').textContent=text;}
+function save(){clearTimeout(saveTimer);if(!session||!storageOK)return;try{localStorage.setItem(KEY,E.serialise(session));$('saveStatus').textContent='Saved in this browser. No learner data is sent anywhere.';}catch{storageOK=false;notice('Browser saving is unavailable or full. Continue in this tab, and export your results before closing it.');$('saveStatus').textContent='Not saved: keep this tab open.';}}
+function soon(){clearTimeout(saveTimer);saveTimer=setTimeout(save,350);}
+function seed(){try{return crypto.getRandomValues(new Uint32Array(1))[0];}catch{return (Date.now()^Math.floor(Math.random()*4294967296))>>>0;}}
+function time(s){s=Math.max(0,Math.floor(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
+function elapsed(s){return Math.max(0,Math.floor(((s.endedAt??Date.now())-s.startedAt)/1000));}
+function changeView(v){view=v;for(const name of ['setupView','sessionView','resultsView'])$(name).hidden=name!==v;window.scrollTo({top:0,behavior:'instant'});}
+function closeDialogs(){finishStroke();for(const d of document.querySelectorAll('dialog[open]'))d.close('cancel');}
+function openDialog(id){if(!$(id).open)$(id).showModal();}
+function ask(title,text,button='Continue'){
+ const d=$('confirmDialog');if(d.open)return Promise.resolve(false);
+ $('confirmTitle').textContent=title;$('confirmText').textContent=text;$('confirmOK').textContent=button;
+ return new Promise(resolve=>{d.addEventListener('close',()=>resolve(d.returnValue==='ok'),{once:true});d.returnValue='cancel';d.showModal();$('confirmCancel').focus();});
+}
+$('confirmOK').onclick=()=>$('confirmDialog').close('ok');$('confirmCancel').onclick=()=>$('confirmDialog').close('cancel');
+for(const b of document.querySelectorAll('[data-close]'))b.onclick=()=>$(b.dataset.close).close();
+function config(){return {name:$('nameInput').value,mode:document.querySelector('input[name=mode]:checked').value,size:$('sizeSelect').value,seconds:$('timeSelect').value,target:$('targetInput').value,component:$('componentSelect').value,focus:$('focusSelect').value,difficulty:$('difficultySelect').value};}
+function modeFields(){const mode=document.querySelector('input[name=mode]:checked').value;$('sizeField').hidden=mode!=='practice';$('timeField').hidden=mode!=='timed';$('targetField').hidden=mode!=='target';}
+function fillConfig(c){$('nameInput').value=c.name==='Student'?'':c.name;document.querySelector(`input[name=mode][value=${c.mode}]`).checked=true;$('sizeSelect').value=c.size;$('timeSelect').value=c.seconds;$('targetInput').value=c.target;$('componentSelect').value=c.component;syncMultiplierOption();$('focusSelect').value=c.component==='noncalc'&&c.focus==='multiplier'?'all':c.focus;$('difficultySelect').value=c.difficulty;modeFields();}
+Object.entries(E.TYPES).forEach(([id,label])=>{const o=document.createElement('option');o.value=id;o.textContent=label;$('focusSelect').appendChild(o);});
+const multiplierOption=$('focusSelect').querySelector('option[value=multiplier]');
+function syncMultiplierOption(){
+ if($('componentSelect').value==='noncalc'){if($('focusSelect').value==='multiplier')$('focusSelect').value='all';multiplierOption.remove();}
+ else if(!multiplierOption.isConnected)$('focusSelect').appendChild(multiplierOption);
+}
+$('componentSelect').addEventListener('change',syncMultiplierOption);
+syncMultiplierOption();
+document.querySelectorAll('input[name=mode]').forEach(el=>el.onchange=modeFields);
+function clock(){if(!session)return;const finite=session.deadline!==null;$('clockLabel').textContent=finite?'Time left':'Time used';const seconds=finite?Math.max(0,Math.ceil((session.deadline-Date.now())/1000)):elapsed(session);$('clock').textContent=time(seconds);$('clock').classList.toggle('urgent',finite&&seconds<=60);}
+function runTimer(){clearInterval(timer);timer=setInterval(()=>{if(!session||session.phase!=='active')return;if(E.expired(session)){finishStroke();save();renderResults();}else clock();},250);}
+function top(){if(!session)return;const s=E.stats(session),c=session.config;$('sessionName').textContent=c.name;$('sessionMode').textContent=(c.mode==='practice'?'Practice set':c.mode==='target'?'Target: '+c.target+' points':c.seconds?'Timed practice':'Free practice')+' · '+(c.component==='noncalc'?'Non-calculator':'Calculator allowed');$('questionCount').textContent=session.records.length+(c.mode==='practice'?' / '+c.size:'');$('pointsCount').textContent=s.score+(c.mode==='target'?' / '+c.target:'');$('exactCount').textContent=s.numericExact;$('nearCount').textContent=s.numericNear;const goal=c.mode==='practice'?c.size:c.mode==='target'?c.target:Math.max(10,Math.ceil((s.completed+1)/10)*10);$('progress').max=goal;$('progress').value=c.mode==='target'?s.score:s.completed;$('progressLabel').textContent=c.mode==='target'?`${s.score} of ${c.target} correct`:`${s.completed} completed`;clock();}
+function tableHTML(table){return table?`<div class="table-scroll"><table class="data-table"><thead><tr>${table.headers.map(x=>`<th scope="col">${esc(x)}</th>`).join('')}</tr></thead><tbody>${table.rows.map(row=>`<tr>${row.map(x=>`<td>${rich(x)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`:'';}
+function linesHTML(q){return q.lines.map(line=>'<p>'+rich(line)+'</p>').join('');}
+function model(part){return part.kind==='choice'?part.options.find(x=>x.id===part.correct)?.text??'':E.show(part.answer,part.unit);}
+function answerFields(r){return r.q.parts.map((p,i)=>{
+ const state=r.parts[i],value=['exact','near'].includes(state.status)?state.raw:(r.draft[i]??state.raw??'');
+ if(p.kind==='choice')return `<fieldset class="answer-item" id="part-${i}"><legend>${r.q.parts.length>1?String.fromCharCode(97+i)+') ':''}${esc(p.label)}</legend><div class="choice-options">${p.options.map(o=>`<label class="choice-option"><input type="radio" name="part-${i}" value="${o.id}" ${o.id===value?'checked':''} aria-describedby="feedback-${i}"><span>${power(o.text)}</span></label>`).join('')}</div><div id="feedback-${i}" class="part-feedback"></div></fieldset>`;
+ return `<div class="answer-item" id="part-${i}"><label for="ans-${i}">${r.q.parts.length>1?String.fromCharCode(97+i)+') ':''}${esc(p.label)}</label><div class="number-shell">${p.unit==='£'?'<span class="answer-unit">£</span>':''}<input id="ans-${i}" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" maxlength="48" placeholder="0.00" value="${esc(value)}" aria-describedby="feedback-${i} answerInstructions" data-part="${i}" data-step="0.01">${p.unit&&p.unit!=='£'?`<span class="answer-unit">${esc(p.unit)}</span>`:''}</div><div class="step-controls"><button type="button" data-step-part="${i}" data-delta="-1" aria-label="Decrease ${esc(p.label)} by 0.01">−0.01</button><button type="button" data-step-part="${i}" data-delta="1" aria-label="Increase ${esc(p.label)} by 0.01">+0.01</button></div><div id="feedback-${i}" class="part-feedback"></div></div>`;
+ }).join('');}
+function pull(){if(!session||view!=='sessionView')return;const r=E.current(session);r.draft=r.q.parts.map((p,i)=>p.kind==='numeric'?$('ans-'+i)?.value??r.draft[i]:document.querySelector(`input[name="part-${i}"]:checked`)?.value??r.draft[i]??'');}
+function message(text,kind=''){const el=$('checkMessage');el.hidden=!text;el.className='notice'+(kind?' '+kind:'');el.textContent=text;}
+function updateFeedback(){
+ const r=E.current(session),locked=r.status!=='open'||session.phase!=='active';
+ r.parts.forEach((s,i)=>{const p=r.q.parts[i],accepted=['exact','near'].includes(s.status),el=$('feedback-'+i);document.querySelectorAll(`#part-${i} input,#part-${i} button`).forEach(x=>x.disabled=locked||accepted);el.className='part-feedback';
+  if(accepted){el.classList.add('good');el.textContent=p.kind==='choice'?'✓ Correct selection.':s.status==='exact'?`✓ Correct — exact to 2 decimal places. Model: ${model(p)}.`:`✓ Correct — accepted within ±1.00. Model: ${model(p)}.`;}
+  else if(s.status==='wrong'){el.classList.add('bad');el.textContent=p.kind==='choice'?'Not quite. Re-read the question and try another option.':'Not quite. Check the percentage and the amount it applies to, then try again.';}
+  else if(r.status==='revealed'){el.textContent='Model answer: '+model(p)+'.';}
+  else el.textContent='';
+ });
+ $('checkBtn').disabled=locked;$('checkBtn').hidden=locked;$('nextBtn').hidden=!locked;$('nextBtn').textContent=session.config.mode==='practice'&&session.records.length>=session.config.size?'View results →':'Next question →';$('skipBtn').disabled=locked;$('revealBtn').disabled=locked;
+ $('solutionBox').hidden=!['accepted','revealed'].includes(r.status);$('solutionBox').innerHTML=$('solutionBox').hidden?'':`<h3>${r.status==='accepted'?'Worked solution':'Solution — no question point'}</h3>${r.q.solution.map(x=>'<p>'+rich(x)+'</p>').join('')}`;
+ top();
+}
+function renderQuestion(focus=true){
+ if(session.phase==='finished'){renderResults();return;}changeView('sessionView');const r=E.current(session),q=r.q;
+ $('paperStyle').textContent=q.component==='noncalc'?'NON-CALCULATOR PRACTICE':'CALCULATOR-ALLOWED PRACTICE';$('levelPill').textContent=['','Getting started','Building confidence','Stretch practice'][q.level];$('questionHeading').textContent='Question '+session.records.length;$('questionText').innerHTML=linesHTML(q);$('questionTable').innerHTML=tableHTML(q.table);$('topicLabel').textContent=E.TYPES[q.type];
+ $('questionGuidance').textContent=q.parts.some(p=>p.kind==='numeric')?'Give money to the nearest penny. Round other non-whole final values to 2 decimal places.':'Choose one answer. Multipliers keep their exact decimal values.';
+ $('answerHeading').textContent=q.parts.length>1?'Your answers':'Your answer';$('checkBtn').textContent=q.parts.length>1?'Check answers':'Check answer';$('answerInstructions').textContent=q.parts.every(p=>p.kind==='choice')?'Choose the correct option. The ±1.00 tolerance applies to numeric entry fields, not choices.':'Enter up to 2 decimal places. Whole numbers are also accepted.';
+ $('answerFields').innerHTML=answerFields(r);message('');updateFeedback();
+ if(r.status==='accepted')message('Correct. One practice point earned.','success');
+ if(r.status==='revealed')message('Solution revealed. This question earns no point.');
+ if(r.status==='skipped')message('Question skipped. No point awarded.');
+ for(const el of $('answerFields').querySelectorAll('input')){el.addEventListener('input',()=>{pull();soon();});el.addEventListener('change',()=>{pull();soon();});if(el.type==='text')el.addEventListener('keydown',e=>{if(e.key==='ArrowUp'||e.key==='ArrowDown'){e.preventDefault();step(Number(el.dataset.part),e.key==='ArrowUp'?1:-1);}});}
+ for(const b of $('answerFields').querySelectorAll('[data-step-part]'))b.onclick=()=>step(Number(b.dataset.stepPart),Number(b.dataset.delta));
+ if(focus)$('questionHeading').focus({preventScroll:true});
+}
+function step(i,delta){if(!session||session.phase!=='active')return;const r=E.current(session),p=r.q.parts[i],el=$('ans-'+i);if(!el||el.disabled)return;const parsed=el.value.trim()?E.parse(el.value,p.unit):{ok:true,cents:0};if(!parsed.ok){$('feedback-'+i).textContent=parsed.error;$('feedback-'+i).className='part-feedback invalid';el.focus();return;}if(Math.abs(parsed.cents+delta)>1e12)return;el.value=E.inputFmt(parsed.cents+delta);pull();soon();el.focus();}
+function submit(event){event?.preventDefault();if(!session||view!=='sessionView')return;pull();const r=E.current(session),out=E.submit(session,r.draft);if(out.status==='finished'){save();renderResults();return;}if(out.status==='locked')return;
+ if(out.status==='invalid'){message('Complete the highlighted answer before checking. No attempt has been used.','error');out.errors.forEach(e=>{const f=$('feedback-'+e.index);f.textContent=e.message;f.className='part-feedback invalid';});$('part-'+out.errors[0].index).querySelector('input')?.focus();return;}
+ updateFeedback();if(out.status==='accepted'){message('Correct. One practice point earned.','success');$('nextBtn').focus();}else message('Some answers need another try. Any accepted part stays locked.','error');save();if(session.phase==='finished')renderResults();
+}
+$('answerForm').addEventListener('submit',submit);
+$('nextBtn').onclick=()=>{if(!session)return;closeDialogs();if(E.next(session)){renderQuestion();save();}else if(session.phase==='finished'){save();renderResults();}};
+$('revealBtn').onclick=async()=>{if(!session||E.current(session).status!=='open')return;if(!await ask('Reveal this solution?','This ends the question without a practice point. Any parts you already answered correctly remain recorded.','Reveal solution'))return;pull();if(E.reveal(session)){updateFeedback();message('Solution revealed. This question earns no point.');save();$('nextBtn').focus();}else if(session.phase==='finished')renderResults();};
+$('skipBtn').onclick=async()=>{if(!session||E.current(session).status!=='open')return;if(!await ask('Skip this question?','It will be recorded as skipped and earn no question point. You can see the solution in the final review.','Skip question'))return;pull();if(E.skip(session)){updateFeedback();message('Question skipped. Select Next question to continue.');save();$('nextBtn').focus();}else if(session.phase==='finished')renderResults();};
+$('finishBtn').onclick=async()=>{if(!session)return;if(!await ask('Finish this session?','Your results and all the questions seen so far will be available for review.','Finish & review'))return;pull();E.finish(session,'Finished by learner');save();renderResults();};
+async function toSetup(){if(session?.phase==='active'&&!await ask('Start a new session?','This ends the current session. Its saved copy remains available until you start the next session. Export a review first if you need a separate record.','Set up new session'))return;if(session?.phase==='active'){pull();E.finish(session,'Finished for a new session');save();}clearInterval(timer);closeDialogs();if(session){saved=session;fillConfig(session.config);}updateResume();changeView('setupView');$('setupTitle').scrollIntoView({block:'start'});}
+$('newBtn').onclick=toSetup;$('againBtn').onclick=toSetup;
+$('setupForm').onsubmit=async e=>{e.preventDefault();$('setupError').hidden=true;let c;try{c=E.normalize(config());}catch(err){$('setupError').textContent=err.message;$('setupError').hidden=false;return;}
+ if(saved&&!await ask('Replace the saved session?','Starting this session replaces the locally saved one. Its results will no longer be available here.','Start new session'))return;
+ try{session=E.create(c,seed());saved=null;$('resumeCard').hidden=true;renderQuestion();save();runTimer();}catch(err){$('setupError').textContent='The session could not start: '+err.message;$('setupError').hidden=false;}
+};
+function updateResume(){if(!saved){$('resumeCard').hidden=true;return;}$('resumeCard').hidden=false;const st=E.stats(saved);$('resumeTitle').textContent=saved.phase==='finished'?'Your last review is saved':'Continue your saved session';$('resumeInfo').textContent=`${saved.config.name} · ${st.score} points · ${saved.records.length} question${saved.records.length===1?'':'s'} seen`;$('resumeBtn').textContent=saved.phase==='finished'?'View saved review':'Resume session';}
+$('resumeBtn').onclick=()=>{if(!saved)return;session=saved;saved=null;E.expired(session);if(session.phase==='finished')renderResults();else{renderQuestion();runTimer();}save();};
+$('discardBtn').onclick=async()=>{if(!await ask('Discard saved session?','This deletes only this trainer’s locally saved session.','Discard'))return;try{localStorage.removeItem(KEY);}catch{}saved=null;session=null;updateResume();toast('Saved session discarded.');};
+function machineHTML(q){const m=q.machine;if(!m)return '';return `<div class="machine-block"><div class="machine-caption">${m.reverse?'Work backwards: start on the right, then divide.':'Work forwards: start on the left.'}</div><div class="number-machine${m.reverse?' reverse':''}"><div class="machine-end"><small>${esc(m.leftLabel)}</small><strong>${esc(m.left)}</strong></div><span class="machine-arrow" aria-hidden="true">${m.reverse?'←':'→'}</span><div class="machine-operation">${power(m.op)}</div><span class="machine-arrow" aria-hidden="true">${m.reverse?'←':'→'}</span><div class="machine-end"><small>${esc(m.rightLabel)}</small><strong>${esc(m.right)}</strong></div></div><button class="quiet animate-button" type="button" data-animate>Animate ${m.reverse?'backwards':'forwards'}</button></div>`;}
+function barHTML(q){if(!q.bar)return '';const b=q.bar,max=Math.max(100,b.percent);return `<div class="bar-model"><div class="bar-row"><div><span>Original whole</span><strong>100%</strong></div><div class="bar-track"><div class="bar-fill reference" style="width:${10000/max}%"></div></div></div><div class="bar-row"><div><span>${esc(b.label)}</span><strong>${esc(b.percent)}%</strong></div><div class="bar-track"><div class="bar-fill" style="width:${b.percent/max*100}%"></div></div></div><p>Both bars use the same scale. A percentage over 100% is larger than the original whole.</p></div>`;}
+function tab(which){const method=which==='method';$('methodTab').setAttribute('aria-selected',String(method));$('exampleTab').setAttribute('aria-selected',String(!method));$('methodTab').tabIndex=method?0:-1;$('exampleTab').tabIndex=method?-1:0;$('methodContent').hidden=!method;$('exampleContent').hidden=method;if(!method&&session&&view==='sessionView'){E.current(session).example=true;soon();}}
+function openMethod(){if(!session)return;const r=E.current(session),q=r.q;r.hint=true;soon();const ex=E.example(q);$('methodContent').innerHTML=`<h3>${esc(E.TYPES[q.type])}</h3>${machineHTML(q)}${barHTML(q)}<ol class="method-steps">${q.method.map(x=>`<li><span>${rich(x)}</span></li>`).join('')}</ol><div class="method-note">This gives the method, not the final answer. Use a suitable fraction, 1% method or a multiplier; there is no compulsory method.</div>`;
+ $('exampleContent').innerHTML=`<p class="method-note">A different question of the same type. These are not your current question’s numbers.</p><div class="example-question">${linesHTML(ex)}${tableHTML(ex.table)}</div>${machineHTML(ex)}<h3>Worked solution</h3>${ex.solution.map(x=>`<div class="solution-step">${rich(x)}</div>`).join('')}<p class="help">Keep exact multipliers such as 0.125 or 1.125. Only round the final answer.</p>`;
+ tab('method');openDialog('methodDialog');}
+$('methodBtn').onclick=openMethod;$('methodTab').onclick=()=>tab('method');$('exampleTab').onclick=()=>tab('example');
+for(const id of ['methodTab','exampleTab'])$(id).onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const isMethod=e.key==='Home'||(e.key!=='End'&&id==='exampleTab');tab(isMethod?'method':'example');$(isMethod?'methodTab':'exampleTab').focus();}};
+$('methodDialog').onclick=e=>{const button=e.target.closest('[data-animate]');if(!button)return;const m=button.previousElementSibling;m.classList.remove('play');void m.offsetWidth;m.classList.add('play');};
+function statusLabel(r){if(r.status==='accepted')return r.parts.every(p=>p.status==='exact')?'Correct · exact':'Correct · tolerance used';return r.status==='revealed'?'Revealed':r.status==='skipped'?'Skipped':'Unfinished';}
+function reviewHTML(r,i){return `<details class="review-card"><summary><span>${i+1}. ${esc(E.TYPES[r.q.type])}</span><span>${esc(statusLabel(r))}</span></summary><div class="review-body">${linesHTML(r.q)}${tableHTML(r.q.table)}${r.q.parts.map((p,j)=>{const s=r.parts[j],typed=s.raw||r.draft[j];const user=p.kind==='choice'?p.options.find(x=>x.id===typed)?.text||'No selection':typed||'No answer';return `<div class="review-part"><b>${esc(p.label)}</b><p>Your answer: ${power(user)}</p><p><strong>Model: ${power(model(p))}</strong></p><p>${esc(['exact','near'].includes(s.status)?(s.status==='near'?'Accepted within ±1.00.':'Accepted exactly.'):'Not accepted as a correct part.')} Attempts: ${s.attempts}.</p></div>`;}).join('')}<div class="review-method"><b>Worked solution</b>${r.q.solution.map(x=>`<p>${rich(x)}</p>`).join('')}</div>${r.working?`<h3>Your typed working</h3><div class="working-review">${esc(r.working)}</div>`:''}${r.strokes.length?`<p><button type="button" class="quiet" data-review-drawing="${i}">View saved drawing</button></p>`:''}<p class="help">Support used: ${r.hint?'method viewed':'no method viewed'}${r.example?', example viewed':''}.</p></div></details>`;}
+function renderResults(){if(!session)return;clearInterval(timer);closeDialogs();changeView('resultsView');const st=E.stats(session);$('resultsSubtitle').textContent=`${session.config.name} · ${session.reason} · ${time(elapsed(session))} used`;
+ $('resultMetrics').innerHTML=[[''+st.score+' / '+st.seen,'Complete questions accepted'],[st.numericExact,'Exact numeric answers'],[st.numericNear,'Numeric answers within tolerance'],[st.first,'Questions correct on first check']].map(([v,label])=>`<div class="metric"><b>${v}</b><span>${label}</span></div>`).join('');
+ const skills={};for(const r of session.records){const o=skills[r.q.type]??={seen:0,accepted:0};o.seen++;if(r.status==='accepted')o.accepted++;}
+ $('topicSummary').innerHTML='<div class="topic-grid">'+Object.entries(skills).map(([k,v])=>`<div class="topic-row"><span>${esc(E.TYPES[k])}</span><strong>${v.accepted} / ${v.seen}</strong></div>`).join('')+'</div>';$('reviewList').innerHTML=session.records.map(reviewHTML).join('');$('resultsHeading').focus({preventScroll:true});save();}
+$('reviewList').onclick=e=>{const b=e.target.closest('[data-review-drawing]');if(b)openWork(session.records[Number(b.dataset.reviewDrawing)],true);};
+function csvCell(v){let s=String(v??'');if(/^[\s]*[=+\-@\t\r]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';}
+function csv(){const rows=[['Resource','Learner','Question','Skill','Calculation style','Question status','Part','Unit','Entered answer','Model answer','Part status','Attempts','Tolerance','Question text','Typed working']];session.records.forEach((r,i)=>r.q.parts.forEach((p,j)=>{const a=r.parts[j],raw=a.raw||r.draft[j];rows.push(['Percentages Studio',session.config.name,i+1,E.TYPES[r.q.type],r.q.component,r.status,p.label,p.unit||'choice',p.kind==='choice'?(p.options.find(x=>x.id===raw)?.text||''):raw,model(p),a.status,a.attempts,p.kind==='numeric'?'±1.00':'exact selection',r.q.lines.join('\n'),r.working]);}));return '\ufeff'+rows.map(row=>row.map(csvCell).join(',')).join('\r\n');}
+function download(name,text,type){const blob=new Blob([text],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);}
+$('csvBtn').onclick=()=>{if(session)download('percentage-practice-results.csv',csv(),'text/csv;charset=utf-8');};
+function summary(){const st=E.stats(session);return `Percentages Studio — Foundation GCSE Mathematics\nLearner: ${session.config.name}\n${session.reason}\nComplete questions accepted: ${st.score} / ${st.seen} seen\nExact numeric answers: ${st.numericExact}\nNumeric answers accepted within tolerance: ${st.numericNear}\nCorrect choice selections: ${st.choiceCorrect}\nQuestions correct on first check: ${st.first}\nTime used: ${time(elapsed(session))}\nNumeric tolerance: ±1.00 inclusive; input increments 0.01.\nPractice points only. No GCSE grade or method-mark judgement.\n`;}
+$('copyBtn').onclick=async()=>{if(!session)return;try{await navigator.clipboard.writeText(summary());toast('Summary copied.');}catch{download('percentage-practice-summary.txt',summary(),'text/plain;charset=utf-8');toast('Clipboard unavailable. A text summary was prepared instead.');}};
+let printStates=[];window.addEventListener('beforeprint',()=>{printStates=[...document.querySelectorAll('.review-card')].map(d=>d.open);document.querySelectorAll('.review-card').forEach(d=>d.open=true);});window.addEventListener('afterprint',()=>document.querySelectorAll('.review-card').forEach((d,i)=>d.open=!!printStates[i]));$('printBtn').onclick=()=>window.print();
+function openWork(record=null,readOnly=false){if(!session)return;pull();drawRecord=record||E.current(session);drawReadOnly=readOnly;redoStack=[];currentStroke=null;$('workHeading').textContent=readOnly?'Saved working':'Working space';$('workQuestion').innerHTML=linesHTML(drawRecord.q)+tableHTML(drawRecord.q.table);$('workText').value=drawRecord.working;$('workText').readOnly=readOnly;document.querySelectorAll('.drawing-tools button,.drawing-tools select').forEach(x=>x.disabled=readOnly);openDialog('workDialog');requestAnimationFrame(resizeCanvas);}
+$('workBtn').onclick=()=>openWork();
+function draw(){if(!ctx||!drawRecord)return;ctx.clearRect(0,0,cw,ch);for(const s of [...drawRecord.strokes,...(currentStroke?[currentStroke]:[])]){if(!s.points.length)continue;ctx.save();ctx.globalCompositeOperation=s.tool==='eraser'?'destination-out':'source-over';ctx.strokeStyle=s.colour;ctx.fillStyle=s.colour;ctx.lineWidth=s.width;ctx.lineCap='round';ctx.lineJoin='round';if(s.points.length===1){const pt=s.points[0];ctx.beginPath();ctx.arc(pt[0]*cw,pt[1]*ch,s.width/2,0,2*Math.PI);ctx.fill();}else{ctx.beginPath();s.points.forEach((pt,i)=>i?ctx.lineTo(pt[0]*cw,pt[1]*ch):ctx.moveTo(pt[0]*cw,pt[1]*ch));ctx.stroke();}ctx.restore();}$('undoBtn').disabled=drawReadOnly||!drawRecord.strokes.length;$('redoBtn').disabled=drawReadOnly||!redoStack.length;}
+function resizeCanvas(){if(!$('workDialog').open||!ctx)return;const rect=$('canvasShell').getBoundingClientRect(),dpr=Math.min(3,window.devicePixelRatio||1);cw=rect.width;ch=rect.height;canvas.width=Math.round(cw*dpr);canvas.height=Math.round(ch*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);draw();}
+function point(e){const box=canvas.getBoundingClientRect();return [Math.max(0,Math.min(1,(e.clientX-box.left)/box.width)),Math.max(0,Math.min(1,(e.clientY-box.top)/box.height))];}
+function finishStroke(){if(!currentStroke||!drawRecord)return;drawRecord.strokes.push(currentStroke);currentStroke=null;redoStack=[];draw();soon();}
+canvas.addEventListener('pointerdown',e=>{if(drawReadOnly||!drawRecord||!ctx||currentStroke||e.button>0)return;if(drawRecord.strokes.length>=500){toast('This question has reached 500 strokes. Clear some drawing or use typed working.');return;}e.preventDefault();canvas.setPointerCapture(e.pointerId);currentStroke={tool:penTool,colour:$('inkSelect').value,width:penTool==='eraser'?24:Number($('penWidth').value),points:[point(e)]};draw();});
+canvas.addEventListener('pointermove',e=>{if(!currentStroke)return;e.preventDefault();if(currentStroke.points.length<2500)currentStroke.points.push(point(e));draw();});
+for(const event of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(event,finishStroke);
+$('penBtn').onclick=()=>{penTool='pen';$('penBtn').setAttribute('aria-pressed','true');$('eraserBtn').setAttribute('aria-pressed','false');};$('eraserBtn').onclick=()=>{penTool='eraser';$('penBtn').setAttribute('aria-pressed','false');$('eraserBtn').setAttribute('aria-pressed','true');};
+$('undoBtn').onclick=()=>{if(drawReadOnly||!drawRecord?.strokes.length)return;finishStroke();redoStack.push(drawRecord.strokes.pop());draw();soon();};$('redoBtn').onclick=()=>{if(drawReadOnly||!redoStack.length)return;drawRecord.strokes.push(redoStack.pop());draw();soon();};
+$('clearBtn').onclick=async()=>{if(drawReadOnly||!drawRecord?.strokes.length)return;if(!await ask('Clear this drawing?','Typed working will be kept. The drawing will be removed from this question.','Clear drawing'))return;drawRecord.strokes=[];currentStroke=null;redoStack=[];draw();soon();};
+$('workText').oninput=()=>{if(drawRecord&&!drawReadOnly){drawRecord.working=$('workText').value;soon();}};$('workDialog').addEventListener('close',()=>{finishStroke();save();});
+window.addEventListener('resize',()=>requestAnimationFrame(resizeCanvas));if(typeof ResizeObserver!=='undefined')new ResizeObserver(()=>{if($('workDialog').open)resizeCanvas();}).observe($('canvasShell'));
+function preferences(){const size=$('sizeSelectDisplay').value;document.documentElement.style.fontSize=size==='large'?'18px':'16px';document.body.dataset.size=size;document.body.dataset.theme=$('themeSelect').value;document.body.dataset.overlay=$('overlaySelect').value;try{localStorage.setItem(PREF,JSON.stringify({size,theme:$('themeSelect').value,overlay:$('overlaySelect').value}));}catch{}requestAnimationFrame(resizeCanvas);}
+for(const id of ['themeSelect','sizeSelectDisplay','overlaySelect'])$(id).onchange=preferences;
+$('displayBtn').onclick=()=>openDialog('displayDialog');$('sourceBtn').onclick=()=>openDialog('sourceDialog');
+$('fullBtn').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();else toast('Full screen is unavailable here. Use your browser’s full-screen control.');}catch{toast('The browser did not allow full screen. Try its own full-screen control.');}};document.addEventListener('fullscreenchange',()=>$('fullBtn').textContent=document.fullscreenElement?'Exit full screen':'Full screen');
+window.addEventListener('pagehide',()=>{pull();finishStroke();save();});document.addEventListener('visibilitychange',()=>{if(document.hidden){pull();save();}else if(session?.phase==='active'&&E.expired(session)){save();renderResults();}});
+try{const pref=JSON.parse(localStorage.getItem(PREF)||'null');if(pref){if(['normal','large'].includes(pref.size))$('sizeSelectDisplay').value=pref.size;if(['light','dark'].includes(pref.theme))$('themeSelect').value=pref.theme;if(['none','cream','blue','green'].includes(pref.overlay))$('overlaySelect').value=pref.overlay;}preferences();const raw=localStorage.getItem(KEY);if(raw){try{saved=E.restore(raw);updateResume();}catch{notice('The saved session could not be validated. You can start a fresh session; no saved answers were loaded.');try{localStorage.removeItem(KEY);}catch{}}}}catch{storageOK=false;notice('Saving is unavailable in this browser context. The trainer still works; keep this tab open until you finish.');}
+if(!ctx){$('workBtn').disabled=true;notice('This browser cannot draw on the working canvas. You can still answer questions and view methods.');}
+modeFields();
+/* BEGIN PERCENTAGE CALCULATOR ADDITION */
+(function installCalculatorOnly() {
+/* Calculator arithmetic is separate from question generation and marking.
+   Exact fractions keep decimal operations and Ans chains free of binary drift.
+   Only a small mathematical grammar is accepted: no eval or Function calls. */
+const StudioBasicCalculator = (() => {
+  const MAX_DIGITS = 500;
+  function gcd(a, b) { a = a < 0n ? -a : a; while (b) { const t = a % b; a = b; b = t; } return a; }
+  function fraction(n, d = 1n) {
+    if (!d) throw new Error('Cannot divide by zero.');
+    if (d < 0n) { n = -n; d = -d; }
+    const g = gcd(n, d); n /= g; d /= g;
+    if (n.toString().length > MAX_DIGITS || d.toString().length > MAX_DIGITS) throw new Error('This calculation is too large. Use smaller values.');
+    return { n, d };
+  }
+  function number(text) {
+    const match = /^(\d+(?:\.\d*)?|\.\d+)(?:[eE]([+-]?\d{1,3}))?$/.exec(text);
+    if (!match) throw new Error('Check the number you entered.');
+    const exponent = Number(match[2] || 0);
+    if (Math.abs(exponent) > 100) throw new Error('Use powers between −100 and 100.');
+    const [whole, decimals = ''] = match[1].split('.');
+    let n = BigInt((whole || '0') + decimals), d = 10n ** BigInt(decimals.length);
+    if (exponent > 0) n *= 10n ** BigInt(exponent);
+    if (exponent < 0) d *= 10n ** BigInt(-exponent);
+    return fraction(n, d);
+  }
+  const add = (a, b) => fraction(a.n * b.d + b.n * a.d, a.d * b.d);
+  const subtract = (a, b) => fraction(a.n * b.d - b.n * a.d, a.d * b.d);
+  const multiply = (a, b) => fraction(a.n * b.n, a.d * b.d);
+  const divide = (a, b) => fraction(a.n * b.d, a.d * b.n);
+  function raise(a, b) {
+    if (b.d !== 1n || b.n < -100n || b.n > 100n) throw new Error('This basic calculator uses whole-number powers from −100 to 100.');
+    if (!a.n && !b.n) throw new Error('Zero to the power zero is not defined here.');
+    const e = b.n < 0n ? -b.n : b.n;
+    // Reject oversized powers before exponentiation rather than after it.
+    if (e && Math.max(a.n.toString().length, a.d.toString().length) * Number(e) > 600) throw new Error('This power is too large. Use smaller values.');
+    return b.n < 0n ? fraction(a.d ** e, a.n ** e) : fraction(a.n ** e, a.d ** e);
+  }
+  function evaluate(source, answer = null) {
+    const text = String(source).replace(/[×x]/g, '*').replace(/[÷]/g, '/').replace(/[−–]/g, '-');
+    if (!text.trim()) throw new Error('Enter a calculation first.');
+    if (text.length > 240) throw new Error('Keep the calculation to 240 characters or fewer.');
+    const tokens = []; let offset = 0;
+    while (offset < text.length) {
+      if (/\s/.test(text[offset])) { offset++; continue; }
+      const rest = text.slice(offset), numeric = /^(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d{1,3})?/.exec(rest);
+      if (numeric) { tokens.push({ type: 'number', value: number(numeric[0]) }); offset += numeric[0].length; continue; }
+      if (/^ans\b/i.test(rest)) { tokens.push({ type: 'answer' }); offset += 3; continue; }
+      if ('+-*/^()%'.includes(text[offset])) { tokens.push({ type: text[offset++] }); continue; }
+      throw new Error('Use numbers, +, −, ×, ÷, brackets, %, a power or Ans.');
+    }
+    let at = 0, depth = 0;
+    const take = type => tokens[at]?.type === type ? (at++, true) : false;
+    function primary() {
+      if (++depth > 32) throw new Error('There are too many nested brackets.');
+      let result;
+      if (take('(')) { result = sum(); if (!take(')')) throw new Error('Close each opening bracket.'); }
+      else if (tokens[at]?.type === 'number') result = tokens[at++].value;
+      else if (take('answer')) { if (!answer) throw new Error('Press = on a calculation before using Ans.'); result = answer; }
+      else throw new Error('A number is missing. Check the operators and brackets.');
+      while (take('%')) result = divide(result, fraction(100n));
+      depth--; return result;
+    }
+    function power() { let value = primary(); if (take('^')) value = raise(value, unary()); return value; }
+    function unary() { if (take('+')) return unary(); if (take('-')) { const v = unary(); return fraction(-v.n, v.d); } return power(); }
+    function product() { let value = unary(); while (true) { if (take('*')) value = multiply(value, unary()); else if (take('/')) value = divide(value, unary()); else break; } return value; }
+    function sum() { let value = product(); while (true) { if (take('+')) value = add(value, product()); else if (take('-')) value = subtract(value, product()); else break; } return value; }
+    const value = sum();
+    if (at !== tokens.length) throw new Error('Check your brackets and put an operator between each value.');
+    return value;
+  }
+  function format(value) {
+    if (!value.n) return { text: '0', approximate: false };
+    const negative = value.n < 0n, n = negative ? -value.n : value.n, d = value.d;
+    // Find the magnitude using integers, including very small fractions.
+    let exponent = n.toString().length - d.toString().length;
+    if (exponent >= 0 ? n < d * 10n ** BigInt(exponent) : n * 10n ** BigInt(-exponent) < d) exponent--;
+    const shift = 13 - exponent;
+    const numerator = shift >= 0 ? n * 10n ** BigInt(shift) : n;
+    const denominator = shift >= 0 ? d : d * 10n ** BigInt(-shift);
+    const quotient = numerator / denominator, remainder = numerator % denominator;
+    let digits = (quotient + (remainder * 2n >= denominator ? 1n : 0n)).toString();
+    if (digits.length > 14) { digits = digits.slice(0, -1); exponent++; }
+    digits = digits.padStart(14, '0');
+    let text;
+    if (exponent >= 14 || exponent < -8) {
+      const tail = digits.slice(1).replace(/0+$/, '');
+      text = digits[0] + (tail ? '.' + tail : '') + 'e' + (exponent >= 0 ? '+' : '') + exponent;
+    } else {
+      const point = exponent + 1;
+      text = point <= 0 ? '0.' + '0'.repeat(-point) + digits : point >= digits.length ? digits + '0'.repeat(point - digits.length) : digits.slice(0, point) + '.' + digits.slice(point);
+      if (text.includes('.')) text = text.replace(/0+$/, '').replace(/\.$/, '');
+    }
+    return { text: (negative ? '-' : '') + text, approximate: remainder !== 0n };
+  }
+  return { evaluate, format };
+})();
+
+  const calculator = document.createElement('section');
+  calculator.id = 'psCalculator';
+  calculator.hidden = true;
+  calculator.setAttribute('role', 'dialog');
+  calculator.setAttribute('aria-modal', 'false');
+  calculator.setAttribute('aria-labelledby', 'psCalculatorTitle');
+  calculator.innerHTML = `
+    <div class="ps-calc-titlebar">
+      <button type="button" id="psCalculatorDrag" title="Drag to move. Arrow keys move the window; Home returns it to the right." aria-label="Move calculator: drag or use the arrow keys; Home resets its position."><span id="psCalculatorTitle">Calculator</span><small>Drag to move</small></button>
+      <button type="button" class="ps-calc-window-control" id="psCalculatorPosition" title="Return to the right side" aria-label="Return calculator to the right side">↺</button>
+      <button type="button" class="ps-calc-window-control" id="psCalculatorClose" title="Close calculator" aria-label="Close calculator">×</button>
+    </div>
+    <div class="ps-calc-body">
+      <label class="ps-calc-label" for="psCalculatorInput">Calculation</label>
+      <input id="psCalculatorInput" type="text" inputmode="text" autocomplete="off" spellcheck="false" maxlength="240" placeholder="e.g. 64 ÷ 0.8" aria-describedby="psCalculatorHelp psCalculatorMessage">
+      <div class="ps-calc-display"><span class="ps-calc-display-label">Result</span><output id="psCalculatorResult" for="psCalculatorInput" aria-live="polite" aria-atomic="true">0</output></div>
+      <div class="ps-calc-keys" role="group" aria-label="Calculator keypad">
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-action="clear" aria-label="Clear calculator">AC</button>
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-action="delete" aria-label="Delete calculator character">DEL</button>
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-value="(" aria-label="Opening bracket">(</button>
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-value=")" aria-label="Closing bracket">)</button>
+        <button type="button" class="ps-calc-key" data-ps-value="7">7</button>
+        <button type="button" class="ps-calc-key" data-ps-value="8">8</button>
+        <button type="button" class="ps-calc-key" data-ps-value="9">9</button>
+        <button type="button" class="ps-calc-key ps-calc-operation" data-ps-value="÷" aria-label="Divide">÷</button>
+        <button type="button" class="ps-calc-key" data-ps-value="4">4</button>
+        <button type="button" class="ps-calc-key" data-ps-value="5">5</button>
+        <button type="button" class="ps-calc-key" data-ps-value="6">6</button>
+        <button type="button" class="ps-calc-key ps-calc-operation" data-ps-value="×" aria-label="Multiply">×</button>
+        <button type="button" class="ps-calc-key" data-ps-value="1">1</button>
+        <button type="button" class="ps-calc-key" data-ps-value="2">2</button>
+        <button type="button" class="ps-calc-key" data-ps-value="3">3</button>
+        <button type="button" class="ps-calc-key ps-calc-operation" data-ps-value="−" aria-label="Subtract or enter a negative number">−</button>
+        <button type="button" class="ps-calc-key" data-ps-value="0">0</button>
+        <button type="button" class="ps-calc-key" data-ps-value="." aria-label="Decimal point">.</button>
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-value="%" aria-label="Percent, divide by 100">%</button>
+        <button type="button" class="ps-calc-key ps-calc-operation" data-ps-value="+" aria-label="Add">+</button>
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-value="Ans" aria-label="Use the last calculator result">Ans</button>
+        <button type="button" class="ps-calc-key ps-calc-function" data-ps-value="^" aria-label="Raise to a whole-number power"><math xmlns="http://www.w3.org/1998/Math/MathML" aria-hidden="true"><msup><mi>x</mi><mi>y</mi></msup></math></button>
+        <button type="button" class="ps-calc-key ps-calc-equals" data-ps-action="equals" aria-label="Calculate result">=</button>
+      </div>
+      <p id="psCalculatorMessage" role="status" aria-live="polite">Type a calculation or use the buttons.</p>
+      <div class="ps-calc-bottom"><button type="button" class="quiet" id="psCalculatorCopy" disabled>Copy result</button><small>Calculator-allowed practice only</small></div>
+      <details class="ps-calc-instructions"><summary>Calculator help</summary><p id="psCalculatorHelp" class="ps-calc-help">Enter or = calculates. AC clears. Brackets and the usual order of operations apply. % divides the preceding value by 100: use 200 × 10% for 10% of 200. Use ^ for a whole-number power and Ans for the previous result. Round only your final answer to the question.</p></details>
+    </div>`;
+  const input = calculator.querySelector('#psCalculatorInput');
+  const result = calculator.querySelector('#psCalculatorResult');
+  const status = calculator.querySelector('#psCalculatorMessage');
+  const copy = calculator.querySelector('#psCalculatorCopy');
+  const jump = document.createElement('button');
+  jump.id = 'psCalculatorJump'; jump.type = 'button'; jump.className = 'quiet';
+  jump.innerHTML = '<svg viewBox="0 0 18 22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1" y="1" width="16" height="20" rx="3"/><path d="M4 5h10v4H4zM4 12h2m3 0h2m3 0h.1M4 15h2m3 0h2m3 0h.1M4 18h2m3 0h2m3 0h.1"/></svg><span>Open calculator</span>';
+  jump.setAttribute('aria-controls', 'psCalculator');
+  jump.setAttribute('aria-haspopup', 'dialog');
+  jump.setAttribute('aria-expanded', 'false');
+  const dock = document.createElement('span');
+  dock.id = 'psCalculatorDock'; dock.appendChild(jump);
+  const dragHandle = calculator.querySelector('#psCalculatorDrag');
+  const closeButton = calculator.querySelector('#psCalculatorClose');
+  const positionButton = calculator.querySelector('#psCalculatorPosition');
+  let position = null, drag = null, layoutFrame = null;
+  let owner = null, lastAnswer = null, resultText = '', evaluated = false;
+
+  // Use the actual active session, not the setup dropdown or a stored preference.
+  // Resuming a non-calculator session must never enable this calculator.
+  function allowed() {
+    return !!session && session.phase === 'active' && session.config.component === 'calc' && view === 'sessionView' && !$('sessionView').hidden;
+  }
+  function showMessage(text, error = false) { status.textContent = text; status.dataset.error = String(error); }
+  function reset() {
+    input.value = ''; result.textContent = '0'; lastAnswer = null; resultText = ''; evaluated = false; copy.disabled = true;
+    showMessage('Type a calculation or use the buttons.');
+  }
+  function edit() {
+    evaluated = false; resultText = ''; result.textContent = '—'; copy.disabled = true;
+    showMessage('Press = or Enter to calculate.');
+  }
+  function focusInput(position) {
+    input.focus({ preventScroll: true });
+    input.setSelectionRange(position, position);
+    input.scrollLeft = input.scrollWidth;
+  }
+  function insert(value) {
+    if (!allowed()) return;
+    if (evaluated) {
+      input.value = /^[+−×÷^%]$/.test(value) ? 'Ans' : '';
+      input.setSelectionRange(input.value.length, input.value.length);
+    }
+    const start = input.selectionStart ?? input.value.length, end = input.selectionEnd ?? start;
+    const next = input.value.slice(0, start) + value + input.value.slice(end);
+    if (next.length > 240) { showMessage('Keep the calculation to 240 characters or fewer.', true); return; }
+    input.value = next; edit(); focusInput(start + value.length);
+  }
+  function removeCharacter() {
+    if (!allowed()) return;
+    const start = input.selectionStart ?? input.value.length, end = input.selectionEnd ?? start;
+    const from = start === end ? Math.max(0, start - 1) : start;
+    input.value = input.value.slice(0, from) + input.value.slice(end);
+    edit(); focusInput(from);
+  }
+  function calculate() {
+    if (!allowed() || evaluated) return;
+    try {
+      const value = StudioBasicCalculator.evaluate(input.value, lastAnswer);
+      const formatted = StudioBasicCalculator.format(value);
+      lastAnswer = value; resultText = formatted.text; result.textContent = formatted.text; evaluated = true; copy.disabled = false;
+      showMessage(formatted.approximate ? 'Displayed result rounded to 14 significant figures. Ans keeps the full calculation.' : 'Result ready. Copy it or type it into your answer box.');
+    } catch (error) {
+      result.textContent = 'Check calculation'; resultText = ''; copy.disabled = true; evaluated = false;
+      showMessage(error.message || 'Check the calculation and try again.', true);
+    }
+  }
+  // All keys are type=button and all keyboard handling is local to this widget.
+  // Calculator Enter must not submit a question or advance to the next one.
+  calculator.addEventListener('click', event => {
+    const button = event.target.closest('[data-ps-action],[data-ps-value]');
+    if (!button || !calculator.contains(button) || !allowed()) return;
+    if (button.dataset.psValue !== undefined) insert(button.dataset.psValue);
+    else if (button.dataset.psAction === 'equals') { calculate(); focusInput(input.value.length); }
+    else if (button.dataset.psAction === 'delete') removeCharacter();
+    else if (button.dataset.psAction === 'clear') { reset(); focusInput(0); }
+  });
+  input.addEventListener('input', () => { if (allowed()) edit(); });
+  calculator.addEventListener('keydown', event => {
+    if (!allowed() || event.ctrlKey || event.metaKey || event.altKey || event.isComposing) return;
+    if (event.target === input) {
+      if (event.key === 'Enter' || event.key === '=') { event.preventDefault(); event.stopPropagation(); calculate(); return; }
+      if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); closeCalculator(); return; }
+      if (evaluated && event.key.length === 1 && /[\d.(+\-*/^%×÷−]/.test(event.key)) {
+        input.value = /^[+\-*/^%×÷−]$/.test(event.key) ? 'Ans' : '';
+        input.setSelectionRange(input.value.length, input.value.length); evaluated = false;
+      }
+    } else if (event.key === 'Enter') {
+      // Let the focused calculator button activate, but do not bubble outward.
+      event.stopPropagation();
+    }
+  });
+  copy.addEventListener('click', async () => {
+    if (!allowed() || !resultText) return;
+    const text = resultText, currentOwner = owner;
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
+      if (allowed() && owner === currentOwner) showMessage('Result copied. Paste it into the answer box, rounding when needed.');
+    } catch {
+      if (!allowed() || owner !== currentOwner) return;
+      const area = document.createElement('textarea');
+      area.value = text; area.setAttribute('aria-label', 'Calculator result to copy');
+      area.style.cssText = 'position:fixed;left:-9999px;top:0;width:1px;height:1px';
+      calculator.appendChild(area); area.select();
+      let copied = false; try { copied = document.execCommand('copy'); } catch {}
+      area.remove(); copy.focus({ preventScroll: true });
+      showMessage(copied ? 'Result copied. Paste it into the answer box, rounding when needed.' : 'Select the displayed result and use your device’s copy command.');
+    }
+  });
+  // Non-modal, viewport-fixed window: the question remains interactive.
+  // All positioning and drag state belongs to the calculator, never the lesson.
+  function viewport() {
+    const v = window.visualViewport;
+    return { left: v?.offsetLeft || 0, top: v?.offsetTop || 0,
+      width: v?.width || document.documentElement.clientWidth || window.innerWidth,
+      height: v?.height || window.innerHeight };
+  }
+  function bounded(value, low, high) { return Math.max(low, Math.min(Math.max(low, high), value)); }
+  function placeLauncher() {
+    if (!allowed() || !dock.isConnected) return;
+    const v = viewport();
+    // Measure the normal button size, then reserve it if it needs to float.
+    if (!jump.hasAttribute('data-floating')) {
+      const b = jump.getBoundingClientRect();
+      dock.style.width = b.width + 'px'; dock.style.height = b.height + 'px';
+    }
+    const d = dock.getBoundingClientRect();
+    if (d.top < v.top + 10) {
+      jump.dataset.floating = 'true';
+      jump.style.width = d.width + 'px';
+      jump.style.left = bounded(d.left, v.left + 10, v.left + v.width - d.width - 10) + 'px';
+      jump.style.top = (v.top + 10) + 'px';
+    } else {
+      jump.removeAttribute('data-floating');
+      jump.style.removeProperty('width'); jump.style.removeProperty('left'); jump.style.removeProperty('top');
+    }
+  }
+  function placeWindow(resetPosition = false) {
+    if (!allowed() || calculator.hidden || !calculator.isConnected) return;
+    const v = viewport(), gap = 10;
+    calculator.style.maxWidth = Math.max(1, v.width - gap * 2) + 'px';
+    calculator.style.maxHeight = Math.max(1, v.height - gap * 2) + 'px';
+    const b = calculator.getBoundingClientRect();
+    const left = v.left + gap, right = v.left + v.width - b.width - gap;
+    const top = v.top + gap, bottom = v.top + v.height - b.height - gap;
+    if (resetPosition || !position) {
+      const launcher = jump.getBoundingClientRect();
+      position = { x: right, y: bounded(launcher.bottom + gap, top, bottom) };
+    }
+    position.x = bounded(position.x, left, right);
+    position.y = bounded(position.y, top, bottom);
+    calculator.style.left = position.x + 'px';
+    calculator.style.top = position.y + 'px';
+  }
+  function layout() {
+    if (layoutFrame !== null) return;
+    layoutFrame = requestAnimationFrame(() => {
+      layoutFrame = null; placeLauncher(); placeWindow();
+    });
+  }
+  function stopDrag() {
+    if (!drag) return;
+    const pointerId = drag.pointerId; drag = null;
+    calculator.removeAttribute('data-dragging');
+    try { if (dragHandle.hasPointerCapture(pointerId)) dragHandle.releasePointerCapture(pointerId); } catch {}
+  }
+  function openCalculator() {
+    if (!allowed()) return;
+    calculator.hidden = false; jump.setAttribute('aria-expanded', 'true');
+    placeLauncher(); placeWindow();
+    // Focusing the fixed window must never scroll the question out of view.
+    if (window.matchMedia('(pointer: coarse)').matches) dragHandle.focus({ preventScroll: true });
+    else focusInput(input.value.length);
+  }
+  function closeCalculator(restoreFocus = true) {
+    stopDrag(); calculator.hidden = true; jump.setAttribute('aria-expanded', 'false');
+    if (restoreFocus && allowed() && jump.isConnected) jump.focus({ preventScroll: true });
+  }
+  jump.addEventListener('click', openCalculator);
+  closeButton.addEventListener('click', () => closeCalculator());
+  positionButton.addEventListener('click', () => { stopDrag(); placeLauncher(); placeWindow(true); });
+  dragHandle.addEventListener('dblclick', () => { stopDrag(); placeWindow(true); });
+  dragHandle.addEventListener('pointerdown', event => {
+    if (!allowed() || calculator.hidden || event.button !== 0 || event.isPrimary === false || drag) return;
+    event.preventDefault();
+    const b = calculator.getBoundingClientRect();
+    position = { x: b.left, y: b.top };
+    drag = { pointerId: event.pointerId, x: event.clientX, y: event.clientY, left: b.left, top: b.top };
+    calculator.dataset.dragging = 'true';
+    dragHandle.focus({ preventScroll: true });
+    try { dragHandle.setPointerCapture(event.pointerId); } catch {}
+  });
+  dragHandle.addEventListener('pointermove', event => {
+    if (!drag || event.pointerId !== drag.pointerId) return;
+    event.preventDefault();
+    position = { x: drag.left + event.clientX - drag.x, y: drag.top + event.clientY - drag.y };
+    placeWindow();
+  });
+  for (const name of ['pointerup', 'pointercancel', 'lostpointercapture']) {
+    dragHandle.addEventListener(name, event => { if (drag?.pointerId === event.pointerId) stopDrag(); });
+  }
+  window.addEventListener('blur', stopDrag);
+  dragHandle.addEventListener('keydown', event => {
+    if (!allowed() || calculator.hidden || event.ctrlKey || event.metaKey || event.altKey || event.isComposing) return;
+    const moves = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] };
+    if (event.key === 'Home') { event.preventDefault(); event.stopPropagation(); placeWindow(true); return; }
+    const move = moves[event.key]; if (!move) return;
+    event.preventDefault(); event.stopPropagation();
+    const step = event.shiftKey ? 40 : 10, b = calculator.getBoundingClientRect();
+    position = { x: b.left + move[0] * step, y: b.top + move[1] * step }; placeWindow();
+  });
+  calculator.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !event.isComposing && allowed()) {
+      event.preventDefault(); event.stopPropagation(); closeCalculator();
+    }
+  });
+  window.addEventListener('scroll', layout, { passive: true });
+  window.addEventListener('resize', () => {
+    // Remeasure the launcher after mobile/desktop or larger-text changes.
+    dock.style.removeProperty('width'); dock.style.removeProperty('height');
+    jump.removeAttribute('data-floating'); jump.style.removeProperty('width');
+    jump.style.removeProperty('left'); jump.style.removeProperty('top');
+    stopDrag(); layout();
+  });
+  window.visualViewport?.addEventListener('resize', layout);
+  window.visualViewport?.addEventListener('scroll', layout);
+  if (typeof ResizeObserver !== 'undefined') {
+    const sizeObserver = new ResizeObserver(layout);
+    sizeObserver.observe(calculator); sizeObserver.observe(dock);
+  }
+  function sync() {
+    if (!allowed()) {
+      closeCalculator(false); calculator.remove(); dock.remove();
+      if (owner) reset(); owner = null; position = null; return;
+    }
+    if (owner !== session) { reset(); closeCalculator(false); position = null; owner = session; }
+    if (!calculator.isConnected) document.body.appendChild(calculator);
+    if (!dock.isConnected) {
+      const actions = $('sessionView').querySelector('.session-actions');
+      actions.insertBefore(dock, actions.firstChild);
+    }
+    // Starts closed. Moving between questions preserves the calculation/window.
+    placeLauncher(); layout();
+  }
+  // These observers do not modify the app's questions, score, timer or storage.
+  // They cover new sessions, resumed sessions, question changes and results.
+  const observer = new MutationObserver(sync);
+  observer.observe($('sessionView'), { attributes: true, attributeFilter: ['hidden'] });
+  observer.observe($('questionHeading'), { childList: true, characterData: true, subtree: true });
+  sync();
+
+})();
+/* END PERCENTAGE CALCULATOR ADDITION */
+// The test harness can request read-only access to state and normal UI entry points.
+if(window.__PERCENT_TEST__)window.PercentageTest={session:()=>session,load:s=>{session=s;renderQuestion(false);runTimer();},renderQuestion,renderResults,tableHTML,machineHTML,barHTML,reviewHTML,csv,summary,save,openMethod,openWork,step};
+})();
+</script>
+</body>
+</html>
